@@ -213,7 +213,7 @@
         }
     },
     "variables": {
-        "resourceGroupName": "[concat(parameters('projectName'), '-rg')]",
+        "resourceGroupName": "odl-units-763095]",
         "dbName": "[concat(parameters('projectName'), '-db-', substring(uniqueString(subscription().id, parameters('projectName')),0,4))]",
         "cacheName": "[concat(parameters('projectName'), '-cache-', substring(uniqueString(subscription().id, parameters('projectName')),0,4))]",
         "keyVaultName": "[concat(parameters('projectName'), '-kv-', substring(uniqueString(subscription().id, parameters('projectName')),0,4))]",
