@@ -2,7 +2,7 @@
 
 In this lab you will use Spring Cloud Gateway filters to apply rate limiting to your API.
 
-### Task 1 : Prepare your environment for deployments
+### Task 1 : Spring Cloud Gateway Rate Limit Filter 
 
 1. If you are not logged in already, click on Azure portal shortcut that is available on the desktop and log in with below Azure credentials.
     * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
