@@ -22,14 +22,14 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
     cp ./scripts/setup-env-variables-template.sh ./scripts/setup-env-variables.sh
     ```
 
-1. Open `./scripts/setup-env-variables.sh` and running the following command :
+1. To open the `./scripts/setup-env-variables.sh` file, run the following command :
 
    ```shell
    cd azure
    vim setup-env-variables.sh
    ```
 
-1. Update the following variables in the setup-env-variables.sh file by running the following commands :
+1. Update the following variables in the setup-env-variables.sh file by replacing the following values :
 
    ```shell
    export SUBSCRIPTION=subscription-id                 # replace it with your subscription-id
