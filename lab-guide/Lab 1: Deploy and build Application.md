@@ -118,5 +118,125 @@ This application is composed of several services:
 * 1 NodeJS and static HTML Application
   * A frontend shopping application
 
+### Task 4 : Bind to Application Configuration Service 
+The Application configuration service is a feature of azure spring apps enterprise that makes Spring Apps config server capabilities available in a polyglot way.
 
+1. Run the following command to bind the spring applications to the Application Configuration Service:
+ 
+```shell
+az spring application-configuration-service bind --app ${PAYMENT_SERVICE_APP}
+az spring application-configuration-service bind --app ${CATALOG_SERVICE_APP}
+```
   
+ ### Task 5 : Bind to Service Registry 
+ 
+ Applications need to communicate with each other. ASA-E internally uses Tanzu Service Registry for dynamic service discovery.
+ 
+ 1. Run the following command to bind the spring applications to the Service Registry:
+
+```shell
+az spring service-registry bind --app ${PAYMENT_SERVICE_APP}
+az spring service-registry bind --app ${CATALOG_SERVICE_APP}
+```
+
+### Task 6 : Configure Spring Cloud Gateway 
+
+In this task, you will create a spring cloud gateway instance for acme-fitness and connect all the backend services to this gateway instance. This way the gateway instance acts as the proxy for any requests that are targeted towards the acme-fitness application.
+
+1. To assign a public endpoint and update the Spring Cloud Gateway configuration with API information, run the following command:
+
+   ```shell
+   az spring gateway update --assign-endpoint true
+   export GATEWAY_URL=$(az spring gateway show | jq -r '.properties.url')
+    
+   az spring gateway update \
+      --api-description "Acme Fitness Store API" \
+      --api-title "Acme Fitness Store" \
+      --api-version "v1.0" \
+      --server-url "https://${GATEWAY_URL}" \
+      --allowed-origins "*" \
+      --no-wait
+    ```
+
+1. Run the following command to create routing rules for the applications:
+
+    ```shell
+    az spring gateway route-config create \
+      --name ${CART_SERVICE_APP} \
+      --app-name ${CART_SERVICE_APP} \
+      --routes-file ./routes/cart-service.json
+    
+    az spring gateway route-config create \
+      --name ${ORDER_SERVICE_APP} \
+      --app-name ${ORDER_SERVICE_APP} \
+      --routes-file ./routes/order-service.json
+
+   az spring gateway route-config create \
+      --name ${CATALOG_SERVICE_APP} \
+      --app-name ${CATALOG_SERVICE_APP} \
+      --routes-file ./routes/catalog-service.json
+
+   az spring gateway route-config create \
+      --name ${FRONTEND_APP} \
+      --app-name ${FRONTEND_APP} \
+      --routes-file ./routes/frontend.json
+   ```
+
+### Task 7 : Build and Deploy Polyglot Applications 
+
+ In this task, you will deploy the more sophisticated acme-fitness application to the same asa-e instance.
+ 
+ 1. Run the following command to deploy and build each application with its required parameters:
+
+```shell
+# Deploy Payment Service
+az spring app deploy --name ${PAYMENT_SERVICE_APP} \
+    --config-file-pattern payment/default \
+    --source-path ./apps/acme-payment 
+
+# Deploy Catalog Service
+az spring app deploy --name ${CATALOG_SERVICE_APP} \
+    --config-file-pattern catalog/default \
+    --source-path ./apps/acme-catalog 
+
+# Deploy Order Service
+az spring app deploy --name ${ORDER_SERVICE_APP} \
+    --source-path ./apps/acme-order 
+
+# Deploy Cart Service 
+az spring app deploy --name ${CART_SERVICE_APP} \
+    --env "CART_PORT=8080" \
+    --source-path ./apps/acme-cart 
+
+# Deploy Frontend App
+az spring app deploy --name ${FRONTEND_APP} \
+    --source-path ./apps/acme-shopping 
+```
+
+> **Note:** Deploying all applications will take approximately 5-10 minutes.
+
+### Task 8 : Access the Application through Spring Cloud Gateway 
+
+1. Run the following command and then open the output from the following command in a browser:
+
+```shell
+echo "https://${GATEWAY_URL}"
+```
+> **Note :** You should see the ACME Fitness Store Application:
+Explore the application, but notice that not everything is functioning yet. Continue on to Lab 2 to configure Single Sign On to enable the rest of the functionality.
+
+### Task 9 : Explore the API using API Portal 
+
+1. To assign an endpoint to API Portal, run the following command:
+
+   ```shell 
+   az spring api-portal update --assign-endpoint true
+   export PORTAL_URL=$(az spring api-portal show | jq -r '.properties.url')
+   ```
+
+1. Run the following command and then open the output from the following command in a browser:
+
+   ```shell
+   echo "https://${PORTAL_URL}"
+   ```
+   
