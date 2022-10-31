@@ -118,5 +118,29 @@ In this task, you update the affected applications to use the databases and redi
    az spring app update \
       --name cart-service \
       --env "CART_PORT=8080" "REDIS_CONNECTIONSTRING=${REDIS_CONN_STR}" "AUTH_URL=https://${GATEWAY_URL}"
-  ```
+   ```
   
+### Task 4 : View the persisted data 
+
+1. Now verify cart data is now persisted in Redis by adding a few items to your cart. Then, restart the cart service by running the following command:
+
+   ```shell
+   az spring app restart --name ${CART_SERVICE_APP}
+   ```
+> Note : Notice that after restarting the cart service, the items in your cart will now persist.
+
+1. Now verify order data is now persisted in a PostgreSQL Database by placing an order. To view your placed orders with the following URL in a browser:
+
+   ```shell
+   https://${GATEWAY_URL}/order/${USER_ID}
+   ```
+   
+> **Note :** Your USER_ID is your username URL encoded.
+
+1. Run the following command to restart the order service application:
+
+   ```shell
+   az spring app restart --name ${ORDER_SERVICE_APP}
+   ```
+   
+> **Note :** After restarting, revisit the URL for your placed orders and notice that they persisted.    
