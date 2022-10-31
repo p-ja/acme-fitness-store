@@ -188,6 +188,8 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
       --no-wait
     ```
 
+      ![](Images/mjv2-7.png)
+
 1. Run the following command to create routing rules for the applications:
 
     ```shell
@@ -211,6 +213,8 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
       --app-name ${FRONTEND_APP} \
       --routes-file ./routes/frontend.json
    ```
+
+      ![](Images/mjv2-8.png)
 
 ### Task 7 : Build and Deploy Polyglot Applications 
 
@@ -245,15 +249,20 @@ az spring app deploy --name ${FRONTEND_APP} \
 
 > **Note:** Deploying all applications will take approximately 5-10 minutes.
 
+ ![](Images/mjv2-9.png)
+
 ### Task 8 : Access the Application through Spring Cloud Gateway 
 
 1. Run the following command and then open the output from the following command in a browser:
 
-```shell
-echo "https://${GATEWAY_URL}"
-```
-> **Note :** You should see the ACME Fitness Store Application:
-Explore the application, but notice that not everything is functioning yet. Continue on to Lab 2 to configure Single Sign On to enable the rest of the functionality.
+   ```shell
+   echo "https://${GATEWAY_URL}"
+   ```
+   ![](Images/mjv2-10.png)
+
+1. Copy the gateway URL and paste it in a new browser and then you should see the ACME Fitness Store Application.Explore the application, but notice that not      everything is functioning yet. Continue on to Lab 2 to configure Single Sign On to enable the rest of the functionality.
+
+  ![](Images/mjv2-11.png)
 
 ### Task 9 : Explore the API using API Portal 
 
@@ -270,3 +279,4 @@ Explore the application, but notice that not everything is functioning yet. Cont
    echo "https://${PORTAL_URL}"
    ```
    
+   ![](Images/mjv2-12.png)
