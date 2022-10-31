@@ -20,7 +20,7 @@ Task 1 : Prepare you environment
 1. Update the following variables in the setup-db-env-variables.sh file by replacing the following values :
 
    ```shell
-   export AZURE_CACHE_NAME=acme-fitness-cache-CHANGE-ME                 #Replace CHANGE_ME with the name of your azure cache for redias instance
+   export AZURE_CACHE_NAME=acme-fitness-cache-CHANGE-ME                 #Replace CHANGE_ME with the name of your azure cache for redis instance
    export POSTGRES_SERVER=acme-fitness-db-CHANGE-ME                     #Replace CHANGE_ME with the name of your postgres server
    ```
    > **Note:** You can use the arrow keys to move around in the file. Press the "CTRL + X" keys to close the file. You will be prompted to save your changes. Press the    "y" key to save your changes and then press enter to exit.
