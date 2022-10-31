@@ -15,6 +15,8 @@ az spring gateway update \
     --no-wait
  ```   
 
+![](Images/mjv2-13.png)
+
 ### Task 2 : Update the Existing Applications 
 
 1. Run the following command to update the existing applications to use authorization information from Spring Cloud Gateway:
@@ -28,6 +30,8 @@ az spring app update --name ${CART_SERVICE_APP} \
 az spring app  update --name ${ORDER_SERVICE_APP} \
     --env "AcmeServiceSettings__AuthUrl=https://${GATEWAY_URL}" 
 ```
+![](Images/mjv2-14.png)
+
 
 ### Task 3 : Login to the Application through Spring Cloud Gateway 
 
@@ -38,6 +42,8 @@ echo "https://${GATEWAY_URL}"
 ```
 
 > **Note :** You should see the ACME Fitness Store Application, and be able to log in using your SSO Credentials. Once logged in, the remaining functionality of the application will be available. This includes adding items to the cart and placing an order.
+
+![](Images/mjv2-15.png)
 
 ### Task 4 : Configure SSO for API Portal 
 
@@ -53,6 +59,8 @@ az spring api-portal update \
     --issuer-uri ${ISSUER_URI}
 ```
 
+![](Images/mjv2-17.png)
+
 ### Task 5 : Expose the API using API Portal 
 
 1. Run the following command to retrieve the URL for API Portal and then open the output in a browser: 
@@ -60,6 +68,8 @@ az spring api-portal update \
 ```shell
 echo "https://${PORTAL_URL}"
 ```
+
+![](Images/mjv2-16.png)
 
 > Note : Now you wil be able to log in using your SSO Credentials. To access the protected APIs, click Authorize and follow the steps that match your SSO provider.
 >
