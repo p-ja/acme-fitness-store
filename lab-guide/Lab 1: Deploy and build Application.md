@@ -47,6 +47,30 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    source ./azure/setup-env-variables.sh
    ```   
   
+1. Run the following command to login to the azure:
+
+    ```shell
+   az login
+   ```   
+
+1. After running the above command you will be prompted with the code to authenticate like the code which is shown in the image below.
+
+   <img src="https://user-images.githubusercontent.com/42836144/198986456-2f98b946-bb3c-4435-a7fa-92b8ddae2a32.png"/>
+
+1. Now open a browser and paste the link which you got after running the command "az login" and give the code to authenticate.
+
+   <img src="https://user-images.githubusercontent.com/42836144/198986747-0ab70980-d595-4bf1-beeb-640b2a47118b.png"/>
+
+1. Run the following commands to get the list of subscriptions and also to set your subscription:
+
+     ```shell
+   az account list -o table
+   az account set --subscription ${SUBSCRIPTION}
+   ```     
+   > **Note:** Replace ${SUBSCRIPTION} with the subscription Id which you can find in the Environment details page. 
+
+   <img src="https://user-images.githubusercontent.com/42836144/198988369-c4911f0e-3376-43b4-8cfa-c09185b07176.png"/>
+  
 ### Task 2 : Deploy a Hello World service to ASA-E 
 
 In this task, you will try to deploy a very simple hello-world spring boot app to get a high level understanding of how to deploy an asa-e app and access it.
