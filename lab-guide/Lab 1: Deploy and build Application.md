@@ -39,6 +39,8 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    export REGION=region-name                           # region should be same as the region of your azure spring apps service
    ```
    > **Note:** You can use the arrow keys to move around in the file. Press the "CTRL + X" keys to close the file. You will be prompted to save your changes. Press the    "y" key to save your changes and then press enter to exit.
+  
+   <img src="https://user-images.githubusercontent.com/42836144/199003377-9cf71546-cdf1-4f23-909d-ff8c98e44eee.png"/>
 
 1. Run the following command to move back to the acme-fitness-store directory and then set up the environment :
   
