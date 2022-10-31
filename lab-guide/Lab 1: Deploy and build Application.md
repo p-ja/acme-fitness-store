@@ -154,7 +154,7 @@ az spring application-configuration-service bind --app ${PAYMENT_SERVICE_APP}
 az spring application-configuration-service bind --app ${CATALOG_SERVICE_APP}
 ```
     
-    ![](Images/mjv2-5.png)
+  ![](Images/mjv2-5.png)
     
  ### Task 5 : Bind to Service Registry 
  
@@ -167,7 +167,7 @@ az spring service-registry bind --app ${PAYMENT_SERVICE_APP}
 az spring service-registry bind --app ${CATALOG_SERVICE_APP}
 ```
 
-    ![](Images/mjv2-6.png)
+ ![](Images/mjv2-6.png)
 
 ### Task 6 : Configure Spring Cloud Gateway 
 
