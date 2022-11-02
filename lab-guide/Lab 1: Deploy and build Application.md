@@ -153,25 +153,25 @@ The Application configuration service is a feature of azure spring apps enterpri
 
 1. Run the following command to bind the spring applications to the Application Configuration Service:
  
-```shell
-az spring application-configuration-service bind --app ${PAYMENT_SERVICE_APP}
-az spring application-configuration-service bind --app ${CATALOG_SERVICE_APP}
-```
+   ```shell
+    az spring application-configuration-service bind --app ${PAYMENT_SERVICE_APP}
+    az spring application-configuration-service bind --app ${CATALOG_SERVICE_APP}
+   ```
     
-  ![](Images/mjv2-5.png)
+      ![](Images/mjv2-5.png)
     
  ### Task 5 : Bind to Service Registry 
  
  Applications need to communicate with each other. ASA-E internally uses Tanzu Service Registry for dynamic service discovery.
  
- 1. Run the following command to bind the spring applications to the Service Registry:
+ 1.  Run the following command to bind the spring applications to the Service Registry:
 
-```shell
-az spring service-registry bind --app ${PAYMENT_SERVICE_APP}
-az spring service-registry bind --app ${CATALOG_SERVICE_APP}
-```
+     ```shell
+     az spring service-registry bind --app ${PAYMENT_SERVICE_APP}
+     az spring service-registry bind --app ${CATALOG_SERVICE_APP}
+     ```
 
- ![](Images/mjv2-6.png)
+     ![](Images/mjv2-6.png)
 
 ### Task 6 : Configure Spring Cloud Gateway 
 
@@ -192,7 +192,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
       --no-wait
     ```
 
-      ![](Images/mjv2-7.png)
+    ![](Images/mjv2-7.png)
 
 1. Run the following command to create routing rules for the applications:
 
@@ -218,7 +218,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
       --routes-file ./routes/frontend.json
    ```
 
-      ![](Images/mjv2-8.png)
+   ![](Images/mjv2-8.png)
 
 ### Task 7 : Build and Deploy Polyglot Applications 
 
@@ -226,34 +226,34 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
  
  1. Run the following command to deploy and build each application with its required parameters:
 
-```shell
-# Deploy Payment Service
-az spring app deploy --name ${PAYMENT_SERVICE_APP} \
-    --config-file-pattern payment/default \
-    --source-path ./apps/acme-payment 
+    ```shell
+    # Deploy Payment Service
+    az spring app deploy --name ${PAYMENT_SERVICE_APP} \
+       --config-file-pattern payment/default \
+       --source-path ./apps/acme-payment 
 
-# Deploy Catalog Service
-az spring app deploy --name ${CATALOG_SERVICE_APP} \
-    --config-file-pattern catalog/default \
-    --source-path ./apps/acme-catalog 
+    # Deploy Catalog Service
+    az spring app deploy --name ${CATALOG_SERVICE_APP} \
+       --config-file-pattern catalog/default \
+       --source-path ./apps/acme-catalog 
 
-# Deploy Order Service
-az spring app deploy --name ${ORDER_SERVICE_APP} \
-    --source-path ./apps/acme-order 
+    # Deploy Order Service
+    az spring app deploy --name ${ORDER_SERVICE_APP} \
+       --source-path ./apps/acme-order 
 
-# Deploy Cart Service 
-az spring app deploy --name ${CART_SERVICE_APP} \
-    --env "CART_PORT=8080" \
-    --source-path ./apps/acme-cart 
+    # Deploy Cart Service 
+    az spring app deploy --name ${CART_SERVICE_APP} \
+       --env "CART_PORT=8080" \
+       --source-path ./apps/acme-cart 
 
-# Deploy Frontend App
-az spring app deploy --name ${FRONTEND_APP} \
-    --source-path ./apps/acme-shopping 
-```
+    # Deploy Frontend App
+    az spring app deploy --name ${FRONTEND_APP} \
+       --source-path ./apps/acme-shopping 
+    ```
 
-> **Note:** Deploying all applications will take approximately 5-10 minutes.
+    > **Note:** Deploying all applications will take approximately 5-10 minutes.
 
- ![](Images/mjv2-9.png)
+    ![](Images/mjv2-9.png)
 
 ### Task 8 : Access the Application through Spring Cloud Gateway 
 
@@ -266,7 +266,7 @@ az spring app deploy --name ${FRONTEND_APP} \
 
 1. Copy the gateway URL and paste it in a new browser and then you should see the ACME Fitness Store Application.Explore the application, but notice that not      everything is functioning yet. Continue on to Lab 2 to configure Single Sign On to enable the rest of the functionality.
 
-  ![](Images/mjv2-11.png)
+   ![](Images/mjv2-11.png)
 
 ### Task 9 : Explore the API using API Portal 
 
