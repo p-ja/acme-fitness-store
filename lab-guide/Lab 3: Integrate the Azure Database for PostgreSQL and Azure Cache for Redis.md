@@ -141,7 +141,7 @@ In this task, you update the affected applications to use the databases and redi
    ```shell
    https://${GATEWAY_URL}/order/${USER_ID}
    ```
-   > **Note :** Replace ${USER_ID} with ODL_User
+   > **Note :** Replace ${USER_ID} with ODL_User<inject key="DeploymentID" enableCopy="false" />
 
    ![](Images/mjv2-21.png)
 
