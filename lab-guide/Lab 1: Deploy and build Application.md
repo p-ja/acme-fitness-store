@@ -10,9 +10,13 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
     
 1.  Click on the Cloud shell icon on the top right – > Next to the search bar.    
 
-1. Select on bash shell to launch.
+1. Select on bash shell to launch. 
+
+   ![](Images/L1-t1-s3.png)
 
 1. Select the subscription and storage account. If you do not have existing storage account , you need to create a one.
+
+   ![](Images/L1-t1-s4.png)   
 
 1. Once the cloud drive is created, cloud shell will be launched.
 
