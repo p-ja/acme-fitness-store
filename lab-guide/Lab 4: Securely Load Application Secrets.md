@@ -23,9 +23,9 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
     
       az keyvault secret set --vault-name ${KEY_VAULT} \
          --name "POSTGRES-LOGIN-PASSWORD" --value ${POSTGRES_SERVER_PASSWORD}
-         ```
+      ```
       
-   ![](Images/mjv2-22.png)
+      ![](Images/mjv2-22.png)
 
 1.  Retrieve and store redis connection secrets in Key Vault.
 
@@ -40,7 +40,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
       --name "CART-REDIS-CONNECTION-STRING" --value "rediss://:${REDIS_PRIMARY_KEY}@${REDIS_HOST}:${REDIS_PORT}/0"
       ```
 
-   ![](Images/mjv2-23.png)
+      ![](Images/mjv2-23.png)
 
 1.  Store SSO Secrets in Key Vault.
 
@@ -51,7 +51,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
       > Note: Creating the SSO-PROVIDER-JWK-URI Secret can be skipped if not configuring Single Sign On
 
-   ![](Images/mjv2-24.png)
+      ![](Images/mjv2-24.png)
 
 1.  Enable System Assigned Identities for applications and export identities to environment.
 
