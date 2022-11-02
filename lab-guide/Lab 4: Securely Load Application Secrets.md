@@ -69,6 +69,8 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
       export IDENTITY_SERVICE_APP_IDENTITY=$(az spring app show --name ${IDENTITY_SERVICE_APP} | jq -r '.identity.principalId')
       ```
 
+      ![](Images/mjv2-25.png)
+
 1.  Add an access policy to Azure Key Vault to allow Managed Identities to read secrets.
 
       ```shell
@@ -85,7 +87,9 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
          --object-id ${IDENTITY_SERVICE_APP_IDENTITY} --secret-permissions get list
       ```
 
-      > Note: Identity Service will not exist if you haven't completed Unit 2. Skip configuring an identity or policy for this service if not configuring Single Sign-On at this point.    
+      > Note: Identity Service will not exist if you haven't completed Unit 2. Skip configuring an identity or policy for this service if not configuring Single Sign-On at this point.  
+
+      ![](Images/mjv2-26.png) 
 
 ### Task 2 : Activate applications to load secrets from Azure Key Vault
 
@@ -142,3 +146,5 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
       az spring app update --name ${CART_SERVICE_APP} \
          --env "CART_PORT=8080" "KEYVAULT_URI=${KEYVAULT_URI}" "AUTH_URL=https://${GATEWAY_URL}"
       ```
+
+      ![](Images/mjv2-27.png)
