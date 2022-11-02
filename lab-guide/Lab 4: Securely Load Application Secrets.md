@@ -24,7 +24,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
       az keyvault secret set --vault-name ${KEY_VAULT} \
          --name "POSTGRES-LOGIN-PASSWORD" --value ${POSTGRES_SERVER_PASSWORD}
          ```
-
+      
    ![](Images/mjv2-22.png)
 
 1.  Retrieve and store redis connection secrets in Key Vault.
