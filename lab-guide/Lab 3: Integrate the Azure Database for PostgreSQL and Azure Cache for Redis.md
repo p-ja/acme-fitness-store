@@ -2,7 +2,7 @@
 
 In this lab, you will create persistent stores outside the applications and connect applications to those stores.
 
-Task 1 : Prepare you environment 
+### Task 1 : Prepare you environment 
 
 1. Run the following bash command to make a copy of the supplied template:
 
@@ -23,6 +23,9 @@ Task 1 : Prepare you environment
    export AZURE_CACHE_NAME=acme-fitness-cache-CHANGE-ME                 #Replace CHANGE_ME with the name of your azure cache for redis instance
    export POSTGRES_SERVER=acme-fitness-db-CHANGE-ME                     #Replace CHANGE_ME with the name of your postgres server
    ```
+   
+   ![](Images/mjv2-18.png)
+   
    > **Note:** You can use the arrow keys to move around in the file. Press the "CTRL + X" keys to close the file. You will be prompted to save your changes. Press the    "y" key to save your changes and then press enter to exit.
 
 1. Run the following command to move back to the acme-fitness-store directory and then set up the environment :
@@ -65,6 +68,8 @@ az spring connection create postgres-flexible \
     --client-type springboot
  ```
  
+ ![](Images/mjv2-19.png)
+ 
  1. Run the following command to create a service connector for Cart Service to connect it to Azure Cache for Redis:
 
 ```shell
@@ -79,6 +84,8 @@ az spring connection create redis \
     --database 0 \
     --client-type java 
 ```
+
+![](Images/mjv2-20.png)
 
 ### Task 3 : Update Applications
 
@@ -127,15 +134,16 @@ In this task, you update the affected applications to use the databases and redi
    ```shell
    az spring app restart --name ${CART_SERVICE_APP}
    ```
-> Note : Notice that after restarting the cart service, the items in your cart will now persist.
+   > **Note :** Notice that after restarting the cart service, the items in your cart will now persist.
 
 1. Now verify order data is now persisted in a PostgreSQL Database by placing an order. To view your placed orders with the following URL in a browser:
 
    ```shell
    https://${GATEWAY_URL}/order/${USER_ID}
    ```
-   
-> **Note :** Your USER_ID is your username URL encoded.
+   > **Note :** Replace ${USER_ID} with Odl_User
+
+   ![](Images/mjv2-21.png)
 
 1. Run the following command to restart the order service application:
 
@@ -143,4 +151,4 @@ In this task, you update the affected applications to use the databases and redi
    az spring app restart --name ${ORDER_SERVICE_APP}
    ```
    
-> **Note :** After restarting, revisit the URL for your placed orders and notice that they persisted.    
+   > **Note :** After restarting, revisit the URL for your placed orders and notice that they persisted.    
