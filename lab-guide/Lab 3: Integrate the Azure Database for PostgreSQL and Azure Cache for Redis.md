@@ -39,53 +39,53 @@ In this lab, you will create persistent stores outside the applications and conn
    
  1. The Order Service and Catalog Service use Azure Database for Postgres, therefore run the the following command to create Service Connectors for those applications:
 
-```shell
-# Bind order service to Postgres
-az spring connection create postgres-flexible \
-    --resource-group ${RESOURCE_GROUP} \
-    --service ${SPRING_APPS_SERVICE} \
-    --connection ${ORDER_SERVICE_DB_CONNECTION} \
-    --app ${ORDER_SERVICE_APP} \
-    --deployment default \
-    --tg ${RESOURCE_GROUP} \
-    --server ${POSTGRES_SERVER} \
-    --database ${ORDER_SERVICE_DB} \
-    --secret name=${POSTGRES_SERVER_USER} secret=${POSTGRES_SERVER_PASSWORD} \
-    --client-type dotnet
+      ```shell
+      # Bind order service to Postgres
+      az spring connection create postgres-flexible \
+         --resource-group ${RESOURCE_GROUP} \
+         --service ${SPRING_APPS_SERVICE} \
+         --connection ${ORDER_SERVICE_DB_CONNECTION} \
+         --app ${ORDER_SERVICE_APP} \
+         --deployment default \
+         --tg ${RESOURCE_GROUP} \
+         --server ${POSTGRES_SERVER} \
+         --database ${ORDER_SERVICE_DB} \
+         --secret name=${POSTGRES_SERVER_USER} secret=${POSTGRES_SERVER_PASSWORD} \
+         --client-type dotnet
     
 
-# Bind catalog service to Postgres
-az spring connection create postgres-flexible \
-    --resource-group ${RESOURCE_GROUP} \
-    --service ${SPRING_APPS_SERVICE} \
-    --connection ${CATALOG_SERVICE_DB_CONNECTION} \
-    --app ${CATALOG_SERVICE_APP} \
-    --deployment default \
-    --tg ${RESOURCE_GROUP} \
-    --server ${POSTGRES_SERVER} \
-    --database ${CATALOG_SERVICE_DB} \
-    --secret name=${POSTGRES_SERVER_USER} secret=${POSTGRES_SERVER_PASSWORD} \
-    --client-type springboot
- ```
+      # Bind catalog service to Postgres
+      az spring connection create postgres-flexible \
+         --resource-group ${RESOURCE_GROUP} \
+         --service ${SPRING_APPS_SERVICE} \
+         --connection ${CATALOG_SERVICE_DB_CONNECTION} \
+         --app ${CATALOG_SERVICE_APP} \
+         --deployment default \
+         --tg ${RESOURCE_GROUP} \
+         --server ${POSTGRES_SERVER} \
+         --database ${CATALOG_SERVICE_DB} \
+         --secret name=${POSTGRES_SERVER_USER} secret=${POSTGRES_SERVER_PASSWORD} \
+         --client-type springboot
+      ```
  
- ![](Images/mjv2-19.png)
+      ![](Images/mjv2-19.png)
  
  1. Run the following command to create a service connector for Cart Service to connect it to Azure Cache for Redis:
 
-```shell
-az spring connection create redis \
-    --resource-group ${RESOURCE_GROUP} \
-    --service ${SPRING_APPS_SERVICE} \
-    --connection $CART_SERVICE_CACHE_CONNECTION \
-    --app ${CART_SERVICE_APP} \
-    --deployment default \
-    --tg ${RESOURCE_GROUP} \
-    --server ${AZURE_CACHE_NAME} \
-    --database 0 \
-    --client-type java 
-```
+      ```shell
+      az spring connection create redis \
+         --resource-group ${RESOURCE_GROUP} \
+         --service ${SPRING_APPS_SERVICE} \
+         --connection $CART_SERVICE_CACHE_CONNECTION \
+         --app ${CART_SERVICE_APP} \
+         --deployment default \
+         --tg ${RESOURCE_GROUP} \
+         --server ${AZURE_CACHE_NAME} \
+         --database 0 \
+         --client-type java 
+      ```
 
-![](Images/mjv2-20.png)
+      ![](Images/mjv2-20.png)
 
 ### Task 3 : Update Applications
 
