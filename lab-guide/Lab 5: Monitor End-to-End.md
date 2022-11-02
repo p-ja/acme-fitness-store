@@ -34,43 +34,45 @@ az keyvault secret set --vault-name ${KEY_VAULT} \
 
 1. To Increase the sampling rate for the Application Insights binding, run the following command in the bash shell pane.
 
-```shell
-az spring build-service builder buildpack-binding set \
-    --builder-name default \
-    --name default \
-    --type ApplicationInsights \
-    --properties sampling-rate=100 connection_string=${INSTRUMENTATION_KEY}
-```
+   ```shell
+   az spring build-service builder buildpack-binding set \
+      --builder-name default \
+      --name default \
+      --type ApplicationInsights \
+      --properties sampling-rate=100 connection_string=${INSTRUMENTATION_KEY}
+   ```
 
 ### Task 3 : Reload Applications
 
 1. Run the following command to restart applications to reload configuration. For the Java applications, this will allow the new sampling rate to take effect. For the non-java applications, this will allow them to access the Instrumentation Key from Key Vault.
 
-```shell
-az spring app restart -n ${CART_SERVICE_APP}
-az spring app restart -n ${ORDER_SERVICE_APP}
-az spring app restart -n ${IDENTITY_SERVICE_APP}
-az spring app restart -n ${CATALOG_SERVICE_APP}
-az spring app restart -n ${PAYMENT_SERVICE_APP}
-```
+   ```shell
+   az spring app restart -n ${CART_SERVICE_APP}
+   az spring app restart -n ${ORDER_SERVICE_APP}
+   az spring app restart -n ${IDENTITY_SERVICE_APP}
+   az spring app restart -n ${CATALOG_SERVICE_APP}
+   az spring app restart -n ${PAYMENT_SERVICE_APP}
+   ```
+
+   ![](Images/mjv2-28.png)
 
 ### Task 4 : Get the log stream for an Application
 
 1. Run the following command to get the latest 100 lines of app console logs from the Catalog Service.
 
-```shell
-az spring app logs \
-    -n ${CATALOG_SERVICE_APP} \
-    --lines 100
-```
+   ```shell
+   az spring app logs \
+      -n ${CATALOG_SERVICE_APP} \
+      --lines 100
+   ```
 
 1. Run the following command by adding the `-f` parameter, so that you can get real-time log streaming from an app. Try log streaming for the Catalog Service.
 
-```shell
-az spring app logs \
-    -n ${CATALOG_SERVICE_APP} \
-    -f
-```
+   ```shell
+   az spring app logs \
+      -n ${CATALOG_SERVICE_APP} \
+      -f
+   ```
 
 You can use `az spring app logs -h` to explore more parameters and log stream functionalities.
 
@@ -80,11 +82,13 @@ Use the ACME Fitness Shop Application to generate some traffic. Move throughout 
 
 1. To continuously generate traffic, use the traffic generator by running the following command.
 
-```shell
-cd traffic-generator
-GATEWAY_URL=https://${GATEWAY_URL} ./gradlew gatlingRun-com.vmware.acme.simulation.GuestSimulation
-cd -
-```
+   ```shell
+   cd traffic-generator
+   GATEWAY_URL=https://${GATEWAY_URL} ./gradlew gatlingRun-com.vmware.acme.simulation.GuestSimulation
+   cd -
+   ```
+
+   ![](Images/mjv2-29.png)
 
 Continue on to the next sections while the traffic generator runs.
 
