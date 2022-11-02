@@ -42,7 +42,7 @@ az spring app  update --name ${ORDER_SERVICE_APP} \
    ```
    ![](Images/mjv2-10.png)
  
-1. You should see the ACME Fitness Store Application, and click on **Login** button.
+1. You should see the ACME Fitness Store Application, and then click on **Login** button.
    ![](Images/gateway-login.png)
    
 1. Click on **Accept** inorder to able to log in using your SSO Credentials. 
