@@ -264,7 +264,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
    ```
    ![](Images/mjv2-10.png)
 
-1. Copy the gateway URL and paste it in a new browser and then you should see the ACME Fitness Store Application.Explore the application, but notice that not      everything is functioning yet. Continue on to Lab 2 to configure Single Sign On to enable the rest of the functionality.
+1. Copy the gateway URL and paste it in a new browser and then you should see the ACME Fitness Store Application. Explore the application, but notice that not      everything is functioning yet. Continue on to Lab 2 to configure Single Sign On to enable the rest of the functionality ( features like log in, adding items to the cart, or completing an order).
 
    ![](Images/mjv2-11.png)
 
