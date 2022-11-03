@@ -27,18 +27,18 @@ In this lab you will use Spring Cloud Gateway filters to apply rate limiting to 
 
 1. The following example would limit all users to two requests every 5 seconds to the `/products` route, run the following command in the bash shell pane.
 
-```json
-{
-    "predicates": [
-      "Path=/products",
-      "Method=GET"
-    ],
-    "filters": [
-      "StripPrefix=0",
-      "RateLimit=2,5s"
-    ]
-}
-```
+   ```json
+   {
+      "predicates": [
+         "Path=/products",
+         "Method=GET"
+      ],
+      "filters": [
+         "StripPrefix=0",
+         "RateLimit=2,5s"
+      ]
+   }
+   ```
 
 When the limit is exceeded, response will fail with `429 Too Many Requests` status.
 
@@ -46,23 +46,25 @@ When the limit is exceeded, response will fail with `429 Too Many Requests` stat
 
 1. To apply the `RateLimit` filter to the `/products` route run the following command:
 
-```bash
-az spring gateway route-config update \
-    --name ${CATALOG_SERVICE_APP} \
-    --app-name ${CATALOG_SERVICE_APP} \
-    --routes-file azure/routes/catalog-service_rate-limit.json
-```
+   ```bash
+   az spring gateway route-config update \
+      --name ${CATALOG_SERVICE_APP} \
+      --app-name ${CATALOG_SERVICE_APP} \
+      --routes-file azure/routes/catalog-service_rate-limit.json
+   ```
+
+   ![](Images/mjv2-30.png)
 
 ### Task 3 : Verify Request Rate Limits
 
 1. To retrieve the URL for the `/products` route in Spring Cloud Gateway using the following command:
 
-```bash
-GATEWAY_URL=$(az spring gateway show | jq -r '.properties.url')
-echo "https://${GATEWAY_URL}/products"
-```
+   ```bash
+   GATEWAY_URL=$(az spring gateway show | jq -r '.properties.url')
+   echo "https://${GATEWAY_URL}/products"
+   ```
 
-Make several requests to the URL for `/products` within a five second period to see requests fail with a status `429 Too Many Requests`.
+   Make several requests to the URL for `/products` within a five second period to see requests fail with a status `429 Too Many Requests`.
 
 
 
