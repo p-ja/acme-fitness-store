@@ -24,9 +24,9 @@ In this lab, you will create persistent stores outside the applications and conn
    export POSTGRES_SERVER=acme-fitness-db-CHANGE-ME                     #Replace CHANGE_ME with the name of your postgres server
    ```
    
-   ![](Images/mjv2-18.png)
+   ![](Images/upd-mjv2-18.png)
    
-   > **Note:** You can use the arrow keys to move around in the file. Press the "CTRL + X" keys to close the file. You will be prompted to save your changes. Press the    "y" key to save your changes and then press enter to exit.
+   > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape "ESC" key to exit insert mode and then type ":wq" to save and close the file.
 
 1. Run the following command to move back to the acme-fitness-store directory and then set up the environment :
   
@@ -68,7 +68,7 @@ In this lab, you will create persistent stores outside the applications and conn
          --client-type springboot
       ```
  
-      ![](Images/mjv2-19.png)
+      ![](Images/upd-mjv2-19.png)
  
  1. Run the following command to create a service connector for Cart Service to connect it to Azure Cache for Redis:
 
@@ -85,7 +85,7 @@ In this lab, you will create persistent stores outside the applications and conn
          --client-type java 
       ```
 
-      ![](Images/mjv2-20.png)
+      ![](Images/upd-mjv2-20.png)
 
 ### Task 3 : Update Applications
 
@@ -134,6 +134,9 @@ In this task, you update the affected applications to use the databases and redi
    ```shell
    az spring app restart --name ${CART_SERVICE_APP}
    ```
+   
+    ![](Images/restart-catalog.png) 
+    
    > **Note :** Notice that after restarting the cart service, the items in your cart will now persist.
 
 1. Now verify order data is now persisted in a PostgreSQL Database by placing an order. To view your placed orders with the following URL in a browser:
@@ -141,7 +144,7 @@ In this task, you update the affected applications to use the databases and redi
    ```shell
    https://${GATEWAY_URL}/order/${USER_ID}
    ```
-   > **Note :** Replace ${USER_ID} with ODL_User<inject key="DeploymentID" enableCopy="false" />
+   > **Note :** Replace ${GATEWAY_URL} with your spring apps gateway URL and ${USER_ID} with ODL_User<inject key="DeploymentID" enableCopy="false" /> respectively.
 
    ![](Images/mjv2-21.png)
 
