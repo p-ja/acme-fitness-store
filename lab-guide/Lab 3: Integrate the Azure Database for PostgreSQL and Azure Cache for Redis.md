@@ -114,6 +114,8 @@ In this task, you update the affected applications to use the databases and redi
       --env "DatabaseProvider=Postgres" "ConnectionStrings__OrderContext=${POSTGRES_CONNECTION_STR}" "AcmeServiceSettings__AuthUrl=https://${GATEWAY_URL}"
    ```
    
+   ![](Images/upd-mjv2-31.png)
+   
 1. To retrieve the Redis connection string and update the Cart Service, run the following command:   
 
    ```shell
@@ -129,6 +131,8 @@ In this task, you update the affected applications to use the databases and redi
       --env "CART_PORT=8080" "REDIS_CONNECTIONSTRING=${REDIS_CONN_STR}" "AUTH_URL=https://${GATEWAY_URL}"
    ```
   
+  ![](Images/upd-mjv2-32.png)
+  
 ### Task 4 : View the persisted data 
 
 1. Now verify cart data is now persisted in Redis by adding a few items to your cart. Then, restart the cart service by running the following command:
@@ -136,7 +140,9 @@ In this task, you update the affected applications to use the databases and redi
    ```shell
    az spring app restart --name ${CART_SERVICE_APP}
    ``` 
-    
+
+   ![](Images/upd-mjv2-33.png)
+
    > **Note :** Notice that after restarting the cart service, the items in your cart will now persist.
 
 1. Now verify order data is now persisted in a PostgreSQL Database by placing an order. To view your placed orders with the following URL in a browser:
