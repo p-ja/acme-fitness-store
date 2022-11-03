@@ -69,7 +69,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 
    ![](Images/mjv2-17.png)
 
-### Task 5 : Expose the API using API Portal 
+### Task 5 : Explore the API using API Portal 
 
 1. Run the following command to retrieve the URL for API Portal and then open the output in a browser: 
 
