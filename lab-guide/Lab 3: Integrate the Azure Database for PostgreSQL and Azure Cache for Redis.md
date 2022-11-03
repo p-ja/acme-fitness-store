@@ -97,6 +97,8 @@ In this task, you update the affected applications to use the databases and redi
     az spring app restart --name ${CATALOG_SERVICE_APP}
    ```
   
+    ![](Images/restart-catalog.png)
+    
 1. To retrieve the PostgreSQL connection string and update the Catalog Service, run the following command:
 
    ```shell
@@ -133,9 +135,7 @@ In this task, you update the affected applications to use the databases and redi
 
    ```shell
    az spring app restart --name ${CART_SERVICE_APP}
-   ```
-   
-    ![](Images/restart-catalog.png) 
+   ``` 
     
    > **Note :** Notice that after restarting the cart service, the items in your cart will now persist.
 
