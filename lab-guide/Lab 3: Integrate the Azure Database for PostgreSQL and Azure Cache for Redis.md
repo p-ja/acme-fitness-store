@@ -144,7 +144,8 @@ In this task, you update the affected applications to use the databases and redi
    ```shell
    https://${GATEWAY_URL}/order/${USER_ID}
    ```
-   > **Note :** Replace ${GATEWAY_URL} with your spring apps gateway URL and ${USER_ID} with ODL_User<inject key="DeploymentID" enableCopy="false" /> respectively.
+   > **Note :** Replace  ${GATEWAY_URL} with your spring apps gateway URL and 
+   > ${USER_ID} with ODL_User<inject key="DeploymentID" enableCopy="false" /> respectively.
 
    ![](Images/mjv2-21.png)
 
