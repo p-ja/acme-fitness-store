@@ -93,17 +93,6 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
 ### Task 2 : Activate applications to load secrets from Azure Key Vault
 
-1. If you are not logged in already, click on Azure portal shortcut that is available on the desktop and log in with below Azure credentials.
-    * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
-    * Azure Password: <inject key="AzureAdUserPassword"></inject>
-    
-1.  Click on the Cloud shell icon on the top right – > Next to the search bar.    
-
-1. Select on bash shell to launch.
-
-1. Select the subscription and storage account. If you do not have existing storage account , you need to create a one.
-
-1. Once the cloud drive is created, cloud shell will be launched.
 
 1. To delete Service Connectors and activate applications to load secrets from Azure Key Vault, run the following command in the bash shell pane.
 
