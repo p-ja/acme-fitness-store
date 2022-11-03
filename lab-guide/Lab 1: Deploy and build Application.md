@@ -44,7 +44,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    export LOG_ANALYTICS_WORKSPACE=log-analytics-name   # name of the existing log analytics workspace 
    export REGION=region-name                           # region should be same as the region of your azure spring apps service
    ```
-   > **Note:** You can use the arrow keys to move around in the file. Press the "CTRL + X" keys to close the file. You will be prompted to save your changes. Press the    "y" key to save your changes and then press enter to exit.
+   > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape "ESC" key to exit insert mode and then type ":wq" to save and close the file.
   
    ![](Images/mjv2-1.png)
 
