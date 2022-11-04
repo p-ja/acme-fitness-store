@@ -24,7 +24,7 @@ In this lab, you will create persistent stores outside the applications and conn
    export POSTGRES_SERVER=acme-fitness-db-CHANGE-ME                     #Replace CHANGE_ME with the name of your postgres server
    ```
    
-   ![](Images/upd-mjv2-18.png)
+   ![](Images/mjv2-18.png)
    
    > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape "ESC" key to exit insert mode and then type ":wq" to save and close the file.
 
