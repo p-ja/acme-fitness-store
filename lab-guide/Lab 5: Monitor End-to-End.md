@@ -23,12 +23,13 @@ In this unit you will explore live application metrics and query logs to know th
 
 1. To retrieve the Instrumentation Key for Application Insights and add to Key Vault, run the following command in the bash shell pane.
 
-```shell
-export INSTRUMENTATION_KEY=$(az monitor app-insights component show --app ${SPRING_APPS_SERVICE} | jq -r '.connectionString')
+   ```shell
+   export INSTRUMENTATION_KEY=$(az monitor app-insights component show --app ${SPRING_APPS_SERVICE} | jq -r '.connectionString')
 
-az keyvault secret set --vault-name ${KEY_VAULT} \
-    --name "ApplicationInsights--ConnectionString" --value ${INSTRUMENTATION_KEY}
-```
+   az keyvault secret set --vault-name ${KEY_VAULT} \
+      --name "ApplicationInsights--ConnectionString" --value ${INSTRUMENTATION_KEY}
+   ```
+   ![](Images/mjv2-45.png)
 
 ### Task 2 : Update Sampling Rate
 
@@ -66,6 +67,8 @@ az keyvault secret set --vault-name ${KEY_VAULT} \
       --lines 100
    ```
 
+   ![](Images/mjv2-46.png)
+
 1. Run the following command by adding the `-f` parameter, so that you can get real-time log streaming from an app. Try log streaming for the Catalog Service.
 
    ```shell
@@ -73,6 +76,8 @@ az keyvault secret set --vault-name ${KEY_VAULT} \
       -n ${CATALOG_SERVICE_APP} \
       -f
    ```
+
+   ![](Images/mjv2-47.png)
 
 You can use `az spring app logs -h` to explore more parameters and log stream functionalities.
 
@@ -97,115 +102,128 @@ Continue on to the next sections while the traffic generator runs.
 Open the Application Insights created by Azure Spring Apps and start monitoring Spring Boot applications. 
 You can find the Application Insights in the same Resource Group where you created an Azure Spring Apps service instance.
 
+   ![](Images/mjv2-48.png)  
+
+   ![](Images/mjv2-49.png)
+
 1. Navigate to the `Application Map` blade:
 
-![An image showing the Application Map of Azure Application Insights](media/fitness-store-application-map.jpg)
+   ![](Images/mjv2-50.png)
+   
+1. Navigate to the `Peforamnce` blade:
 
-2. Navigate to the `Peforamnce` blade:
+   ![](Images/mjv2-51.png)
 
-![An image showing the Performance Blade of Azure Application Insights](media/performance.jpg)
+1. Navigate to the `Performance/Dependenices` blade - you can see the performance number for dependencies, particularly SQL calls:
 
-3. Navigate to the `Performance/Dependenices` blade - you can see the performance number for dependencies, particularly SQL calls:
+   ![](Images/mjv2-52.png)
 
-![An image showing the Dependencies section of the Performance Blade of Azure Application Insights](media/performance_dependencies.jpg)
+1. Navigate to the `Performance/Roles` blade - you can see the performance metrics for individual instances or roles:
 
-4. Navigate to the `Performance/Roles` blade - you can see the performance metrics for individual instances or roles:
+   ![](Images/mjv2-53.png)
+   
+1. Click on a SQL call to see the end-to-end transaction in context:
 
-![An image showing the Roles section of the Performance Blade of Azure Application Insights](media/fitness-store-roles-in-performance-blade.jpg)
+   
+   
+1. Navigate to the `Failures` blade and the `Exceptions` panel - you can see a collection of exceptions:
 
-5. Click on a SQL call to see the end-to-end transaction in context:
+   ![](Images/mjv2-54.png)
+   
+1. Navigate to the `Metrics` blade - you can see metrics contributed by Spring Boot apps, Spring Cloud modules, and dependencies. The chart below shows `http_server_requests` and `Heap Memory Used`.
 
-![An image showing the end-to-end transaction of a SQL call](media/fitness-store-end-to-end-transaction-details.jpg)
+   ![](Images/mjv2-55.png)
 
-6. Navigate to the `Failures` blade and the `Exceptions` panel - you can see a collection of exceptions:
+   ![](Images/mjv2-56.png)
 
-![An image showing application failures graphed](media/fitness-store-exceptions.jpg)
+   Spring Boot registers a lot number of core metrics: JVM, CPU, Tomcat, Logback...The Spring Boot auto-configuration enables the instrumentation of requests handled by Spring MVC. The REST controllers `ProductController`, and `PaymentController` have been instrumented by the `@Timed` Micrometer annotation at class level.
 
-7. Navigate to the `Metrics` blade - you can see metrics contributed by Spring Boot apps, Spring Cloud modules, and dependencies. The chart below shows `http_server_requests` and `Heap Memory Used`.
+   * `acme-catalog` application has the following custom metrics enabled:
+   * @Timed: `store.products`
+   * `acem-payment` application has the following custom metrics enabled:
+   * @Timed: `store.payment`
 
-![An image showing metrics over time](media/metrics.jpg)
+1. You can see these custom metrics in the `Metrics` blade:
 
-Spring Boot registers a lot number of core metrics: JVM, CPU, Tomcat, Logback...The Spring Boot auto-configuration enables the instrumentation of requests handled by Spring MVC. The REST controllers `ProductController`, and `PaymentController` have been instrumented by the `@Timed` Micrometer annotation at class level.
+   ![](Images/mjv2-57.png)
+   
+1. Navigate to the `Live Metrics` blade - you can see live metrics on screen with low latencies < 1 second:
 
-* `acme-catalog` application has the following custom metrics enabled:
-  * @Timed: `store.products`
-* `acem-payment` application has the following custom metrics enabled:
-  * @Timed: `store.payment`
-
-8. You can see these custom metrics in the `Metrics` blade:
-
-![An image showing custom metrics instrumented by Micrometer](media/fitness-store-custom-metrics-with-payments-2.jpg)
-
-9. Navigate to the `Live Metrics` blade - you can see live metrics on screen with low latencies < 1 second:
-
-![An image showing the live metrics of all applications](media/live-metrics.jpg)
+   ![](Images/mjv2-60.png)
 
 ### Task 7 : Start monitoring ACME Fitness Store's logs and metrics in Azure Log Analytics
 
 Open the Log Analytics that you created - you can find the Log Analytics in the same
 Resource Group where you created an Azure Spring Apps service instance.
 
+   ![](Images/mjv2-58.png)
+
+   ![](Images/mjv2-59.png)
+
 1. In the Log Analytics page, selects `Logs` blade and run any of the sample queries supplied below for Azure Spring Apps. Run the following Kusto query to see application logs:
 
-```sql
-    AppPlatformLogsforSpring 
-    | where TimeGenerated > ago(24h) 
-    | limit 500
-    | sort by TimeGenerated
-    | project TimeGenerated, AppName, Log
-```
+   ```sql
+      AppPlatformLogsforSpring 
+      | where TimeGenerated > ago(24h) 
+      | limit 500
+      | sort by TimeGenerated
+      | project TimeGenerated, AppName, Log
+   ```
 
-![Example output from all application logs query](media/all-app-logs-in-log-analytics.jpg)
+   ![](Images/mjv2-61.png)
 
-2. Run the following Kusto query to see `catalog-service` application logs:
+1. Run the following Kusto query to see `catalog-service` application logs:
 
-```sql
-    AppPlatformLogsforSpring 
-    | where AppName has "catalog-service"
-    | limit 500
-    | sort by TimeGenerated
-    | project TimeGenerated, AppName, Log
-```
+   ```sql
+      AppPlatformLogsforSpring 
+      | where AppName has "catalog-service"
+      | limit 500
+      | sort by TimeGenerated
+      | project TimeGenerated, AppName, Log
+   ```
+   
+   ![](Images/mjv2-62.png)
 
-![Example output from catalog service logs](media/catalog-app-logs-in-log-analytics.jpg)
+1. Run the following Kusto query to see errors and exceptions thrown by each app:
+  
+   ```sql
+      AppPlatformLogsforSpring 
+      | where Log contains "error" or Log contains "exception"
+      | extend FullAppName = strcat(ServiceName, "/", AppName)
+      | summarize count_per_app = count() by FullAppName, ServiceName, AppName, _ResourceId
+      | sort by count_per_app desc 
+      | render piechart
+   ```
 
-3. Run the following Kusto query to see errors and exceptions thrown by each app:
-```sql
-    AppPlatformLogsforSpring 
-    | where Log contains "error" or Log contains "exception"
-    | extend FullAppName = strcat(ServiceName, "/", AppName)
-    | summarize count_per_app = count() by FullAppName, ServiceName, AppName, _ResourceId
-    | sort by count_per_app desc 
-    | render piechart
-```
+   ![](Images/mjv2-63.png)
 
-![An example output from the Ingress Logs](media/ingress-logs-in-log-analytics.jpg)
+1. Run the following Kusto query to see all in the inbound calls into Azure Spring Apps:
 
-4. Run the following Kusto query to see all in the inbound calls into Azure Spring Apps:
+   ```sql
+      AppPlatformIngressLogs
+      | project TimeGenerated, RemoteAddr, Host, Request, Status, BodyBytesSent, RequestTime, ReqId, RequestHeaders
+      | sort by TimeGenerated
+   ```
+   
+   ![](Images/mjv2-64.png)
 
-```sql
-    AppPlatformIngressLogs
-    | project TimeGenerated, RemoteAddr, Host, Request, Status, BodyBytesSent, RequestTime, ReqId, RequestHeaders
-    | sort by TimeGenerated
-```
+1. Run the following Kusto query to see all the logs from Spring Cloud Gateway managed by Azure Spring Apps:
 
-5. Run the following Kusto query to see all the logs from Spring Cloud Gateway managed by Azure Spring Apps:
+   ```sql
+      AppPlatformSystemLogs
+      | where LogType contains "SpringCloudGateway"
+      | project TimeGenerated,Log
+   ```
 
-```sql
-    AppPlatformSystemLogs
-    | where LogType contains "SpringCloudGateway"
-    | project TimeGenerated,Log
-```
+   ![](Images/mjv2-65.png)
 
-![An example out from the Spring Cloud Gateway Logs](media/spring-cloud-gateway-logs-in-log-analytics.jpg)
+1. Run the following Kusto query to see all the logs from Spring Cloud Service Registry managed by Azure Spring Apps:
 
-6. Run the following Kusto query to see all the logs from Spring Cloud Service Registry managed by Azure Spring Apps:
+   ```sql
+      AppPlatformSystemLogs
+      | where LogType contains "ServiceRegistry"
+      | project TimeGenerated, Log
+   ```
 
-```sql
-    AppPlatformSystemLogs
-    | where LogType contains "ServiceRegistry"
-    | project TimeGenerated, Log
-```
-
-![An example output from service registry logs](media/service-registry-logs-in-log-analytics.jpg)
+   ![](Images/mjv2-66.png)
 
