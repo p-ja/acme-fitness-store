@@ -51,7 +51,25 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
 1. Once logged in, the remaining functionality of the application will be available. This includes adding items to the cart and placing an order.
 
-    
+   ![](Images/mjv2-34.png)
+   
+   ![](Images/mjv2-35.png)
+
+   ![](Images/mjv2-36.png)
+
+   ![](Images/mjv2-37.png)
+   
+   ![](Images/mjv2-38.png)
+   
+   ![](Images/mjv2-39.png)
+   
+   ![](Images/mjv2-40.png)
+   
+   ![](Images/mjv2-41.png)
+   
+   ![](Images/mjv2-42.png)
+
+   ![](Images/mjv2-43.png)
 
 ### Task 4 : Configure SSO for API Portal 
 
@@ -82,3 +100,5 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    > Note : Now you will be able to log in using your SSO Credentials. To access the protected APIs, click Authorize and follow the steps that match your SSO provider.
 
    ![](Images/api-login.png)
+   
+   ![](Images/mjv2-44.png)
