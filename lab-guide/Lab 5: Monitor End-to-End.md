@@ -21,13 +21,13 @@ In this unit you will explore live application metrics and query logs to know th
    > Note: In future iterations, the buildpacks for non-java applications will support
    > Application Insights binding and this step will be unnecessary.
 
-1. To retrieve the Instrumentation Key for Application Insights and add to Key Vault, run the following command in the bash shell pane.
+1. To retrieve the Instrumentation Key for Application Insights and add to Key Vault, run the following command in the bash shell pane. (Replace ${APPLICATION_INSIGHTS} with your azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />.)
 
    ```shell
-   export INSTRUMENTATION_KEY=$(az monitor app-insights component show --app ${SPRING_APPS_SERVICE} | jq -r '.connectionString')
+      export INSTRUMENTATION_KEY=$(az monitor app-insights component show --app ${APPLICATION_INSIGHTS} | jq -r '.connectionString')
 
-   az keyvault secret set --vault-name ${KEY_VAULT} \
-      --name "ApplicationInsights--ConnectionString" --value ${INSTRUMENTATION_KEY}
+      az keyvault secret set --vault-name ${KEY_VAULT} \
+       --name "ApplicationInsights--ConnectionString" --value ${INSTRUMENTATION_KEY}
    ```
    ![](Images/mjv2-45.png)
 
@@ -83,9 +83,9 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
 
 ### Task 5 : Generate Traffic
 
-Use the ACME Fitness Shop Application to generate some traffic. Move throughout the application, view the catalog, or place an order.
+In this task, you will use the ACME Fitness Shop Application to generate some traffic. Move throughout the application, view the catalog, or place an order.
 
-1. To continuously generate traffic, use the traffic generator by running the following command.
+1. To continuously generate traffic, use the traffic generator by running the following command:
 
    ```shell
    cd traffic-generator
@@ -95,48 +95,46 @@ Use the ACME Fitness Shop Application to generate some traffic. Move throughout 
 
    ![](Images/mjv2-29.png)
 
-Continue on to the next sections while the traffic generator runs.
+> **Note:** Continue on to the next tasks while the traffic generator runs. 
 
 ### Task 6 : Start monitoring apps and dependencies - in Application Insights
 
-Open the Application Insights created by Azure Spring Apps and start monitoring Spring Boot applications. 
-You can find the Application Insights in the same Resource Group where you created an Azure Spring Apps service instance.
+1. Move back to the azure portal and in the **search resources, services and docs bar**, type **Application insight** and select it from suggestions, as shown below: 
 
    ![](Images/mjv2-48.png)  
 
+1. Under the Application Insight page, select **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />**.
+  
    ![](Images/mjv2-49.png)
 
-1. Navigate to the `Application Map` blade:
+1. From the left panel, navigate to the `Application Map` blade under Investigate and then select time filter as **Last 4 hours**.
 
    ![](Images/mjv2-50.png)
    
-1. Navigate to the `Peforamnce` blade:
+1. From the left panel, navigate to the `Peforamnce` blade under Investigate and then click on **Operations**:
 
    ![](Images/mjv2-51.png)
 
-1. Navigate to the `Performance/Dependenices` blade - you can see the performance number for dependencies, particularly SQL calls:
+1. Now navigate to the `Performance/Dependenices` blade - you can see the performance number for dependencies, particularly SQL calls:
 
    ![](Images/mjv2-52.png)
 
 1. Navigate to the `Performance/Roles` blade - you can see the performance metrics for individual instances or roles:
 
    ![](Images/mjv2-53.png)
+      
    
-1. Click on a SQL call to see the end-to-end transaction in context:
-
-   
-   
-1. Navigate to the `Failures` blade and the `Exceptions` panel - you can see a collection of exceptions:
+1. Now from the left panel, navigate to the `Failures` blade under Investigate and then select on `Exceptions` panel - you can see a collection of exceptions:
 
    ![](Images/mjv2-54.png)
    
-1. Navigate to the `Metrics` blade - you can see metrics contributed by Spring Boot apps, Spring Cloud modules, and dependencies. The chart below shows `http_server_requests` and `Heap Memory Used`.
+1. Now from the left panel, navigate to the `Metrics` blade under Monitoring - you can see metrics contributed by Spring Boot apps, Spring Cloud modules, and dependencies. The chart below shows `http_server_requests` and `Heap Memory Used`.
 
    ![](Images/mjv2-55.png)
 
    ![](Images/mjv2-56.png)
 
-   Spring Boot registers a lot number of core metrics: JVM, CPU, Tomcat, Logback...The Spring Boot auto-configuration enables the instrumentation of requests handled by Spring MVC. The REST controllers `ProductController`, and `PaymentController` have been instrumented by the `@Timed` Micrometer annotation at class level.
+   > **Note:**  Spring Boot registers a lot number of core metrics: JVM, CPU, Tomcat, Logback...The Spring Boot auto-configuration enables the instrumentation of requests       handled by Spring MVC. The REST controllers `ProductController`, and `PaymentController` have been instrumented by the `@Timed` Micrometer annotation at class         level.
 
    * `acme-catalog` application has the following custom metrics enabled:
    * @Timed: `store.products`
@@ -147,20 +145,20 @@ You can find the Application Insights in the same Resource Group where you creat
 
    ![](Images/mjv2-57.png)
    
-1. Navigate to the `Live Metrics` blade - you can see live metrics on screen with low latencies < 1 second:
+1. Now from the left panel, navigate to the `Live Metrics` blade under Investigate - you can see live metrics on screen with low latencies < 1 second:
 
    ![](Images/mjv2-60.png)
 
 ### Task 7 : Start monitoring ACME Fitness Store's logs and metrics in Azure Log Analytics
 
-Open the Log Analytics that you created - you can find the Log Analytics in the same
-Resource Group where you created an Azure Spring Apps service instance.
+1. In the **search resources, services and docs bar**, type **Log analytics workspace** and select it from suggestions, as shown below: 
 
    ![](Images/mjv2-58.png)
 
+1. Under Log Analytics Workspaces page, select **log-analytics-<inject key="DeploymentID" enableCopy="false" />**.
    ![](Images/mjv2-59.png)
 
-1. In the Log Analytics page, selects `Logs` blade and run any of the sample queries supplied below for Azure Spring Apps. Run the following Kusto query to see application logs:
+1. In the Log Analytics page, selects `Logs` blade (1) under General and paste the below Kusto query (2) and the click on **Run** (3) to see the application logs:
 
    ```sql
       AppPlatformLogsforSpring 
@@ -172,7 +170,7 @@ Resource Group where you created an Azure Spring Apps service instance.
 
    ![](Images/mjv2-61.png)
 
-1. Run the following Kusto query to see `catalog-service` application logs:
+1. Now paste the below Kusto query (1) and the click on **Run** (2) to see `catalog-service` application logs:
 
    ```sql
       AppPlatformLogsforSpring 
@@ -184,7 +182,7 @@ Resource Group where you created an Azure Spring Apps service instance.
    
    ![](Images/mjv2-62.png)
 
-1. Run the following Kusto query to see errors and exceptions thrown by each app:
+1. Now paste the below Kusto query (1) and the click on **Run** (2) to see errors and exceptions thrown by each app:
   
    ```sql
       AppPlatformLogsforSpring 
@@ -197,7 +195,7 @@ Resource Group where you created an Azure Spring Apps service instance.
 
    ![](Images/mjv2-63.png)
 
-1. Run the following Kusto query to see all in the inbound calls into Azure Spring Apps:
+1. Now paste the below Kusto query (1) and the click on **Run** (2) to see all in the inbound calls into Azure Spring Apps:
 
    ```sql
       AppPlatformIngressLogs
@@ -207,7 +205,7 @@ Resource Group where you created an Azure Spring Apps service instance.
    
    ![](Images/mjv2-64.png)
 
-1. Run the following Kusto query to see all the logs from Spring Cloud Gateway managed by Azure Spring Apps:
+1. Now paste the below Kusto query (1) and the click on **Run** (2) to see all the logs from Spring Cloud Gateway managed by Azure Spring Apps:
 
    ```sql
       AppPlatformSystemLogs
@@ -217,7 +215,7 @@ Resource Group where you created an Azure Spring Apps service instance.
 
    ![](Images/mjv2-65.png)
 
-1. Run the following Kusto query to see all the logs from Spring Cloud Service Registry managed by Azure Spring Apps:
+1. Now paste the below Kusto query (1) and the click on **Run** (2) to see all the logs from Spring Cloud Service Registry managed by Azure Spring Apps:
 
    ```sql
       AppPlatformSystemLogs
