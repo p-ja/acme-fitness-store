@@ -156,6 +156,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
    ![](Images/mjv2-58.png)
 
 1. Under Log Analytics Workspaces page, select **log-analytics-<inject key="DeploymentID" enableCopy="false" />**.
+   
    ![](Images/mjv2-59.png)
 
 1. In the Log Analytics page, selects `Logs` blade (1) under General and paste the below Kusto query (2) and the click on **Run** (3) to see the application logs:
