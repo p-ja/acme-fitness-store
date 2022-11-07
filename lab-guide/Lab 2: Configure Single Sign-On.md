@@ -49,27 +49,68 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 
    ![](Images/mjv2-15.png)
    
-1. Once logged in, the remaining functionality of the application will be available. This includes adding items to the cart and placing an order.
+1. Once logged in, the remaining functionality of the application will be available. Click on **Catalog** to see the list of products.
 
    ![](Images/mjv2-34.png)
    
+1. Click on **Yoga Mat** to add this item in your cart.  
+   
    ![](Images/mjv2-35.png)
 
-   ![](Images/mjv2-36.png)
+1. Under Yoga Mat, click on Add to cart.
+   ![](Images/mjv2-36.png) 
 
+1. Now click on **1 items in cart** to proceed futher to place an order.   
+   
    ![](Images/mjv2-37.png)
+   
+1. To place an order, click on **Proceed to checkout**.
    
    ![](Images/mjv2-38.png)
    
+1. On the Address pane of the checkout page, fill the following details and then click on **Continue to Delivery Method**:
+
+  - Firstname: odl
+
+  - Lastname: user
+  
+  - City: Seattle
+  
+  - ZIP: 123456
+  
+  - State: Washington
+  
+  - Country: USA
+  
+  - Leave the other values as blank  
+  
    ![](Images/mjv2-39.png)
+   
+1. On the Delivery Method pane, click on **Continue to Payment Method**.   
    
    ![](Images/mjv2-40.png)
    
+1. On the Payment Method pane, fill the following details and then click on **Continue to Order Review**.
+
+  - Card Type: American Express
+  
+  - Credit Card Number: 1234567890123456
+  
+  - CCV: 678
+  
+  - Expiration Month: 01
+  
+  - Expiration Year: 2024    
+   
    ![](Images/mjv2-41.png)
    
+1. On the Order Review pane, click on **Place an Order**.   
+   
    ![](Images/mjv2-42.png)
-
-   ![](Images/mjv2-43.png)
+   
+1. After that you will recieve a pop-up page for Successfully placing an order.
+  
+  ![](Images/mjv2-43.png)
 
 ### Task 4 : Configure SSO for API Portal 
 
@@ -97,8 +138,10 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 
    ![](Images/mjv2-16.png)
 
-   > Note : Now you will be able to log in using your SSO Credentials. To access the protected APIs, click Authorize and follow the steps that match your SSO provider.
+1. To access the API Portal, click on **Sign in via SSO**. 
 
    ![](Images/api-login.png)
+   
+1. Once logged in via SSO credentials, you can now explore the API portal.
    
    ![](Images/mjv2-44.png)
