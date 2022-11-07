@@ -43,6 +43,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    ![](Images/mjv2-10.png)
  
 1. You should see the ACME Fitness Store Application, and then click on **Login** button.
+   
    ![](Images/gateway-login.png)
    
 1. Click on **Accept** inorder to able to log in using your SSO Credentials. 
@@ -58,6 +59,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    ![](Images/mjv2-35.png)
 
 1. Under Yoga Mat, click on Add to cart.
+   
    ![](Images/mjv2-36.png) 
 
 1. Now click on **1 items in cart** to proceed futher to place an order.   
@@ -84,7 +86,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   
   - Leave the other values as blank  
   
-   ![](Images/mjv2-39.png)
+    ![](Images/mjv2-39.png)
    
 1. On the Delivery Method pane, click on **Continue to Payment Method**.   
    
@@ -102,7 +104,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   
   - Expiration Year: 2024    
    
-   ![](Images/mjv2-41.png)
+    ![](Images/mjv2-41.png)
    
 1. On the Order Review pane, click on **Place an Order**.   
    
@@ -110,7 +112,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
 1. After that you will recieve a pop-up page for Successfully placing an order.
   
-  ![](Images/mjv2-43.png)
+   ![](Images/mjv2-43.png)
 
 ### Task 4 : Configure SSO for API Portal 
 
@@ -126,7 +128,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
        --issuer-uri ${ISSUER_URI}
    ```
 
-   ![](Images/mjv2-17.png)
+    ![](Images/mjv2-17.png)
 
 ### Task 5 : Explore the API using API Portal 
 
@@ -136,12 +138,12 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    echo "https://${PORTAL_URL}"
    ```
 
-   ![](Images/mjv2-16.png)
+    ![](Images/mjv2-16.png)
 
 1. To access the API Portal, click on **Sign in via SSO**. 
 
-   ![](Images/api-login.png)
+    ![](Images/api-login.png)
    
 1. Once logged in via SSO credentials, you can now explore the API portal.
    
-   ![](Images/mjv2-44.png)
+    ![](Images/mjv2-44.png)
