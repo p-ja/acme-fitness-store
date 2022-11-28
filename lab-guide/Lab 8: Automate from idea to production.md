@@ -44,6 +44,6 @@ key                  = "dev.terraform.tfstate"
 
 1. Each application has a `Deploy` workflow that will redeploy the application when changes are made to that application. An example output from the catalog service is seen below:
 
-![Output from the Deploy Catalog workflow](images/deploy-catalog.png)
+![Output from the Deploy Catalog workflow](Images/deploy-catalog.png)
 
 
