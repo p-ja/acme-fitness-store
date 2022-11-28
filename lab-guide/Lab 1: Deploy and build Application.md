@@ -78,6 +78,15 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    > **Note:** Replace ${SUBSCRIPTION} with the subscription Id which you can find in the Environment details page. 
 
    ![](Images/mjv2-4.png)
+   
+1. Now, run the following command to set your default resource group name and cluster name :
+
+    ```shell
+    az configure --defaults \
+    group=${RESOURCE_GROUP} \
+    location=${REGION} \
+    spring=${SPRING_APPS_SERVICE}
+    ```
   
 ### Task 2 : Deploy a Hello World service to ASA-E 
 
