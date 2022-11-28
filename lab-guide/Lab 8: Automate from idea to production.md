@@ -42,17 +42,8 @@ key                  = "dev.terraform.tfstate"
 
 ### Task 2 : Run GitHub Actions
 
-1. Now you can run GitHub Actions in your repository. The `provision` workflow will provision all resources created in the first four units. An example run is seen below:
+1. Each application has a `Deploy` workflow that will redeploy the application when changes are made to that application. An example output from the catalog service is seen below:
 
-![Output from the provision workflow](media/provision.png)
+![Output from the Deploy Catalog workflow](images/deploy-catalog.png)
 
-> Note: The entire provision workflow will run in approximately 60 minutes.
-
-2. Each application has a `Deploy` workflow that will redeploy the application when changes are made to that application. An example output from the catalog service is seen below:
-
-![Output from the Deploy Catalog workflow](media/deploy-catalog.png)
-
-3. The `cleanup` workflow can be manually run to delete all resources created by the `provision` workflow. The output can be seen below:
-
-![Output from the cleanup workflow](media/cleanup.png)
 
