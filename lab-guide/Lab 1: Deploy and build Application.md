@@ -141,7 +141,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
 This section discusses the demo application that you will be using in this lab to demonstrate the different features of ASA-E.
 
 Below image shows the services involved in the ACME Fitness Store. It depicts the applications and their dependencies on different ASA-E services. We will be implementing this architecture by the end of this workshop.
-![acme-fitness](images/end-end-arch.png)
+![acme-fitness](Images/architecture.png)
 
 This application is composed of several services:
 
