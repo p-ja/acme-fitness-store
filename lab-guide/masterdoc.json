@@ -1,0 +1,38 @@
+[ {
+  "Name": "Modernize Java Apps V2",
+  "Language": "English",
+  "Files": [
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab%201%3A%20Deploy%20and%20build%20Application.md",
+      "Order": 1
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab%202%3A%20Configure%20Single%20Sign-On.md",
+      "Order": 2
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab%203%3A%20Integrate%20the%20Azure%20Database%20for%20PostgreSQL%20and%20Azure%20Cache%20for%20Redis.md",
+      "Order": 3
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab%204%3A%20Securely%20Load%20Application%20Secrets.md",
+      "Order": 4
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab%205%3A%20Monitor%20End-to-End.md",
+      "Order": 5
+    },
+        {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab%206%3A%20Change%20the%20application.md",
+      "Order": 6
+    },
+        {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab%207%3A%20Set%20Request%20Rate%20Limits.md",
+      "Order": 7
+    },
+            {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab%208%3A%20Automate%20from%20idea%20to%20production.md",
+      "Order": 8
+    }
+  ]
+} ]
