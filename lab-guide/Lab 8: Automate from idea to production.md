@@ -22,7 +22,9 @@ To get started with deploying this sample app from GitHub Actions, please:
 1. Add the following secrets to GitHub Actions:
 
    * `AZURE_CREDENTIALS` - using the json result from creating the Service Principal in the previous step.
-   * `TF_PROJECT_NAME` - with the value of your choosing. This will be the name of your Terraform Project
+   * `APP_SERVICE` - Use your Spring app name
+   * `RESOURCE_GROUP` - with the value of your resource group that you are using for this lab
+   * `KEYVAULT` - with the value for your keyvault deployed in your environment
    * `AZURE_LOCATION` - this is the Azure Region your resources will be created in.
    * `OIDC_JWK_SET_URI` - use the `JWK_SET_URI` defined in [Unit 2](#unit-2---configure-single-sign-on)
    * `OIDC_CLIENT_ID` - use the `CLIENT_ID` defined in [Unit 2](#unit-2---configure-single-sign-on)
