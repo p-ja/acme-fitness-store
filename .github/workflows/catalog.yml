@@ -8,9 +8,9 @@ on:
     paths:
       - 'apps/acme-catalog/**'
 env:
-  SPRING_APPS_SERVICE: ${{ secrets.TF_PROJECT_NAME }}-asa
-  RESOURCE_GROUP: ${{ secrets.TF_PROJECT_NAME }}-grp
-  KEY_VAULT: ${{ secrets.TF_PROJECT_NAME }}-keyvault
+  SPRING_APPS_SERVICE: ${{ secrets.TF_PROJECT_NAME }}
+  RESOURCE_GROUP: ${{ secrets.TF_PROJECT_NAME }}
+  KEY_VAULT: ${{ secrets.TF_PROJECT_NAME }}
   CATALOG_SERVICE_APP: catalog-service
 
 jobs:
