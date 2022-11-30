@@ -25,6 +25,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 1. To make a copy of the supplied template, run the following command in the bash shell pane : 
 
     ```shell
+    git clone https://github.com/CloudLabsAI-Azure/acme-fitness-store
     cp ./scripts/setup-env-variables-template.sh ./scripts/setup-env-variables.sh
     ```
 
