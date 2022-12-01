@@ -1,8 +1,8 @@
-# Lab 7 :  Set Request Rate Limits
+## Lab 6:  Set Request Rate Limits
 
 In this lab you will use Spring Cloud Gateway filters to apply rate limiting to your API.
 
-### Task 1 : Spring Cloud Gateway Rate Limit Filter (Read-only)
+### Task 1: Spring Cloud Gateway Rate Limit Filter (Read-only)
 
 Spring Cloud Gateway includes route filters from the Open Source version as well as several additional route filters. One of these additional filters is the [RateLimit: Limiting user requests filter](https://docs.vmware.com/en/VMware-Spring-Cloud-Gateway-for-Kubernetes/1.1/scg-k8s/GUID-route-filters.html#ratelimit-limiting-user-requests-filter). The RateLimit filter limits the number of requests allowed per route during a time window.
 
@@ -30,7 +30,7 @@ Spring Cloud Gateway includes route filters from the Open Source version as well
 
 When the limit is exceeded, response will fail with `429 Too Many Requests` status.
 
-### Task 2 : Update Spring Cloud Gateway Routes
+### Task 2: Update Spring Cloud Gateway Routes
 
 1. To apply the `RateLimit` filter to the `/products` route run the following command:
 
@@ -43,7 +43,7 @@ When the limit is exceeded, response will fail with `429 Too Many Requests` stat
 
    ![](Images/mjv2-30.png)
 
-### Task 3 : Verify Request Rate Limits
+### Task 3: Verify Request Rate Limits
 
 1. To retrieve the URL for the `/products` route in Spring Cloud Gateway using the following command:
 
