@@ -45,6 +45,8 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    export LOG_ANALYTICS_WORKSPACE=log-analytics-name   # name of the existing log analytics workspace 
    export REGION=region-name                           # region should be same as the region of your azure spring apps service
    ```
+   >**Note:** You can copy the above values from environment details page.
+   
    > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape "ESC" key to exit insert mode and then type ":wq" to save and close the file.
   
    ![](Images/mjv2-1.png)
@@ -70,7 +72,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
    ![](Images/mjv2-3.png)
    
-1. Enter the azure credentails to from environment deatils page if necessary and click on **Continue**.
+1. Enter the azure credentails to signin from environment deatils page if necessary and click on **Continue**.
 
    ![](Images/azure1.png)
 
@@ -107,7 +109,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
 
    ```shell
    cd hello-world
-   cat > HelloController.java << EOF
+   cat >HelloController.java << EOF
    package com.example.demo;
 
    import org.springframework.web.bind.annotation.GetMapping;
