@@ -44,13 +44,12 @@
 
 1. Add the secret `TF_BACKEND_CONFIG` to GitHub Actions with the value (replacing `${STORAGE_ACCOUNT_NAME}` and `${STORAGE_RESOURCE_GROUP}`):
 
-```text
-resource_group_name  = "${STORAGE_RESOURCE_GROUP}"
-storage_account_name = "${STORAGE_ACCOUNT_NAME}"
-container_name       = "terraform-state-container"
-key                  = "dev.terraform.tfstate"
-```
-
+   ```text
+   resource_group_name  = "${STORAGE_RESOURCE_GROUP}"
+   storage_account_name = "${STORAGE_ACCOUNT_NAME}"
+   container_name       = "terraform-state-container"
+   key                  = "dev.terraform.tfstate"
+   ```
 
 ### Task 3 : Run GitHub Actions
 
@@ -58,10 +57,10 @@ key                  = "dev.terraform.tfstate"
 
 1. Select **Deploy catalog** (1) under __Actions_ All worklows_ from the left side panel, and click on **Run workflow** (2). After that Click on **Run workflow** (3) under _Branch:Azure_.
 
-  ![](Images/L8-t3-s2.png)
+   ![](Images/L8-t3-s2.png)
 
 1. Each application has a `Deploy` workflow that will redeploy the application when changes are made to that application. An example output from the catalog service is seen below:
 
-![Output from the Deploy Catalog workflow](Images/final-result.png)
+   ![Output from the Deploy Catalog workflow](Images/final-result.png)
 
 
