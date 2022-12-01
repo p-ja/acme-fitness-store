@@ -109,7 +109,8 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   
   - Leave the other values as blank  
   
-    ![](Images/mjv2-39.png)
+   
+   ![](Images/mjv2-39.png)
    
 1. On the Delivery Method pane, click on **Continue to Payment Method**.   
    
@@ -127,7 +128,8 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   
   - Expiration Year: 2024    
    
-    ![](Images/mjv2-41.png)
+   
+   ![](Images/mjv2-41.png)
    
 1. On the Order Review pane, click on **Place an Order**.   
    
