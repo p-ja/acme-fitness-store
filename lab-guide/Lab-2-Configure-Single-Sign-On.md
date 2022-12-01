@@ -129,7 +129,8 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   
   - Expiration Year: 2024    
    
-   
+     <br>
+     <br>
    
      ![](Images/mjv2-41.png)
     
