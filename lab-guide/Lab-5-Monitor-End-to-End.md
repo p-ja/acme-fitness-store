@@ -1,4 +1,4 @@
-# Lab 5:  Monitor End-to-End
+## Lab 5:  Monitor End-to-End
 
 In this unit you will explore live application metrics and query logs to know the health of your applications.
 
