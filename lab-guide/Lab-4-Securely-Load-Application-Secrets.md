@@ -1,8 +1,8 @@
-# Lab 4 : Securely Load Application Secrets
+## Lab 4: Securely Load Application Secrets
 
 In this lab, you will use Azure Key Vault to securely store and load secrets to connect to Azure services.
 
-### Task 1 : Store secrets
+### Task 1: Store secrets
 
 1.  Store database connection secrets in Key Vault.
 
@@ -91,7 +91,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
       ![](Images/mjv2-26.png) 
 
-### Task 2 : Activate applications to load secrets from Azure Key Vault
+### Task 2: Activate applications to load secrets from Azure Key Vault
 
 
 1. To delete Service Connectors and activate applications to load secrets from Azure Key Vault, run the following command in the bash shell pane.
