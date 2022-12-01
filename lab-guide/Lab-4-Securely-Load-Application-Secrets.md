@@ -137,3 +137,5 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
       ```
 
       ![](Images/mjv2-27.png)
+      
+  Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
