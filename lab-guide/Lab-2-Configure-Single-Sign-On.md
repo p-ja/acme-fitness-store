@@ -130,6 +130,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   - Expiration Year: 2024    
    
    
+   
      ![](Images/mjv2-41.png)
     
    
@@ -138,6 +139,8 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
      ![](Images/mjv2-42.png)
    
 13. After that you will recieve a pop-up page for Successfully placing an order.
+  
+  
   
      ![](Images/mjv2-43.png)
 
