@@ -1,35 +1,46 @@
 # Lab 8 :  Automate from idea to production
 
-To get started with deploying this sample app from GitHub Actions, please:
+### Task 1 : Setup Github Account and Settings
 
-1. Complete an Azure AD App registration outlined [here](#register-application-with-azure-ad) or have SSO Credentials prepared as described [here](#using-an-existing-sso-identity-provider)
-2. Fork this repository and turn on GitHub Actions in your fork
+1. From the new browser tab, go to [Github](https://github.com/) and login to your account.
+    > Note: If you don't have an account for Github, please sign up.
 
-### Task 1 : Add Secrets to GitHub Actions
+1. After the login, go to [https://github.com/CloudLabsAI-Azure/acme-fitness-store](https://github.com/CloudLabsAI-Azure/acme-fitness-store) and click `Fork`.
 
-1. If you are not logged in already, click on Azure portal shortcut that is available on the desktop and log in with below Azure credentials.
-    * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
-    * Azure Password: <inject key="AzureAdUserPassword"></inject>
-    
-1.  Click on the Cloud shell icon on the top right – > Next to the search bar.    
+   ![](Images/L8-t1-s2.png)
+   
+1. On the Create a new fork page, click on Create fork.   
 
-1. Select on bash shell to launch.
+### Task 2 : Add Secrets to GitHub Actions
 
-1. Select the subscription and storage account. If you do not have existing storage account , you need to create a one.
+1. Now you're going to add the secrets to your repo.
+     
+   - The url of your repo will looks like this
 
-1. Once the cloud drive is created, cloud shell will be launched.
+        ```text
+        https://github.com/{YOURACCOUNT}}/acme-fitness-store
+        ```
+1. From your repo, click on **Settings**.
 
-1. Add the following secrets to GitHub Actions:
+1. Find **Secrets** (1) under _Security_ on the left side of menu, and click on **Actions** (2). After that Click on **New repository secret** (3).
 
-   * `AZURE_CREDENTIALS` - using the json result from creating the Service Principal in the previous step.
-   * `APP_SERVICE` - Use your Spring app name
-   * `RESOURCE_GROUP` - with the value of your resource group that you are using for this lab
-   * `KEYVAULT` - with the value for your keyvault deployed in your environment
+   ![](Images/L8-t2-s3.png)
+   
+1. Type `AZURE_CREDENTIALS` (1) for the name of the secret, and **paste** (2) the json result obtained from creating the Service Principal in the previous step and then click on **Add Secret** (3).   
+
+   ![](Images/L8-t3-s4.png)
+
+1. In the similar way, you will add the following secrets to GitHub Actions:
+
+  
+   * `APP_SERVICE` - Use your Spring app name.
+   * `RESOURCE_GROUP` - with the value of your resource group that you are using for this lab.
+   * `KEYVAULT` - with the value for your keyvault deployed in your environment.
    * `AZURE_LOCATION` - this is the Azure Region your resources will be created in.
-   * `OIDC_JWK_SET_URI` - use the `JWK_SET_URI` defined in [Unit 2](#unit-2---configure-single-sign-on)
-   * `OIDC_CLIENT_ID` - use the `CLIENT_ID` defined in [Unit 2](#unit-2---configure-single-sign-on)
-   * `OIDC_CLIENT_SECRET` - use the `CLIENT_SECRET` defined in [Unit 2](#unit-2---configure-single-sign-on)
-   * `OIDC_ISSUER_URI` - use the `ISSUER_URI` defined in [Unit 2](#unit-2---configure-single-sign-on)
+   * `OIDC_JWK_SET_URI` - use the `JWK_SET_URI` defined in [Lab 2]
+   * `OIDC_CLIENT_ID` - use the `CLIENT_ID` defined in [Lab 2]
+   * `OIDC_CLIENT_SECRET` - use the `CLIENT_SECRET` defined in [Lab 2]
+   * `OIDC_ISSUER_URI` - use the `ISSUER_URI` defined in [Lab 2]
 
 1. Add the secret `TF_BACKEND_CONFIG` to GitHub Actions with the value (replacing `${STORAGE_ACCOUNT_NAME}` and `${STORAGE_RESOURCE_GROUP}`):
 
@@ -40,12 +51,17 @@ container_name       = "terraform-state-container"
 key                  = "dev.terraform.tfstate"
 ```
 
-> Detailed instructions for adding secrets to GitHub Actions can be found [here](https://docs.microsoft.com/azure/spring-cloud/how-to-github-actions?pivots=programming-language-java#set-up-github-repository-and-authenticate-1).
 
-### Task 2 : Run GitHub Actions
+### Task 3 : Run GitHub Actions
+
+1. From your repo, click on **Actions**.
+
+1. Select **Deploy catalog** (1) under __Actions_ All worklows_ from the left side panel, and click on **Run workflow** (2). After that Click on **Run workflow** (3) under _Branch:Azure_.
+
+  ![](Images/L8-t3-s2.png)
 
 1. Each application has a `Deploy` workflow that will redeploy the application when changes are made to that application. An example output from the catalog service is seen below:
 
-![Output from the Deploy Catalog workflow](Images/deploy-catalog.png)
+![Output from the Deploy Catalog workflow](Images/final-result.png)
 
 
