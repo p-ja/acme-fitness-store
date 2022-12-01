@@ -1,8 +1,8 @@
-# Lab 5 :  Monitor End-to-End
+# Lab 5:  Monitor End-to-End
 
 In this unit you will explore live application metrics and query logs to know the health of your applications.
 
-### Task 1 : Add Instrumentation Key to Key Vault
+### Task 1: Add Instrumentation Key to Key Vault
 
 1. The Application Insights Instrumentation Key must be provided for the non-java applications.
 
@@ -19,7 +19,7 @@ In this unit you will explore live application metrics and query logs to know th
    ```
    ![](Images/mjv2-45.png)
 
-### Task 2 : Update Sampling Rate
+### Task 2: Update Sampling Rate
 
 1. To Increase the sampling rate for the Application Insights binding, run the following command in the bash shell pane.
 
@@ -31,7 +31,7 @@ In this unit you will explore live application metrics and query logs to know th
       --properties sampling-rate=100 connection_string=${INSTRUMENTATION_KEY}
    ```
 
-### Task 3 : Reload Applications
+### Task 3: Reload Applications
 
 1. Run the following command to restart applications to reload configuration. For the Java applications, this will allow the new sampling rate to take effect. For the non-java applications, this will allow them to access the Instrumentation Key from Key Vault.
 
@@ -45,7 +45,7 @@ In this unit you will explore live application metrics and query logs to know th
 
    ![](Images/mjv2-28.png)
 
-### Task 4 : Get the log stream for an Application
+### Task 4: Get the log stream for an Application
 
 1. Run the following command to get the latest 100 lines of app console logs from the Catalog Service.
 
@@ -69,7 +69,7 @@ In this unit you will explore live application metrics and query logs to know th
 
 You can use `az spring app logs -h` to explore more parameters and log stream functionalities.
 
-### Task 5 : Generate Traffic
+### Task 5: Generate Traffic
 
 In this task, you will use the ACME Fitness Shop Application to generate some traffic. Move throughout the application, view the catalog, or place an order.
 
@@ -85,7 +85,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
 
 > **Note:** Continue on to the next tasks while the traffic generator runs. 
 
-### Task 6 : Start monitoring apps and dependencies - in Application Insights
+### Task 6: Start monitoring apps and dependencies - in Application Insights
 
 1. Move back to the azure portal and in the **search resources, services and docs bar**, type **Application insight** and select it from suggestions, as shown below: 
 
@@ -122,7 +122,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
 
    ![](Images/mjv2-56.png)
 
-   > **Note:**  Spring Boot registers a lot number of core metrics: JVM, CPU, Tomcat, Logback...The Spring Boot auto-configuration enables the instrumentation of requests       handled by Spring MVC. The REST controllers `ProductController`, and `PaymentController` have been instrumented by the `@Timed` Micrometer annotation at class         level.
+   > **Note:**  Spring Boot registers a lot number of core metrics: JVM, CPU, Tomcat, Logback...The Spring Boot auto-configuration enables the instrumentation of requests handled by Spring MVC. The REST controllers `ProductController`, and `PaymentController` have been instrumented by the `@Timed` Micrometer annotation at class  level.
 
    * `acme-catalog` application has the following custom metrics enabled:
    * @Timed: `store.products`
