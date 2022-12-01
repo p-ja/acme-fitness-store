@@ -55,4 +55,5 @@ When the limit is exceeded, response will fail with `429 Too Many Requests` stat
    Make several requests to the URL for `/products` within a five second period to see requests fail with a status `429 Too Many Requests`.
 
 
+Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
 
