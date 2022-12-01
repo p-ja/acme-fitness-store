@@ -1,8 +1,8 @@
-# Lab 3 : Integrate with Azure Database for PostgreSQL and Azure Cache for Redis
+## Lab 3: Integrate with Azure Database for PostgreSQL and Azure Cache for Redis
 
 In this lab, you will create persistent stores outside the applications and connect applications to those stores.
 
-### Task 1 : Prepare you environment 
+### Task 1: Prepare you environment 
 
 1. Run the following bash command to make a copy of the supplied template:
 
@@ -35,7 +35,7 @@ In this lab, you will create persistent stores outside the applications and conn
    source ./azure/setup-db-env-variables.sh
    ```
    
-### Task 2 : Create Service Connectors
+### Task 2: Create Service Connectors
    
  1. The Order Service and Catalog Service use Azure Database for Postgres, therefore run the the following command to create Service Connectors for those applications:
 
@@ -87,7 +87,7 @@ In this lab, you will create persistent stores outside the applications and conn
 
       ![](Images/upd-mjv2-20.png)
 
-### Task 3 : Update Applications
+### Task 3: Update Applications
 
 In this task, you update the affected applications to use the databases and redis cache.
 
@@ -133,7 +133,7 @@ In this task, you update the affected applications to use the databases and redi
   
     ![](Images/mjv2-32.png)
   
-### Task 4 : View the persisted data 
+### Task 4: View the persisted data 
 
 1. Now verify cart data is now persisted in Redis by adding a few items to your cart. Then, restart the cart service by running the following command:
 
