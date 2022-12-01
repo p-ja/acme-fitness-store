@@ -65,35 +65,35 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    ```
    ![](Images/mjv2-10.png)
  
-1. You should see the ACME Fitness Store Application, and then click on **Login** button.
+2. You should see the ACME Fitness Store Application, and then click on **Login** button.
    
    ![](Images/gateway-login.png)
    
-1. Click on **Accept** inorder to able to log in using your SSO Credentials. 
+3. Click on **Accept** inorder to able to log in using your SSO Credentials. 
 
    ![](Images/mjv2-15.png)
    
-1. Once logged in, the remaining functionality of the application will be available. Click on **Catalog** to see the list of products.
+4. Once logged in, the remaining functionality of the application will be available. Click on **Catalog** to see the list of products.
 
    ![](Images/mjv2-34.png)
    
-1. Click on **Yoga Mat** to add this item in your cart.  
+5. Click on **Yoga Mat** to add this item in your cart.  
    
    ![](Images/mjv2-35.png)
 
-1. Under Yoga Mat, click on Add to cart.
+6. Under Yoga Mat, click on Add to cart.
    
    ![](Images/mjv2-36.png) 
 
-1. Now click on **1 items in cart** to proceed futher to place an order.   
+7. Now click on **1 items in cart** to proceed futher to place an order.   
    
    ![](Images/mjv2-37.png)
    
-1. To place an order, click on **Proceed to checkout**.
+8. To place an order, click on **Proceed to checkout**.
    
    ![](Images/mjv2-38.png)
    
-1. On the Address pane of the checkout page, fill the following details and then click on **Continue to Delivery Method**:
+9. On the Address pane of the checkout page, fill the following details and then click on **Continue to Delivery Method**:
 
   - Firstname: odl
 
@@ -110,12 +110,12 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   - Leave the other values as blank  
   
    
-    ![](Images/mjv2-39.png)
+     ![](Images/mjv2-39.png)
    
-   
+ 
 10. On the Delivery Method pane, click on **Continue to Payment Method**.   
    
-    ![](Images/mjv2-40.png)
+     ![](Images/mjv2-40.png)
    
 11. On the Payment Method pane, fill the following details and then click on **Continue to Order Review**.
 
@@ -130,16 +130,16 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   - Expiration Year: 2024    
    
    
-    ![](Images/mjv2-41.png)
+     ![](Images/mjv2-41.png)
     
    
 12. On the Order Review pane, click on **Place an Order**.   
    
-   ![](Images/mjv2-42.png)
+     ![](Images/mjv2-42.png)
    
 13. After that you will recieve a pop-up page for Successfully placing an order.
   
-   ![](Images/mjv2-43.png)
+     ![](Images/mjv2-43.png)
 
 ### Task 5 : Configure SSO for API Portal 
 
