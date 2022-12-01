@@ -30,17 +30,14 @@
       "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab-5-Monitor-End-to-End.md",
       "Order": 7
     },
-       {
-      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab-6-Change-the-application.md",
-      "Order": 8
-    },
+       
         {
       "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab-7-Set-Request-Rate-Limits.md",
-      "Order": 9
+      "Order": 8
     },
             {
       "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab-8-Automate-from-idea-to-production.md",
-      "Order": 10
+      "Order": 9
     }
   ]
 } ]
