@@ -5,7 +5,7 @@
 1. From the new browser tab, go to [Github](https://github.com/) and login to your account.
     > Note: If you don't have an account for Github, please sign up.
 
-1. After the login, go to [https://github.com/CloudLabsAI-Azure/acme-fitness-store](https://github.com/CloudLabsAI-Azure/acme-fitness-store) and click `Fork`.
+1. After the login, go to [https://github.com/CloudLabsAI-Azure/acme-fitness-store](https://github.com/CloudLabsAI-Azure/acme-fitness-store) and click on `Fork`.
 
    ![](Images/L8-t1-s2.png)
    
@@ -17,9 +17,9 @@
      
    - The url of your repo will looks like this
 
-        ```text
-        https://github.com/{YOURACCOUNT}}/acme-fitness-store
-        ```
+     ```text
+     https://github.com/{YOURACCOUNT}}/acme-fitness-store
+     ```
 1. From your repo, click on **Settings**.
 
 1. Find **Secrets** (1) under _Security_ on the left side of menu, and click on **Actions** (2). After that Click on **New repository secret** (3).
