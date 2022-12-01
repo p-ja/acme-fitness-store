@@ -141,7 +141,8 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
 13. After that you will recieve a pop-up page for Successfully placing an order.
   
-  
+      <br>
+      <br>
   
      ![](Images/mjv2-43.png)
 
