@@ -181,3 +181,6 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 1. Once logged in via SSO credentials, you can now explore the API portal.
    
     ![](Images/mjv2-44.png)
+    
+    
+   Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
