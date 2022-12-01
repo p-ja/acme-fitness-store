@@ -1,6 +1,6 @@
-# Lab 8 :  Automate from idea to production
+# Lab 8:  Automate from idea to production
 
-### Task 1 : Setup Github Account and Settings
+### Task 1: Setup Github Account and Settings
 
 1. From the new browser tab, go to [Github](https://github.com/) and login to your account.
     > Note: If you don't have an account for Github, please sign up.
@@ -11,7 +11,7 @@
    
 1. On the Create a new fork page, click on Create fork.   
 
-### Task 2 : Add Secrets to GitHub Actions
+### Task 2: Add Secrets to GitHub Actions
 
 1. Now you're going to add the secrets to your repo.
      
@@ -51,7 +51,7 @@
    key                  = "dev.terraform.tfstate"
    ```
 
-### Task 3 : Run GitHub Actions
+### Task 3: Run GitHub Actions
 
 1. From your repo, click on **Actions**.
 
