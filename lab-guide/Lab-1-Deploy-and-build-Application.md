@@ -22,25 +22,34 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
 1. Once the cloud drive is created, cloud shell will be launched.
 
-1. To make a copy of the supplied template, run the following command in the bash shell pane : 
+1. Run the following command to remove previous versions and install the latest Azure Spring Apps Enterprise tier extension:
 
     ```shell
-    git clone https://github.com/CloudLabsAI-Azure/acme-fitness-store
+    az extension remove --name spring-cloud
+    az extension add --name spring
+    ```
+    
+1. To create a new folder and clone the sample app repository to your Azure Cloud account, run the following command in the bash shell pane : 
+
+    ```shell
+    mkdir source-code
+    cd source-code
+    git clone https://github.com/Azure-Samples/acme-fitness-store
     cd acme-fitness-store
     ```
 
-1. To open the `./scripts/setup-env-variables.sh` file, run the following command :
+1. To open the `./scripts/setup-env-variables.template.sh` file, run the following command :
 
    ```shell
    cd azure
    vim setup-env-variables-template.sh
    ```
 
-1. Update the following variables in the setup-env-variables.sh file by replacing the following values :
+1. Update the following variables in the setup-env-variables.template.sh file by replacing the following values :
 
    ```shell
    export SUBSCRIPTION=subscription-id                 # replace it with your subscription-id
-   export RESOURCE_GROUP=resource-group-name           # existing resource group 
+   export RESOURCE_GROUP=resource-group-name           # replace it with Modernize-java-apps-DID 
    export SPRING_APPS_SERVICE=azure-spring-apps-name   # name of the existing azure spring apps service 
    export LOG_ANALYTICS_WORKSPACE=log-analytics-name   # name of the existing log analytics workspace 
    export REGION=region-name                           # region should be same as the region of your azure spring apps service
@@ -72,7 +81,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
    ![](Images/mjv2-3.png)
    
-1. Enter the azure credentails to signin from environment deatils page if necessary and click on **Continue**.
+1. Enter the azure credentails to signin from environment details page if necessary and click on **Continue**.
 
    ![](Images/azure1.png)
 
