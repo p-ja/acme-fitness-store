@@ -1,8 +1,31 @@
 # Lab 2 : Configure Single Sign-On
  
 In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Azure Active Directory.
+
+### Task 1 : Prepare your environment for SSO Deployments
+
+1. Run the following command to set the environment and then verify the environment variables are set:
+
+   ```shell
+   source ./azure/setup-sso-variables-ad.sh
+
+   echo ${CLIENT_ID}
+   echo ${CLIENT_SECRET}
+   echo ${TENANT_ID}
+   echo ${ISSUER_URI}
+   echo ${JWK_SET_URI}
+   ```
+    > **Note:** Copy the output values and save them in the notepad as these will be used later in the lab. ( The ISSUER_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/v2.0 The JWK_SET_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/discovery/v2.0/keys)
+
+1. To add the necessary web redirect URIs to the Azure AD Application Registration, run the following command:
+
+   ```shell
+   az ad app update --id ${APPLICATION_ID} \
+    --web-redirect-uris "https://${GATEWAY_URL}/login/oauth2/code/sso" "https://${PORTAL_URL}/oauth2-redirect.html" "https://${PORTAL_URL}/login/oauth2/code/sso"
+   ```
+
  
-### Task 1 : Configure Spring Cloud Gateway with SSO  
+### Task 2 : Configure Spring Cloud Gateway with SSO  
 
 1. Run the following command to configure Spring Cloud Gateway with SSO enabled:
 
@@ -17,7 +40,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 
    ![](Images/mjv2-13.png)
 
-### Task 2 : Update the Existing Applications 
+### Task 3 : Update the Existing Applications 
 
 1. Run the following command to update the existing applications to use authorization information from Spring Cloud Gateway:
 
@@ -33,7 +56,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    ![](Images/mjv2-14.png)
 
 
-### Task 3 : Login to the Application through Spring Cloud Gateway 
+### Task 4 : Login to the Application through Spring Cloud Gateway 
 
 1. Run the following command to retrieve the URL for Spring Cloud Gateway and then open the output in a browser:
 
@@ -114,7 +137,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   
    ![](Images/mjv2-43.png)
 
-### Task 4 : Configure SSO for API Portal 
+### Task 5 : Configure SSO for API Portal 
 
 1. To configure API Portal with SSO enabled, run the following command:
 
@@ -130,7 +153,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 
     ![](Images/mjv2-17.png)
 
-### Task 5 : Explore the API using API Portal 
+### Task 6 : Explore the API using API Portal 
 
 1. Run the following command to retrieve the URL for API Portal and then open the output in a browser: 
 
