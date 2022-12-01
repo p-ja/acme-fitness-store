@@ -1,8 +1,8 @@
-# Lab 1 :  Deploy and Build Applications
+## Lab 1:  Deploy and Build Applications
 
 In this lab, you will learn how to build and deploy Spring applications to Azure Spring Apps.
 
-### Task 1 : Prepare your environment for deployments
+### Task 1: Prepare your environment for deployments
 
 1. If you are not logged in already, click on Azure portal shortcut that is available on the desktop and log in with below Azure credentials.
     * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
@@ -104,7 +104,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
     spring=${SPRING_APPS_SERVICE}
     ```
   
-### Task 2 : Deploy a Hello World service to ASA-E 
+### Task 2: Deploy a Hello World service to ASA-E 
 
 In this task, you will try to deploy a very simple hello-world spring boot app to get a high level understanding of how to deploy an asa-e app and access it.
 
@@ -152,7 +152,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
 
 
 
-### Task 3 : Introduction to Acme Fitness app 
+### Task 3: Introduction to Acme Fitness app 
 
 This section discusses the demo application that you will be using in this lab to demonstrate the different features of ASA-E.
 
@@ -175,7 +175,7 @@ This application is composed of several services:
 * 1 NodeJS and static HTML Application
   * A frontend shopping application
 
-### Task 4 : Bind to Application Configuration Service 
+### Task 4: Bind to Application Configuration Service 
 The Application configuration service is a feature of azure spring apps enterprise that makes Spring Apps config server capabilities available in a polyglot way.
 
 1. Run the following command to bind the spring applications to the Application Configuration Service:
@@ -187,7 +187,7 @@ The Application configuration service is a feature of azure spring apps enterpri
     
       ![](Images/mjv2-5.png)
     
- ### Task 5 : Bind to Service Registry 
+ ### Task 5: Bind to Service Registry 
  
  Applications need to communicate with each other. ASA-E internally uses Tanzu Service Registry for dynamic service discovery.
  
@@ -200,7 +200,7 @@ The Application configuration service is a feature of azure spring apps enterpri
 
      ![](Images/mjv2-6.png)
 
-### Task 6 : Configure Spring Cloud Gateway 
+### Task 6: Configure Spring Cloud Gateway 
 
 In this task, you will create a spring cloud gateway instance for acme-fitness and connect all the backend services to this gateway instance. This way the gateway instance acts as the proxy for any requests that are targeted towards the acme-fitness application.
 
@@ -247,7 +247,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
 
    ![](Images/mjv2-8.png)
 
-### Task 7 : Build and Deploy Polyglot Applications 
+### Task 7: Build and Deploy Polyglot Applications 
 
  In this task, you will deploy the more sophisticated acme-fitness application to the same asa-e instance.
  
@@ -282,7 +282,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
 
     ![](Images/mjv2-9.png)
 
-### Task 8 : Access the Application through Spring Cloud Gateway 
+### Task 8: Access the Application through Spring Cloud Gateway 
 
 1. Run the following command and then open the output from the following command in a browser:
 
@@ -295,7 +295,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
 
    ![](Images/mjv2-11.png)
 
-### Task 9 : Explore the API using API Portal 
+### Task 9: Explore the API using API Portal 
 
 1. To assign an endpoint to API Portal, run the following command:
 
