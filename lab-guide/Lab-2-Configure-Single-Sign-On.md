@@ -110,13 +110,14 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   - Leave the other values as blank  
   
    
-   ![](Images/mjv2-39.png)
+    ![](Images/mjv2-39.png)
    
-1. On the Delivery Method pane, click on **Continue to Payment Method**.   
    
-   ![](Images/mjv2-40.png)
+10. On the Delivery Method pane, click on **Continue to Payment Method**.   
    
-1. On the Payment Method pane, fill the following details and then click on **Continue to Order Review**.
+    ![](Images/mjv2-40.png)
+   
+11. On the Payment Method pane, fill the following details and then click on **Continue to Order Review**.
 
   - Card Type: American Express
   
@@ -129,13 +130,14 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   - Expiration Year: 2024    
    
    
-   ![](Images/mjv2-41.png)
+    ![](Images/mjv2-41.png)
+    
    
-1. On the Order Review pane, click on **Place an Order**.   
+12. On the Order Review pane, click on **Place an Order**.   
    
    ![](Images/mjv2-42.png)
    
-1. After that you will recieve a pop-up page for Successfully placing an order.
+13. After that you will recieve a pop-up page for Successfully placing an order.
   
    ![](Images/mjv2-43.png)
 
