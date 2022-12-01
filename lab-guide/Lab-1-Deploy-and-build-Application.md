@@ -26,14 +26,14 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
     ```shell
     git clone https://github.com/CloudLabsAI-Azure/acme-fitness-store
-    cp ./scripts/setup-env-variables-template.sh ./scripts/setup-env-variables.sh
+    cd acme-fitness-store
     ```
 
 1. To open the `./scripts/setup-env-variables.sh` file, run the following command :
 
    ```shell
    cd azure
-   vim setup-env-variables.sh
+   vim setup-env-variables-template.sh
    ```
 
 1. Update the following variables in the setup-env-variables.sh file by replacing the following values :
@@ -53,7 +53,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
   
    ```shell
    cd ..
-   source ./azure/setup-env-variables.sh
+   source ./azure/setup-env-variables-template.sh
    ```   
   
 1. Run the following command to login to the azure:
@@ -69,6 +69,10 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 1. Now open a browser and paste the link which you got after running the command "az login" and give the code to authenticate.
 
    ![](Images/mjv2-3.png)
+   
+1. Enter the azure credentails to from environment deatils page if necessary and click on **Continue**.
+
+   ![](Images/azure1.png)
 
 1. Run the following commands to get the list of subscriptions and also to set your subscription:
 
