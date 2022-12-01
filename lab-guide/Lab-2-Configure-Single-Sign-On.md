@@ -143,6 +143,8 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   
       <br>
       <br>
+      <br>
+      <br>
   
      ![](Images/mjv2-43.png)
 
