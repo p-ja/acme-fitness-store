@@ -214,3 +214,4 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
 
    ![](Images/mjv2-66.png)
 
+Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
