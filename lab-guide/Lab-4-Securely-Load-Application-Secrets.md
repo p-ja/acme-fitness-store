@@ -4,6 +4,18 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
 ### Task 1: Store secrets
 
+1. Choose a unique name for your Key Vault and set an environment variable with the value **keyvault<inject key="DeploymentID" enableCopy="false" />**
+    
+     ```shell
+     export KEY_VAULT=change-me      # customize this
+     ```
+1. Create an Azure Key Vault and store connection secrets.
+
+    ```shell
+    az keyvault create --name ${KEY_VAULT} -g ${RESOURCE_GROUP}
+    export KEYVAULT_URI=$(az keyvault show --name ${KEY_VAULT} | jq -r '.properties.vaultUri')
+    ```
+   
 1.  Store database connection secrets in Key Vault.
 
       ```shell
