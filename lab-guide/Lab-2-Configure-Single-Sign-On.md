@@ -10,6 +10,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    cd azure
    vim setup-sso-variables-template.sh
    ```
+   
 1. Update the following variables in the setup-env-variables.template.sh file by replacing the following values :
 
    ```shell
@@ -19,10 +20,11 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    export JWK_SET_URI=change-me          # Your SSO provider Json Web Token URI
    ```
    
-   >**Note:** You can copy the above values from environment details page.
+    >**Note:** You can copy the above values from environment details page.
 
 
    ![](Images/lab2-task1-01.png)
+
 
 1. Run the following command to set the environment and then verify the environment variables are set:
 
