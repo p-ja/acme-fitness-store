@@ -9,7 +9,7 @@ In this unit you will explore live application metrics and query logs to know th
    > Note: In future iterations, the buildpacks for non-java applications will support
    > Application Insights binding and this step will be unnecessary.
 
-1. To retrieve the Instrumentation Key for Application Insights and add to Key Vault, run the following command in the bash shell pane. (Replace ${APPLICATION_INSIGHTS} with your azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />.)
+1. To retrieve the Instrumentation Key for Application Insights and add to Key Vault, run the following command in the bash shell pane. (Replace ${APPLICATION_INSIGHTS} with your **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />**.)
 
    ```shell
       export INSTRUMENTATION_KEY=$(az monitor app-insights component show --app ${APPLICATION_INSIGHTS} | jq -r '.connectionString')
