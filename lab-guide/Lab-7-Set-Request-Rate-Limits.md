@@ -1,6 +1,6 @@
 ## Lab 6:  Set Request Rate Limits
 
-In this lab you will use Spring Cloud Gateway filters to apply rate limiting to your API.
+In this lab, you will use Spring Cloud Gateway filters to apply rate limiting to your API.
 
 ### Task 1: Spring Cloud Gateway Rate Limit Filter (Read-only)
 
@@ -9,9 +9,9 @@ Spring Cloud Gateway includes route filters from the Open Source version as well
    When defining a Route, you can add the RateLimit filter by including it in the list of filters for the route. The filter accepts 4 options:
 
    * Number of requests accepted during the window.
-   * Duration of the window: by default milliseconds, but you can use s, m or h suffix to specify it in seconds, minutes or hours.
-   * (Optional) User partition key: it's also possible to apply rate limiting per user, that is, different users can have its own throughput allowed based on an identifier found in the request. Set whether the key is in a JWT claim or HTTP header with '' or '' syntax.
-   * (Optional) It is possible to rate limit by IP addresses. Note, this cannot be combined with the rate limiting per user.
+   * Duration of the window: by default milliseconds, but you can use the s, m, or h suffix to specify it in seconds, minutes, or hours.
+   * (Optional) User partition key: it's also possible to apply rate limiting per user, that is, different users can have their throughput allowed based on an identifier found in the request. Set whether the key is in a JWT claim or HTTP header with '' or '' syntax.
+   * (Optional) It is possible to rate limit by IP addresses. Note, this cannot be combined with the rate-limiting per user.
 
    > **Note:** The following example would limit all users to two requests every 5 seconds to the `/products` route, run the following command in the bash shell pane.
 
@@ -28,7 +28,7 @@ Spring Cloud Gateway includes route filters from the Open Source version as well
    }
    ```
 
-When the limit is exceeded, response will fail with `429 Too Many Requests` status.
+When the limit is exceeded, the response will fail with `429 Too Many Requests` status.
 
 ### Task 2: Update Spring Cloud Gateway Routes
 
@@ -52,8 +52,7 @@ When the limit is exceeded, response will fail with `429 Too Many Requests` stat
    echo "https://${GATEWAY_URL}/products"
    ```
 
-   Make several requests to the URL for `/products` within a five second period to see requests fail with a status `429 Too Many Requests`.
+   Make several requests to the URL for `/products` within a five-second period to see requests fail with the status `429 Too Many Requests`.
 
 
 Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
-
