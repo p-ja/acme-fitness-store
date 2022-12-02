@@ -4,9 +4,28 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 
 ### Task 1: Prepare your environment for SSO Deployments
 
+1. To open the `./scripts/setup-sso-variables.template.sh` file, run the following command :
+
+   ```shell
+   cd azure
+   vim setup-env-variables-template.sh
+   ```
+1. 1. Update the following variables in the setup-env-variables.template.sh file by replacing the following values :
+
+   ```shell
+   export CLIENT_ID=change-me            # Your SSO provider Client ID
+   export CLIENT_SECRET=change-me        # Your SSO provider Client Secret
+   export ISSUER_URI=change-me           # Your SSO provider Issuer URI
+   export JWK_SET_URI=change-me          # Your SSO provider Json Web Token URI
+   ```
+   >**Note:** You can copy the above values from environment details page.
+
+  ![](Images/lab2-task1-01.png)
+
 1. Run the following command to set the environment and then verify the environment variables are set:
 
    ```shell
+   cd ..
    source ./azure/setup-sso-variables-ad.sh
 
    echo ${CLIENT_ID}
