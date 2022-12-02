@@ -311,5 +311,9 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
    ```
    
    ![](Images/mjv2-12.png)
+   
+1. Copy the URL and paste it in a new browser and then you should see the API portal of ACME Fitness Store Application.
+
+    ![](Images/api1.png)
 
 Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
