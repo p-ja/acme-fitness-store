@@ -42,7 +42,7 @@
    * `OIDC_CLIENT_SECRET` - use the `CLIENT_SECRET` defined in [Lab 2]
    * `OIDC_ISSUER_URI` - use the `ISSUER_URI` defined in [Lab 2]
 
-  ![](Images/secrets-count.png)
+    ![](Images/secrets-count.png)
 
 1. Add the secret `TF_BACKEND_CONFIG` to GitHub Actions with the value (replacing `${STORAGE_ACCOUNT_NAME}` and `${STORAGE_RESOURCE_GROUP}`):
 
