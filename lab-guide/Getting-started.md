@@ -1,22 +1,22 @@
 # Getting Started with Lab
 
-1. Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the the lab. You can see the number on lab guide bottom area to switch on different exercises of lab guide.
+1. Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the lab guide bottom area to switch on different exercises of the lab guide.
 
    ![](Images/cloudlab-vm-guide.png "Lab Environment")
 
-1. To get the lab environment details, you can select **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided at registration. You can also open the Lab Guide on separate and full window by selecting the **Split Window** from lower right corner. Also, you can start, stop and restart virtual machines from **Virtual Machines** tab.
+1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided at registration. You can also open the Lab Guide on a separate and full window by selecting the **Split Window** from the lower right corner. Also, you can start, stop and restart virtual machines from the **Virtual Machines** tab.
 
    ![](Images/splitwindow1.png "Lab Environment")
  
-    > You will see SUFFIX value on **Environment Details** tab, use it wherever you see SUFFIX or DeploymentID in lab steps.
+    > You will see the SUFFIX value on the **Environment Details** tab, use it wherever you see SUFFIX or DeploymentID in lab steps.
 
 
 ## Login to Azure Portal
-1. In the JumpVM, click on Azure portal shortcut of Microsoft Edge browser which is created on desktop.
+1. In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
 
    ![](Images/azure-portal.png "Lab Environment")
    
-1. On **Sign into Microsoft Azure** tab you will see login screen, in that enter following email/username and then click on **Next**. 
+1. On the **Sign into Microsoft Azure** tab you will see a login screen, in that enter the following email/username and then click on **Next**. 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
    
    ![](Images/image7.png "Enter Email")
@@ -26,7 +26,7 @@
    
    ![](Images/image8.png "Enter Password")
      
-   > If you are presented with **Help us protect your account** dialog box, then select **Skip for now** option.
+   > If you are presented with the **Help us protect your account** dialog box, then select the **Skip for now** option.
 
    ![](Images/MFA.png "Enter Password")
   
@@ -40,8 +40,8 @@
 
    ![](Images/select-rg.png "Resource groups")
    
-1. Confirm you have all resource group are present as shown below.
+1. Confirm you have all resource groups present as shown below.
 
    ![](Images/upimage10.png "Resource groups")
    
-1. Now, click on the **Next** from lower right corner to move on next page.
+1. Now, click on the **Next** from the lower right corner to move to next page.
