@@ -5,6 +5,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 ### Task 1: Prepare your environment for deployments
 
 1. If you are not logged in already, click on Azure portal shortcut that is available on the desktop and log in with below Azure credentials.
+    
     * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
     * Azure Password: <inject key="AzureAdUserPassword"></inject>
     
@@ -37,15 +38,21 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
     git clone https://github.com/Azure-Samples/acme-fitness-store
     cd acme-fitness-store
     ```
+    
+1. Create a bash script with environment variables by making a copy of the supplied template:
 
-1. To open the `./scripts/setup-env-variables.template.sh` file, run the following command :
+   ```shell
+   cp ./azure/setup-env-variables-template.sh ./azure/setup-env-variables.sh
+   ```
+
+1. To open the `./scripts/./azure/setup-env-variables.sh` file, run the following command :
 
    ```shell
    cd azure
-   vim setup-env-variables-template.sh
+   vim setup-env-variables.sh
    ```
 
-1. Update the following variables in the setup-env-variables.template.sh file by replacing the following values :
+1. Update the following variables in the setup-env-variables.sh file by replacing the following values :
 
    ```shell
    export SUBSCRIPTION=subscription-id                 # replace it with your subscription-id
@@ -64,7 +71,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
   
    ```shell
    cd ..
-   source ./azure/setup-env-variables-template.sh
+   source ./azure/setup-env-variables.sh
    ```   
   
 1. Run the following command to login to the azure:
