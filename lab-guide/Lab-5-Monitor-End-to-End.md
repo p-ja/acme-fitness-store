@@ -1,6 +1,6 @@
 ## Lab 5:  Monitor End-to-End
 
-In this unit you will explore live application metrics and query logs to know the health of your applications.
+In this unit, you will explore live application metrics and query logs to know the health of your applications.
 
 ### Task 1: Add Instrumentation Key to Key Vault
 
@@ -9,7 +9,7 @@ In this unit you will explore live application metrics and query logs to know th
    > Note: In future iterations, the buildpacks for non-java applications will support
    > Application Insights binding and this step will be unnecessary.
 
-1. To retrieve the Instrumentation Key for Application Insights and add to Key Vault, run the following command in the bash shell pane. (Replace ${APPLICATION_INSIGHTS} with your **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />**.)
+1. To retrieve the Instrumentation Key for Application Insights and add it to Key Vault, run the following command in the bash shell pane. (Replace ${APPLICATION_INSIGHTS} with your **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />**.)
 
    ```shell
       export INSTRUMENTATION_KEY=$(az monitor app-insights component show --app ${APPLICATION_INSIGHTS} | jq -r '.connectionString')
@@ -33,7 +33,7 @@ In this unit you will explore live application metrics and query logs to know th
 
 ### Task 3: Reload Applications
 
-1. Run the following command to restart applications to reload configuration. For the Java applications, this will allow the new sampling rate to take effect. For the non-java applications, this will allow them to access the Instrumentation Key from Key Vault.
+1. Run the following command to restart applications to reload the configuration. For the Java applications, this will allow the new sampling rate to take effect. For the non-java applications, this will allow them to access the Instrumentation Key from Key Vault.
 
    ```shell
    az spring app restart -n ${CART_SERVICE_APP}
@@ -95,7 +95,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
   
    ![](Images/mjv2-49.png)
 
-1. From the left panel, navigate to the `Application Map` blade under Investigate and then select time filter as **Last 4 hours**.
+1. From the left panel, navigate to the `Application Map` blade under Investigate and then select the time filter as **Last 4 hours**.
 
    ![](Images/mjv2-50.png)
    
@@ -122,7 +122,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
 
    ![](Images/mjv2-56.png)
 
-   > **Note:**  Spring Boot registers a lot number of core metrics: JVM, CPU, Tomcat, Logback...The Spring Boot auto-configuration enables the instrumentation of requests handled by Spring MVC. The REST controllers `ProductController`, and `PaymentController` have been instrumented by the `@Timed` Micrometer annotation at class  level.
+   > **Note:**  Spring Boot registers a lot number of core metrics: JVM, CPU, Tomcat, Logback...The Spring Boot auto-configuration enables the instrumentation of requests handled by Spring MVC. The REST controllers `ProductController`, and `PaymentController` have been instrumented by the `@Timed` Micrometer annotation at class level.
 
    * `acme-catalog` application has the following custom metrics enabled:
    * @Timed: `store.products`
@@ -137,7 +137,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
 
    ![](Images/mjv2-60.png)
 
-### Task 7 : Start monitoring ACME Fitness Store's logs and metrics in Azure Log Analytics
+### Task 7: Start monitoring ACME Fitness Store's logs and metrics in Azure Log Analytics
 
 1. In the **search resources, services and docs bar**, type **Log analytics workspace** and select it from suggestions, as shown below: 
 
@@ -147,7 +147,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
    
    ![](Images/mjv2-59.png)
 
-1. In the Log Analytics page, selects `Logs` blade (1) under General and paste the below Kusto query (2) and the click on **Run** (3) to see the application logs:
+1. In the Log Analytics page, selects `Logs` blade (1) under General and paste the below Kusto query (2) and click on **Run** (3) to see the application logs:
 
    ```sql
       AppPlatformLogsforSpring 
@@ -159,7 +159,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
 
    ![](Images/mjv2-61.png)
 
-1. Now paste the below Kusto query (1) and the click on **Run** (2) to see `catalog-service` application logs:
+1. Now paste the below Kusto query (1) and click on **Run** (2) to see `catalog-service` application logs:
 
    ```sql
       AppPlatformLogsforSpring 
@@ -171,7 +171,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
    
    ![](Images/mjv2-62.png)
 
-1. Now paste the below Kusto query (1) and the click on **Run** (2) to see errors and exceptions thrown by each app:
+1. Now paste the below Kusto query (1) and click on **Run** (2) to see errors and exceptions thrown by each app:
   
    ```sql
       AppPlatformLogsforSpring 
@@ -184,7 +184,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
 
    ![](Images/mjv2-63.png)
 
-1. Now paste the below Kusto query (1) and the click on **Run** (2) to see all in the inbound calls into Azure Spring Apps:
+1. Now paste the below Kusto query (1) and click on **Run** (2) to see all the inbound calls into Azure Spring Apps:
 
    ```sql
       AppPlatformIngressLogs
@@ -194,7 +194,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
    
    ![](Images/mjv2-64.png)
 
-1. Now paste the below Kusto query (1) and the click on **Run** (2) to see all the logs from Spring Cloud Gateway managed by Azure Spring Apps:
+1. Now paste the below Kusto query (1) and click on **Run** (2) to see all the logs from Spring Cloud Gateway managed by Azure Spring Apps:
 
    ```sql
       AppPlatformSystemLogs
@@ -204,7 +204,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
 
    ![](Images/mjv2-65.png)
 
-1. Now paste the below Kusto query (1) and the click on **Run** (2) to see all the logs from Spring Cloud Service Registry managed by Azure Spring Apps:
+1. Now paste the below Kusto query (1) and click on **Run** (2) to see all the logs from Spring Cloud Service Registry managed by Azure Spring Apps:
 
    ```sql
       AppPlatformSystemLogs
@@ -213,5 +213,6 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
    ```
 
    ![](Images/mjv2-66.png)
+   
 
 Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
