@@ -4,7 +4,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
 ### Task 1: Prepare your environment for deployments
 
-1. If you are not logged in already, click on Azure portal shortcut that is available on the desktop and log in with below Azure credentials.
+1. If you are not logged in already, click on the Azure portal shortcut that is available on the desktop and log in with the below Azure credentials.
     
     * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
     * Azure Password: <inject key="AzureAdUserPassword"></inject>
@@ -17,11 +17,11 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
    ![](Images/upd-L1-t1-s3.png)
 
-1. Under the you have no storage mounted pop-up, select **your subscription** (1) and then click on **Create storage** (2).
+1. Under that you have no storage mounted pop-up, select **your subscription** (1) and then click on **Create storage** (2).
 
    ![](Images/upd-L1-t1-s4.png)   
 
-1. Once the cloud drive is created, cloud shell will be launched.
+1. Once the cloud drive is created, the cloud shell will be launched.
 
 1. Run the following command to remove previous versions and install the latest Azure Spring Apps Enterprise tier extension:
 
@@ -61,7 +61,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    export LOG_ANALYTICS_WORKSPACE=log-analytics-name   # name of the existing log analytics workspace 
    export REGION=region-name                           # region should be same as the region of your azure spring apps service
    ```
-   >**Note:** You can copy the above values from environment details page.
+   >**Note:** You can copy the above values from the environment details page.
    
    > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape "ESC" key to exit insert mode and then type ":wq" to save and close the file.
   
@@ -74,7 +74,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    source ./azure/setup-env-variables.sh
    ```   
   
-1. Run the following command to login to the azure:
+1. Run the following command to log in to Azure:
 
     ```shell
    az login
@@ -88,7 +88,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
    ![](Images/mjv2-3.png)
    
-1. Enter the azure credentails to signin from environment details page if necessary and click on **Continue**.
+1. Enter the azure credentials to sign in from the environment details page if necessary and click on **Continue**.
 
    ![](Images/azure1.png)
 
@@ -98,7 +98,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    az account list -o table
    az account set --subscription ${SUBSCRIPTION}
    ```     
-   > **Note:** Replace ${SUBSCRIPTION} with the subscription Id which you can find in the Environment details page. 
+   > **Note:** Replace ${SUBSCRIPTION} with the subscription Id which you can find on the Environment details page. 
 
    ![](Images/mjv2-4.png)
    
@@ -121,7 +121,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    curl https://start.spring.io/starter.tgz -d dependencies=web -d baseDir=hello-world \ -d bootVersion=2.7.5 -d javaVersion=17 -d type=maven-project | tar -xzvf -
    ```
 
-1. Run the following command to create a new file called HelloController.java in the hello-world directory and adding the a new Spring MVC Controller inside that file.
+1. Run the following command to create a new file called HelloController.java in the hello-world directory and add the new Spring MVC Controller inside that file.
 
    ```shell
    cd hello-world
@@ -142,7 +142,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    EOF
    mv HelloController.java src/main/java/com/example/demo/HelloController.java
    ```
-1. Run the following command create the 'hello-world' app instance and deploy it to Azure Spring Apps Enterprise:
+1. Run the following command to create the 'hello-world' app instance and deploy it to Azure Spring Apps Enterprise:
 
    ```shell
    az spring app create -n hello-world
@@ -151,7 +151,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    cd ..
    ```
 
-1. Now navigate back to Azure portal and Look for your Azure Spring Apps instance in your resource group.
+1. Now navigate back to the Azure portal and Look for your Azure Spring Apps instance in your resource group.
 
 1. Click on "Apps" in the "Settings" section of the navigation pane and select "hello-world"
 
@@ -159,11 +159,11 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
 
 
 
-### Task 3: Introduction to Acme Fitness app 
+### Task 3: Introduction to the Acme Fitness app 
 
 This section discusses the demo application that you will be using in this lab to demonstrate the different features of ASA-E.
 
-Below image shows the services involved in the ACME Fitness Store. It depicts the applications and their dependencies on different ASA-E services. We will be implementing this architecture by the end of this workshop.
+The below image shows the services involved in the ACME Fitness Store. It depicts the applications and their dependencies on different ASA-E services. We will be implementing this architecture by the end of this workshop.
 ![acme-fitness](Images/architecture.png)
 
 This application is composed of several services:
@@ -298,7 +298,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
    ```
    ![](Images/mjv2-10.png)
 
-1. Copy the gateway URL and paste it in a new browser and then you should see the ACME Fitness Store Application. Explore the application, but notice that not      everything is functioning yet. Continue on to Lab 2 to configure Single Sign On to enable the rest of the functionality ( features like log in, adding items to the cart, or completing an order).
+1. Copy the gateway URL and paste it into a new browser and then you should see the ACME Fitness Store Application. Explore the application, but notice that not      everything is functioning yet. Continue to Lab 2 to configure Single Sign On to enable the rest of the functionality ( features like logging in, adding items to the cart, or completing an order).
 
    ![](Images/mjv2-11.png)
 
@@ -319,7 +319,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
    
    ![](Images/mjv2-12.png)
    
-1. Copy the URL and paste it in a new browser and then you should see the API portal of ACME Fitness Store Application.
+1. Copy the URL and paste it in a new browser and then you should see the API portal of the ACME Fitness Store Application.
 
     ![](Images/api1.png)
 
