@@ -65,7 +65,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
       ![](Images/mjv2-24.png)
 
-1.  Enable System Assigned Identities for applications and export identities to environment.
+1.  Enable System Assigned Identities for applications and export identities to the environment.
 
       ```shell
       az spring app identity assign --name ${CART_SERVICE_APP}
