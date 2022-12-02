@@ -23,8 +23,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
     >**Note:** You can copy the above values from environment details page.
 
 
-   ![](Images/lab2-task1-01.png)
-
+      ![](Images/lab2-task1-01.png)
 
 1. Run the following command to set the environment and then verify the environment variables are set:
 
@@ -118,19 +117,19 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
 9. On the Address pane of the checkout page, fill the following details and then click on **Continue to Delivery Method**:
 
-  - Firstname: odl
+    - Firstname: odl
 
-  - Lastname: user
+    - Lastname: user
   
-  - City: Seattle
+    - City: Seattle
   
-  - ZIP: 123456
+    - ZIP: 123456
   
-  - State: Washington
+    - State: Washington
   
-  - Country: USA
+    - Country: USA
   
-  - Leave the other values as blank  
+    - Leave the other values as blank  
   
    
      ![](Images/mjv2-39.png)
@@ -142,18 +141,18 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
 11. On the Payment Method pane, fill the following details and then click on **Continue to Order Review**.
 
-  - Card Type: American Express
+    - Card Type: American Express
   
-  - Credit Card Number: 1234567890123456
+    - Credit Card Number: 1234567890123456
   
-  - CCV: 678
+    - CCV: 678
   
-  - Expiration Month: 01
+    - Expiration Month: 01
   
-  - Expiration Year: 2024    
+    - Expiration Year: 2024    
    
-     <br>
-     <br>
+       <br>
+       <br>
    
      ![](Images/mjv2-41.png)
     
