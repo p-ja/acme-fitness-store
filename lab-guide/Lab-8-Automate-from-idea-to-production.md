@@ -2,7 +2,7 @@
 
 ### Task 1: Setup Github Account and Settings
 
-1. From the new browser tab, go to [Github](https://github.com/) and login to your account.
+1. From the new browser tab, go to [Github](https://github.com/) and log in to your account.
     > Note: If you don't have an account for Github, please sign up.
 
 1. After the login, go to [https://github.com/CloudLabsAI-Azure/acme-fitness-store](https://github.com/CloudLabsAI-Azure/acme-fitness-store) and click on `Fork`.
@@ -15,7 +15,7 @@
 
 1. Now you're going to add the secrets to your repo.
      
-   - The url of your repo will looks like this
+   - The URL of your repo will look like this
 
      ```text
      https://github.com/{YOURACCOUNT}}/acme-fitness-store
@@ -26,11 +26,11 @@
 
    ![](Images/L8-t2-s3.png)
    
-1. Type `AZURE_CREDENTIALS` (1) for the name of the secret, and **paste** (2) the json result obtained from creating the Service Principal in the previous step and then click on **Add Secret** (3).   
+1. Type `AZURE_CREDENTIALS` (1) for the name of the secret, and **paste** (2) the JSON result obtained from creating the Service Principal in the previous step and then click on **Add Secret** (3).   
 
    ![](Images/L8-t3-s4.png)
 
-1. In the similar way, you will add the following secrets to GitHub Actions:
+1. In a similar way, you will add the following secrets to GitHub Actions:
 
   
    * `APP_SERVICE` - Use your Spring app name.
@@ -69,4 +69,3 @@
 
 
 ## Lab Ends
-
