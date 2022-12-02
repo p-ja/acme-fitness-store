@@ -2,7 +2,7 @@
 
 In this lab, you will create persistent stores outside the applications and connect applications to those stores.
 
-### Task 1: Prepare you environment 
+### Task 1: Prepare your environment 
 
 1. Run the following bash command to make a copy of the supplied template:
 
@@ -37,7 +37,7 @@ In this lab, you will create persistent stores outside the applications and conn
    
 ### Task 2: Create Service Connectors
    
- 1. The Order Service and Catalog Service use Azure Database for Postgres, therefore run the the following command to create Service Connectors for those applications:
+ 1. The Order Service and Catalog Service use Azure Database for Postgres, therefore run the following command to create Service Connectors for those applications:
 
       ```shell
       # Bind order service to Postgres
@@ -143,7 +143,7 @@ In this task, you update the affected applications to use the databases and redi
 
    ![](Images/mjv2-33.png)
 
-   > **Note :** Notice that after restarting the cart service, the items in your cart will now persist.
+   > **Note:** Notice that after restarting the cart service, the items in your cart will now persist.
 
 1. Now verify order data is now persisted in a PostgreSQL Database by placing an order. To view your placed orders with the following URL in a browser:
 
@@ -161,6 +161,6 @@ In this task, you update the affected applications to use the databases and redi
    az spring app restart --name ${ORDER_SERVICE_APP}
    ```
    
-   > **Note :** After restarting, revisit the URL for your placed orders and notice that they persisted. 
+   > **Note:** After restarting, revisit the URL for your placed orders and notice that they persisted. 
 
 Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
