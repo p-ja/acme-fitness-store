@@ -124,24 +124,44 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
 1. Run the following command to create a new file called HelloController.java in the hello-world directory and add the new Spring MVC Controller inside that file.
 
    ```shell
-   cd gs-spring-boot/complete
-   mvn clean package -DskipTests
+   cd hello-world
+    cat >HelloController.java << EOF
+    package com.example.demo;
+
+    import org.springframework.web.bind.annotation.GetMapping;
+    import org.springframework.web.bind.annotation.RestController;
+
+    @RestController
+    public class HelloController {
+
+       @GetMapping("/hello")
+       public String hello() {
+         return "Hello from Azure Spring Apps Enterprise";
+     }
+    }
+    EOF
+    mv HelloController.java src/main/java/com/example/demo/HelloController.java
    ```
 1. Run the following command to create the 'hello-world' app instance and deploy it to Azure Spring Apps Enterprise:
 
    ```shell
-   az spring app create -n hello-world --assign-endpoint true
-   
-   az spring app deploy -n hello-world --artifact-path target/spring-boot-complete-0.0.1-SNAPSHOT.jar
-   cd ..
+    az spring app create -n hello-world --assign-endpoint true
+    ./mvnw clean package
+    az spring app deploy -n hello-world --artifact-path target/demo-0.0.1-SNAPSHOT.jar
+    cd ..
    ```
 
-1. Now navigate back to the Azure portal and Look for your Azure Spring Apps instance in your resource group.
+1. Now navigate back to the Azure portal in the browser and Look for your Azure Spring Apps instance in your resource group.
 
 1. Click on "Apps" in the "Settings" section of the navigation pane and select "hello-world"
 
-1. On the overview page, Find the "Test endpoint" in the "Essentials" section
+    ![acme-fitness](Images/hrlloword.png)
 
+1. On the overview page, Find the "Test endpoint" in the "Essentials" section, click on the link to browse the application.
+
+    ![acme-fitness](Images/testend.png)
+    
+1. A new browser tab will open and you should be able to see your **hello world** app successfuly deployed. 
 
 
 ### Task 3: Introduction to the Acme Fitness app 
