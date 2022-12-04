@@ -17,11 +17,11 @@ In this lab, you will create persistent stores outside the applications and conn
    vim setup-db-env-variables.sh
    ```
 
-1. Update the following variables in the setup-db-env-variables.sh file by replacing the following values :
+1. Update the following variables in the setup-db-env-variables.sh file by replacing the SUFFIX value :
 
    ```shell
-   export AZURE_CACHE_NAME=acme-fitness-cache-CHANGE-ME                 #Replace CHANGE_ME with the name of your azure cache for redis instance
-   export POSTGRES_SERVER=acme-fitness-db-CHANGE-ME                     #Replace CHANGE_ME with the name of your postgres server
+   export AZURE_CACHE_NAME=azure-cache-SUFFIX                   # Update the SUFFIX in the value
+   export POSTGRES_SERVER=acmefitnessdb-SUFFIX                  # Update the SUFFIX in the value
    ```
    
    ![](Images/mjv2-18.png)
@@ -71,6 +71,7 @@ In this lab, you will create persistent stores outside the applications and conn
       ![](Images/upd-mjv2-19.png)
  
  1. Run the following command to create a service connector for Cart Service to connect it to Azure Cache for Redis:
+    >Note: You can ignore any warning related to auth. 
 
       ```shell
       az spring connection create redis \
