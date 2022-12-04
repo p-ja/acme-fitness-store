@@ -9,19 +9,11 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
     * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
     * Azure Password: <inject key="AzureAdUserPassword"></inject>
     
-1.  Click on the Cloud shell icon on the top right – > Next to the search bar.    
+1. Now open gitbash from the start menu, click on the windows button and open **Git Bash**   
 
-     ![](Images/L1-t1-s2.png)                          
+     ![](Images/gitbash.png)                          
 
-1. Select on bash shell to launch. 
-
-   ![](Images/upd-L1-t1-s3.png)
-
-1. Under that you have no storage mounted pop-up, select **your subscription** (1) and then click on **Create storage** (2).
-
-   ![](Images/upd-L1-t1-s4.png)   
-
-1. Once the cloud drive is created, the cloud shell will be launched.
+1. Once the Git Bash is open, please continue with the next step.
 
 1. Run the following command to remove previous versions and install the latest Azure Spring Apps Enterprise tier extension:
 
