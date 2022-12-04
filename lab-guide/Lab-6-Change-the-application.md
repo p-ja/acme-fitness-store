@@ -1,4 +1,4 @@
-# Lab 6 : Change the application code and update the app
+# Lab 6: Change the application code and update the app
 
   In this exercise, you will be updating the source code of the application and will update the spring application.
   
@@ -12,13 +12,13 @@
 
 1. The index.html file will open with VS code editor, now in the line no **67**, update the value from **Abount ACME Fitness** to **ACME Fitness key Points** and save the file using **CTRL + S**
 
-       ![](Images/keyupdate.png)
+     ![gfd](Images/keyupdate.png)
 
-       ![](Images/keyupdates2.png)
+     ![dfgj](Images/keyupdates2.png)
 
 1. Once the changes are done, now you will be publishing a new stagging deployment to the frontend application.
 
-1. Run the below command in the cmd to create a new deployment names as stagging-update for the frontend application.
+1. Run the below command in the cmd to create a new deployment name as stagging-update for the frontend application.
 
     ```bash
     az spring app deployment create --name green --app ${FRONTEND_APP} --source-path ./apps/acme-shopping 
