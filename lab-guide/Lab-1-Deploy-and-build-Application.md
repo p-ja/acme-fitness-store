@@ -55,11 +55,11 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 1. Update the following variables in the setup-env-variables.sh file by replacing the following values :
 
    ```shell
-   export SUBSCRIPTION=subscription-id                 # replace it with your subscription-id
-   export RESOURCE_GROUP=resource-group-name           # replace it with Modernize-java-apps-DID 
-   export SPRING_APPS_SERVICE=azure-spring-apps-name   # name of the existing azure spring apps service 
-   export LOG_ANALYTICS_WORKSPACE=log-analytics-name   # name of the existing log analytics workspace 
-   export REGION=region-name                           # region should be same as the region of your azure spring apps service
+    export SUBSCRIPTION=subscription-id                 # replace it with your subscription-id
+    export RESOURCE_GROUP=Modernize-java-apps-SUFFIX           # Repleace suffix with deploymentID from environment details page
+    export SPRING_APPS_SERVICE=azure-spring-apps-SUFFIX   # Repleace suffix with deploymentID from environment details page
+    export LOG_ANALYTICS_WORKSPACE=acme-log-analytic  
+    export REGION=eastus                           # choose a region with Enterprise tier support
    ```
    >**Note:** You can copy the above values from the environment details page.
    
@@ -118,36 +118,21 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
 1. To invoke the Spring Initializer for creating the Spring Boot application, run the following command :
 
    ```shell
-   curl https://start.spring.io/starter.tgz -d dependencies=web -d baseDir=hello-world \ -d bootVersion=2.7.5 -d javaVersion=17 -d type=maven-project | tar -xzvf -
+   git clone https://github.com/spring-guides/gs-spring-boot.git
    ```
 
 1. Run the following command to create a new file called HelloController.java in the hello-world directory and add the new Spring MVC Controller inside that file.
 
    ```shell
-   cd hello-world
-   cat >HelloController.java << EOF
-   package com.example.demo;
-
-   import org.springframework.web.bind.annotation.GetMapping;
-   import org.springframework.web.bind.annotation.RestController;
-
-   @RestController
-   public class HelloController {
-
-      @GetMapping("/hello")
-      public String hello() {
-        return "Hello from Azure Spring Apps Enterprise";
-    }
-   }
-   EOF
-   mv HelloController.java src/main/java/com/example/demo/HelloController.java
+   cd gs-spring-boot/complete
+   mvn clean package -DskipTests
    ```
 1. Run the following command to create the 'hello-world' app instance and deploy it to Azure Spring Apps Enterprise:
 
    ```shell
-   az spring app create -n hello-world
-   ./mvnw clean package
-   az spring app deploy -n hello-world --artifact-path target/demo-0.0.1-SNAPSHOT.jar
+   az spring app create -n hello-world --assign-endpoint true
+   
+   az spring app deploy -n hello-world --artifact-path target/spring-boot-complete-0.0.1-SNAPSHOT.jar
    cd ..
    ```
 
@@ -183,7 +168,7 @@ This application is composed of several services:
   * A frontend shopping application
 
 ### Task 4: Bind to Application Configuration Service 
-The Application configuration service is a feature of azure spring apps enterprise that makes Spring Apps config server capabilities available in a polyglot way.
+The Application configuration service is a feature of azure spring apps enterprise that makes Spring Apps config server capabilities available in a polyglot way. Please note that we have already deployed the Azure Spring app and created the required Apps to save the time during the lab.
 
 1. Run the following command to bind the spring applications to the Application Configuration Service:
  
@@ -285,7 +270,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
        --source-path ./apps/acme-shopping 
     ```
 
-    > **Note:** Deploying all applications will take approximately 5-10 minutes.
+    > **Note:** Deploying all applications will take approximately 10-15 minutes.
 
     ![](Images/mjv2-9.png)
 
