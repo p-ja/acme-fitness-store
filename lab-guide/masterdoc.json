@@ -4,11 +4,11 @@
   "Files": [
     {
       "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Getting-started.md",
-      "Order": 1
+      "Order": 2
     },
     {
       "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Overview.md",
-      "Order": 2
+      "Order": 1
     },
     {
       "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/acme-fitness-store/Azure/lab-guide/Lab-1-Deploy-and-build-Application.md",
