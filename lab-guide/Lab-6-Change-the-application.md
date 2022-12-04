@@ -12,11 +12,11 @@
 
 1. The index.html file will open with VS code editor, now in the line no **67**, update the value from **Abount ACME Fitness** to **ACME Fitness key Points** and save the file using **CTRL + S**
 
-     ![](Images/keyupdate.png)
-     
-     ![](Images/keyupdates2.png)
-     
-1.Once the changes are done, now you will be publishing a new stagging deployment to the frontend application.
+       ![](Images/keyupdate.png)
+
+       ![](Images/keyupdates2.png)
+
+1. Once the changes are done, now you will be publishing a new stagging deployment to the frontend application.
 
 1. Run the below command in the cmd to create a new deployment names as stagging-update for the frontend application.
 
