@@ -12,7 +12,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 1. Create an Azure Key Vault and store connection secrets.
 
     ```shell
-    az keyvault create --name ${KEY_VAULT} -g ${RESOURCE_GROUP}
+    
     export KEYVAULT_URI=$(az keyvault show --name ${KEY_VAULT} | jq -r '.properties.vaultUri')
     ```
    
