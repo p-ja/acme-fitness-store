@@ -22,7 +22,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
     az extension add --name spring
     ```
     
-1. To create a new folder and clone the sample app repository to your Azure Cloud account, run the following command in the bash shell pane : 
+1. To create a new folder and clone the sample app repository to your Azure Cloud account, run the following command in the bash shell pane: 
 
     ```shell
     mkdir source-code
@@ -37,7 +37,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    cp ./azure/setup-env-variables-template.sh ./azure/setup-env-variables.sh
    ```
 
-1. To open the `./scripts/./azure/setup-env-variables.sh` file, run the following command :
+1. To open the `./scripts/./azure/setup-env-variables.sh` file, run the following command:
 
    ```shell
    cd azure
@@ -48,8 +48,8 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
    ```shell
     export SUBSCRIPTION=subscription-id                 # replace it with your subscription-id
-    export RESOURCE_GROUP=Modernize-java-apps-SUFFIX           # Repleace suffix with deploymentID from environment details page
-    export SPRING_APPS_SERVICE=azure-spring-apps-SUFFIX   # Repleace suffix with deploymentID from environment details page
+    export RESOURCE_GROUP=Modernize-java-apps-SUFFIX           # Replace suffix with deploymentID from environment details page
+    export SPRING_APPS_SERVICE=azure-spring-apps-SUFFIX   # Replace suffix with deploymentID from environment details page
     export LOG_ANALYTICS_WORKSPACE=acme-log-analytic  
     export REGION=eastus                           # choose a region with Enterprise tier support
    ```
@@ -59,7 +59,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
   
    ![](Images/mjv2-1.png)
 
-1. Run the following command to move back to the acme-fitness-store directory and then set up the environment :
+1. Run the following command to move back to the acme-fitness-store directory and then set up the environment:
   
    ```shell
    cd ..
@@ -94,7 +94,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
    ![](Images/mjv2-4.png)
    
-1. Now, run the following command to set your default resource group name and cluster name :
+1. Now, run the following command to set your default resource group name and cluster name:
 
     ```shell
     az configure --defaults \
@@ -153,7 +153,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
 
     ![acme-fitness](Images/testend.png)
     
-1. A new browser tab will open and you should be able to see your **hello world** app successfuly deployed. 
+1. A new browser tab will open, and you should be able to see your **hello world** app successfully deployed. 
 
 
 ### Task 3: Introduction to the Acme Fitness app 
@@ -295,7 +295,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
    ```
    ![](Images/mjv2-10.png)
 
-1. Copy the gateway URL and paste it into a new browser and then you should see the ACME Fitness Store Application. Explore the application, but notice that not      everything is functioning yet. Continue to Lab 2 to configure Single Sign On to enable the rest of the functionality ( features like logging in, adding items to the cart, or completing an order).
+1. Copy the gateway URL and paste it into a new browser and then you should see the ACME Fitness Store Application. Explore the application but notice that not      everything is functioning yet. Continue to Lab 2 to configure Single Sign On to enable the rest of the functionality (features like logging in, adding items to the cart, or completing an order).
 
    ![](Images/mjv2-11.png)
 
