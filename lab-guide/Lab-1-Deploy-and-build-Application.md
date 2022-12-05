@@ -107,7 +107,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
 In this task, you will try to deploy a very simple hello-world spring boot app to get a high level understanding of how to deploy an asa-e app and access it.
 
-1. To invoke the Spring Initializer for creating the Spring Boot application, run the following command :
+1. A typical way to create Spring Boot applications is to use the Spring Initializer at https://start.spring.io/. For the purposes of this workshop, we will only invoke the Spring Initializer site via the curl command.
 
    ```shell
    git clone https://github.com/spring-guides/gs-spring-boot.git
