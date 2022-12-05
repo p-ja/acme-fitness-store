@@ -26,7 +26,7 @@
 
    ![](Images/L8-t2-s3.png)
    
-1. Type `AZURE_CREDENTIALS` (1) for the name of the secret, and **paste** (2) the JSON result obtained from creating the Service Principal in the previous step and then click on **Add Secret** (3).   
+1. Type `AZURE_CREDENTIALS` (1) for the name of the secret go to **Service Principal Details** and copy the secret key and **paste** (2) and then click on **Add Secret** (3).   
 
    ![](Images/L8-t3-s4.png)
 
