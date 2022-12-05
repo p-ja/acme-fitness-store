@@ -83,7 +83,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
 
    ![](Images/mjv2-29.png)
 
-> **Note:** Continue on to the next tasks while the traffic generator runs. 
+> **Note:** Continue to the next tasks while the traffic generator runs. 
 
 ### Task 6: Start monitoring apps and dependencies - in Application Insights
 
@@ -99,11 +99,11 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
 
    ![](Images/mjv2-50.png)
    
-1. From the left panel, navigate to the `Peforamnce` blade under Investigate and then click on **Operations**:
+1. From the left panel, navigate to the `Peformance` blade under Investigate and then click on **Operations**:
 
    ![](Images/mjv2-51.png)
 
-1. Now navigate to the `Performance/Dependenices` blade - you can see the performance number for dependencies, particularly SQL calls:
+1. Now navigate to the `Performance/Dependencies` blade - you can see the performance number for dependencies, particularly SQL calls:
 
    ![](Images/mjv2-52.png)
 
@@ -143,11 +143,11 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
 
    ![](Images/mjv2-58.png)
 
-1. Under Log Analytics Workspaces page, select **log-analytics-<inject key="DeploymentID" enableCopy="false" />**.
+1. Under the Log Analytics Workspaces page, select **log-analytics-<inject key="DeploymentID" enableCopy="false" />**.
    
    ![](Images/mjv2-59.png)
 
-1. In the Log Analytics page, selects `Logs` blade (1) under General and paste the below Kusto query (2) and click on **Run** (3) to see the application logs:
+1. In the Log Analytics page, select `Logs` blade (1) under General and paste the below Kusto query (2) and click on **Run** (3) to see the application logs:
 
    ```sql
       AppPlatformLogsforSpring 
