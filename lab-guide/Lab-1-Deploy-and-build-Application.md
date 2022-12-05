@@ -107,16 +107,16 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
 In this task, you will try to deploy a very simple hello-world spring boot app to get a high level understanding of how to deploy an asa-e app and access it.
 
-1. A typical way to create Spring Boot applications is to use the Spring Initializer at https://start.spring.io/. For the purposes of this workshop, we will only invoke the Spring Initializer site via the curl command.
+1. To deploy the hellpw world app and creating the Spring Boot application, run the following command :
 
    ```shell
-   curl https://start.spring.io/starter.tgz -d dependencies=web -d baseDir=hello-world \ -d bootVersion=2.7.5 -d javaVersion=17 -d type=maven-project | tar -xzvf -
+   git clone https://github.com/spring-guides/gs-spring-boot.git
    ```
 
 1. Run the following command to create a new file called HelloController.java in the hello-world directory and add the new Spring MVC Controller inside that file.
 
    ```shell
-   cd hello-world
+   cd gs-spring-bootrem
     cat >HelloController.java << EOF
     package com.example.demo;
 
@@ -133,14 +133,16 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
     }
     EOF
     mv HelloController.java src/main/java/com/example/demo/HelloController.java
+   cd gs-spring-boot/complete
+   
    ```
 1. Run the following command to create the 'hello-world' app instance and deploy it to Azure Spring Apps Enterprise:
 
    ```shell
-    az spring app create -n hello-world --assign-endpoint true
-    ./mvnw clean package
-    az spring app deploy -n hello-world --artifact-path target/demo-0.0.1-SNAPSHOT.jar
-    cd ..
+   az spring app create -n hello-world --assign-endpoint true
+   mvn clean package -DskipTests
+   az spring app deploy -n hello-world --artifact-path target/spring-boot-complete-0.0.1-SNAPSHOT.jar
+   cd ..
    ```
 
 1. Now navigate back to the Azure portal in the browser and Look for your Azure Spring Apps instance in your resource group.
