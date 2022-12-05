@@ -110,7 +110,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
 1. A typical way to create Spring Boot applications is to use the Spring Initializer at https://start.spring.io/. For the purposes of this workshop, we will only invoke the Spring Initializer site via the curl command.
 
    ```shell
-   git clone https://github.com/spring-guides/gs-spring-boot.git
+   curl https://start.spring.io/starter.tgz -d dependencies=web -d baseDir=hello-world \ -d bootVersion=2.7.5 -d javaVersion=17 -d type=maven-project | tar -xzvf -
    ```
 
 1. Run the following command to create a new file called HelloController.java in the hello-world directory and add the new Spring MVC Controller inside that file.
