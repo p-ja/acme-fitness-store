@@ -27,7 +27,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
     ```shell
     mkdir source-code
     cd source-code
-    git clone https://github.com/Azure-Samples/acme-fitness-store
+    git clone https://github.com/CloudLabsAI-Azure/acme-fitness-store
     cd acme-fitness-store
     ```
     
