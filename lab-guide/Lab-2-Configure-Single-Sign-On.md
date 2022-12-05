@@ -10,14 +10,14 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    cp ./azure/setup-sso-variables-template.sh ./azure/setup-sso-variables.sh
    ```
 
-1. To open the `./scripts/setup-sso-variables.sh` file, run the following command :
+2. To open the `./scripts/setup-sso-variables.sh` file, run the following command :
 
    ```shell
    cd azure
    vim setup-sso-variables.sh
    ```
    
-1. Update the following variables in the setup-env-variables.sh file by replacing the following values :
+3. Update the following variables in the setup-env-variables.sh file by replacing the following values :
 
    ```shell
    export CLIENT_ID=change-me            # Your SSO provider Client ID
@@ -28,10 +28,9 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
     >**Note:** You can copy the above values from environment details page.
 
+   ![](Images/lab2-task1-01.png)
 
-      ![](Images/lab2-task1-01.png)
-
-1. Run the following command to set the environment and then verify the environment variables are set:
+4. Run the following command to set the environment and then verify the environment variables are set:
 
    ```shell
    cd ..
@@ -45,7 +44,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    ```
     > **Note:** Copy the output values and save them in the notepad as these will be used later in the lab. ( The ISSUER_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/v2.0 The JWK_SET_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/discovery/v2.0/keys)
 
-1. To add the necessary web redirect URIs to the Azure AD Application Registration, run the following command:
+5. To add the necessary web redirect URIs to the Azure AD Application Registration, run the following command:
 
    ```shell
    az ad app update --id ${APPLICATION_ID} \
