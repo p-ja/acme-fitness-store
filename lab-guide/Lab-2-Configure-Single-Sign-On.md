@@ -17,7 +17,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    vim setup-sso-variables.sh
    ```
    
-1. Update the following variables in the setup-env-variables.sh file by replacing the following values :
+1. Update the following variables in the setup-env-variables.sh file by replacing the following values:
 
    ```shell
    export CLIENT_ID=change-me            # Your SSO provider Client ID
@@ -26,10 +26,11 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    export JWK_SET_URI=change-me          # Your SSO provider Json Web Token URI
    ```
    
-    >**Note:** You can copy the above values from environment details page.
+    >**Note:** You can copy the CLIENT_ID(Application id) and CLIENT_SECRET(Secret key) from the environment details page.
 
+    >**Note:** Copy the output values and save them in the notepad as these will be used later in the lab. (The ISSUER_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/v2.0 The JWK_SET_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/discovery/v2.0/keys)
 
-      ![](Images/lab2-task1-01.png)
+   ![](Images/lab2-task1-01.png)
 
 1. Run the following command to set the environment and then verify the environment variables are set:
 
@@ -43,7 +44,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    echo ${ISSUER_URI}
    echo ${JWK_SET_URI}
    ```
-    > **Note:** Copy the output values and save them in the notepad as these will be used later in the lab. ( The ISSUER_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/v2.0 The JWK_SET_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/discovery/v2.0/keys)
+  
 
 1. To add the necessary web redirect URIs to the Azure AD Application Registration, run the following command:
 
@@ -113,7 +114,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
    ![](Images/mjv2-36.png) 
 
-7. Now click on **1 items in cart** to proceed futher to place an order.   
+7. Now click on **1 item in cart** to proceed further to place an order.   
    
    ![](Images/mjv2-37.png)
    
@@ -167,7 +168,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
      ![](Images/mjv2-42.png)
    
-13. After that you will recieve a pop-up page for Successfully placing an order.
+13. After that you will receive a pop-up page for Successfully placing an order.
   
       <br>
       <br>
