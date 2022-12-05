@@ -57,7 +57,7 @@
 
 1. From your repo, click on **Actions**.
 
-1. Select **Deploy catalog** (1) under __Actions_ All worklows_ from the left side panel, and click on **Run workflow** (2). After that Click on **Run workflow** (3) under _Branch:Azure_.
+1. Select **Deploy catalog** (1) under __Actions_ All workflows_ from the left side panel and click on **Run workflow** (2). After that Click on **Run workflow** (3) under _Branch:Azure_.
 
    ![](Images/L8-t3-s2.png)
 
