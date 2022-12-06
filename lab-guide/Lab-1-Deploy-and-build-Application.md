@@ -110,7 +110,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
 1. To deploy the hellpw world app and creating the Spring Boot application, run the following command and change the directory to hello world :
 
    ```shell
-   cd hello-world
+   cd hello-world/complete
    ```
 
 1. Run the following command to create the 'hello-world' app instance and deploy it to Azure Spring Apps Enterprise:
