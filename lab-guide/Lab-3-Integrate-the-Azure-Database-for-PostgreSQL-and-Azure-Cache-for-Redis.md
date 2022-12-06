@@ -17,14 +17,14 @@ In this lab, you will create persistent stores outside the applications and conn
    vim setup-db-env-variables.sh
    ```
 
-1. Update the following variables in the setup-db-env-variables.sh file by replacing the SUFFIX value :
+1. Update the following variables in the setup-db-env-variables.sh file by replacing the SUFFIX value with **<inject key="DeploymentID" enableCopy="false" />** :
 
    ```shell
    export AZURE_CACHE_NAME=azure-cache-SUFFIX                   # Update the SUFFIX in the value
    export POSTGRES_SERVER=acmefitnessdb-SUFFIX                  # Update the SUFFIX in the value
    ```
    
-   ![](Images/mjv2-18.png)
+   ![](Images/mjv2-18-new.png)
    
    > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape "ESC" key to exit insert mode and then type ":wq" to save and close the file.
 
@@ -68,7 +68,7 @@ In this lab, you will create persistent stores outside the applications and conn
          --client-type springboot
       ```
  
-      ![](Images/upd-mjv2-19.png)
+      ![](Images/upd-mjv2-19-new.png)
  
  1. Run the following command to create a service connector for Cart Service to connect it to Azure Cache for Redis:
     >Note: You can ignore any warning related to auth. 
@@ -86,7 +86,7 @@ In this lab, you will create persistent stores outside the applications and conn
          --client-type java 
       ```
 
-      ![](Images/upd-mjv2-20.png)
+      ![](Images/upd-mjv2-20-new.png)
 
 ### Task 3: Update Applications
 
@@ -98,7 +98,7 @@ In this task, you update the affected applications to use the databases and redi
     az spring app restart --name ${CATALOG_SERVICE_APP}
    ```
   
-    ![](Images/restart-catalog.png)
+    ![](Images/restart-catalog-new.png)
     
 1. To retrieve the PostgreSQL connection string and update the Catalog Service, run the following command:
 
@@ -115,7 +115,7 @@ In this task, you update the affected applications to use the databases and redi
       --env "DatabaseProvider=Postgres" "ConnectionStrings__OrderContext=${POSTGRES_CONNECTION_STR}" "AcmeServiceSettings__AuthUrl=https://${GATEWAY_URL}"
    ```
    
-   ![](Images/mjv2-31.png)
+   ![](Images/mjv2-31-new.png)
    
 1. To retrieve the Redis connection string and update the Cart Service, run the following command:   
 
@@ -132,7 +132,7 @@ In this task, you update the affected applications to use the databases and redi
       --env "CART_PORT=8080" "REDIS_CONNECTIONSTRING=${REDIS_CONN_STR}" "AUTH_URL=https://${GATEWAY_URL}"
    ```
   
-    ![](Images/mjv2-32.png)
+    ![](Images/mjv2-32-new.png)
   
 ### Task 4: View the persisted data 
 
@@ -142,7 +142,7 @@ In this task, you update the affected applications to use the databases and redi
    az spring app restart --name ${CART_SERVICE_APP}
    ``` 
 
-   ![](Images/mjv2-33.png)
+   ![](Images/mjv2-33-new.png)
 
    > **Note:** Notice that after restarting the cart service, the items in your cart will now persist.
 
