@@ -21,7 +21,7 @@ In this lab, you will create persistent stores outside the applications and conn
 
    ```shell
    export AZURE_CACHE_NAME=azure-cache-SUFFIX                   # Update the SUFFIX in the value
-   export POSTGRES_SERVER=acmefitnessdb-SUFFIX                  # Update the SUFFIX in the value
+   export POSTGRES_SERVER=acmefitnessdbSUFFIX                  # Update the SUFFIX in the value
    ```
    
    ![](Images/mjv2-18-new.png)
@@ -92,6 +92,8 @@ In this lab, you will create persistent stores outside the applications and conn
 
 In this task, you update the affected applications to use the databases and redis cache.
 
+> **Note:** The commands listed in this task can run for up to two minutes. Hold off until the command has completed.
+
 1. Run the following command to restart the Catalog Service for the Service Connector to take effect:
 
    ```shell
@@ -149,12 +151,14 @@ In this task, you update the affected applications to use the databases and redi
 1. Now verify order data is now persisted in a PostgreSQL Database by placing an order. To view your placed orders with the following URL in a browser:
 
    ```shell
-   https://${GATEWAY_URL}/order/${USER_ID}
+   curl https://${GATEWAY_URL}/order/${USER_ID}
    ```
    > **Note :** Replace  ${GATEWAY_URL} with your spring apps gateway URL and 
    > ${USER_ID} with ODL_User<inject key="DeploymentID" enableCopy="false" /> respectively.
 
-   ![](Images/mjv2-21.png)
+1.  Browse the URL `https://${GATEWAY_URL}/order/${USER_ID}` in your browser and you will be able to see the following output.
+
+   ![](Images/browser.png)
 
 1. Run the following command to restart the order service application:
 
