@@ -170,7 +170,7 @@ The Application configuration service is a feature of azure spring apps enterpri
     
       ![](Images/mjv2-5.png)
    
-  > **Note:** Please be aware that the above commands can run for up to two minutes. 
+  > **Note:** Please be aware that the above commands can run up to two minutes. 
    
  ### Task 5: Bind to Service Registry 
  
@@ -185,7 +185,7 @@ The Application configuration service is a feature of azure spring apps enterpri
 
      ![](Images/mjv2-6.png)
 
-   > **Note:** Please be aware that the above commands can run for up to two minutes. 
+   > **Note:** Please be aware that the above commands can take up to two minutes to complete the running. 
 
 ### Task 6: Configure Spring Cloud Gateway 
 
