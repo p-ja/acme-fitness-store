@@ -1,5 +1,7 @@
 ## Lab 3: Integrate with Azure Database for PostgreSQL and Azure Cache for Redis
 
+Duration: 20 minutes
+
 In this lab, you will create persistent stores outside the applications and connect applications to those stores.
 
 ### Task 1: Prepare your environment 
