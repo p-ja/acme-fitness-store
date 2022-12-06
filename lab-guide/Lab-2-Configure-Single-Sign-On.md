@@ -1,4 +1,6 @@
 ## Lab 2: Configure Single Sign-On
+
+Duration: 20 minutes
  
 In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Azure Active Directory.
 
@@ -26,11 +28,11 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    export JWK_SET_URI=change-me          # Your SSO provider Json Web Token URI
    ```
    
-    >**Note:** You can copy the CLIENT_ID(Application id) and CLIENT_SECRET(Secret key) from the environment details page.
+    >**Note:** You can copy the CLIENT_ID(Application id), CLIENT_SECRET(Secret key) and TENANT_ID from the environment details page.
 
     >**Note:** Copy the output values and save them in the notepad as these will be used later in the lab. (The ISSUER_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/v2.0 The JWK_SET_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/discovery/v2.0/keys)
 
-   ![](Images/lab2-task1-01.png)
+   ![](Images/lab2-task1-01-new.png)
 
 1. Run the following command to set the environment and then verify the environment variables are set:
 
@@ -40,7 +42,6 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 
    echo ${CLIENT_ID}
    echo ${CLIENT_SECRET}
-   echo ${TENANT_ID}
    echo ${ISSUER_URI}
    echo ${JWK_SET_URI}
    ```
@@ -49,7 +50,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 1. To add the necessary web redirect URIs to the Azure AD Application Registration, run the following command:
 
    ```shell
-   az ad app update --id ${APPLICATION_ID} \
+   az ad app update --id ${CLIENT_ID} \
     --web-redirect-uris "https://${GATEWAY_URL}/login/oauth2/code/sso" "https://${PORTAL_URL}/oauth2-redirect.html" "https://${PORTAL_URL}/login/oauth2/code/sso"
    ```
 
@@ -82,7 +83,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    az spring app  update --name ${ORDER_SERVICE_APP} \
        --env "AcmeServiceSettings__AuthUrl=https://${GATEWAY_URL}" 
    ```
-   ![](Images/mjv2-14.png)
+   ![](Images/mjv2-14-new.png)
 
 
 ### Task 4: Login to the Application through Spring Cloud Gateway 
@@ -124,17 +125,17 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
 9. On the Address pane of the checkout page, fill the following details and then click on **Continue to Delivery Method**:
 
-    - Firstname: odl
+    - **Firstname:** odl
 
-    - Lastname: user
+    - **Lastname:** user
   
-    - City: Seattle
+    - **City:** Seattle
   
-    - ZIP: 123456
+    - **ZIP:** 123456
   
-    - State: Washington
+    - **State:** Washington
   
-    - Country: USA
+    - **Country:** USA
   
     - Leave the other values as blank  
   
@@ -148,15 +149,15 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
 11. On the Payment Method pane, fill the following details and then click on **Continue to Order Review**.
 
-    - Card Type: American Express
+    - **Card Type:** American Express
   
-    - Credit Card Number: 1234567890123456
+    - **Credit Card Number:** 1234567890123456
   
-    - CCV: 678
+    - **CCV:** 678
   
-    - Expiration Month: 01
+    - **Expiration Month:** 01
   
-    - Expiration Year: 2024    
+    - **Expiration Year:** 2024    
    
        <br>
        <br>
@@ -191,7 +192,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
        --issuer-uri ${ISSUER_URI}
    ```
 
-    ![](Images/mjv2-17.png)
+    ![](Images/mjv2-17-new.png)
 
 ### Task 6: Explore the API using API Portal 
 
