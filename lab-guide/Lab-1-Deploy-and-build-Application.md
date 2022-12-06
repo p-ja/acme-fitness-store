@@ -22,13 +22,11 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
     az extension add --name spring
     ```
     
-1. To create a new folder and clone the sample app repository to your Azure Cloud account, run the following command in the bash shell pane: 
+1. To change the directory to the sample app repository to your shell, run the following command in the bash shell pane: 
 
     ```shell
-    mkdir source-code
-    cd source-code
-    git clone https://github.com/CloudLabsAI-Azure/acme-fitness-store
-    cd acme-fitness-store
+  
+    cd source-code/acme-fitness-store
     ```
     
 1. Create a bash script with environment variables by making a copy of the supplied template:
@@ -107,35 +105,12 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
 In this task, you will try to deploy a very simple hello-world spring boot app to get a high level understanding of how to deploy an asa-e app and access it.
 
-1. To deploy the hellpw world app and creating the Spring Boot application, run the following command :
+1. To deploy the hellpw world app and creating the Spring Boot application, run the following command and change the directory to hello world :
 
    ```shell
-   git clone https://github.com/spring-guides/gs-spring-boot.git
+   cd hello-world
    ```
 
-1. Run the following command to create a new file called HelloController.java in the hello-world directory and add the new Spring MVC Controller inside that file.
-
-   ```shell
-   cd gs-spring-bootrem
-    cat >HelloController.java << EOF
-    package com.example.demo;
-
-    import org.springframework.web.bind.annotation.GetMapping;
-    import org.springframework.web.bind.annotation.RestController;
-
-    @RestController
-    public class HelloController {
-
-       @GetMapping("/hello")
-       public String hello() {
-         return "Hello from Azure Spring Apps Enterprise";
-     }
-    }
-    EOF
-    mv HelloController.java src/main/java/com/example/demo/HelloController.java
-   cd gs-spring-boot/complete
-   
-   ```
 1. Run the following command to create the 'hello-world' app instance and deploy it to Azure Spring Apps Enterprise:
 
    ```shell
