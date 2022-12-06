@@ -22,3 +22,6 @@ Throughout this hands-on lab, you will learn several things:
 ## Architecture
 
 ![acme-fitness](Images/architecture.png)
+
+
+> **Note:** Please be aware that each activity depends on the one before it. In order to complete the lab successfully, you need to ensure that you have not misssed any previous tasks while performing the lab.
