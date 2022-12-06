@@ -83,6 +83,8 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
       export IDENTITY_SERVICE_APP_IDENTITY=$(az spring app show --name ${IDENTITY_SERVICE_APP} | jq -r '.identity.principalId')
       ```
 
+     > **Note:** Please be aware that the above commands can run for up to 5 minutes. 
+
       ![](Images/mjv2-25-new.png)
 
 1.  Add an access policy to Azure Key Vault to allow Managed Identities to read secrets.
