@@ -1,4 +1,4 @@
-# Lab 6: Change the application code and update the app
+## Lab 6: Change the application code and update the app
 
   In this exercise, you will be updating the source code of the application and will update the spring application.
   
