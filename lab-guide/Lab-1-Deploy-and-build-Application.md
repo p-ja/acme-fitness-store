@@ -1,5 +1,7 @@
 ## Lab 1:  Deploy and Build Applications
 
+Duration: 40 minutes
+
 In this lab, you will learn how to build and deploy Spring applications to Azure Spring Apps.
 
 ### Task 1: Prepare your environment for deployments
@@ -167,7 +169,9 @@ The Application configuration service is a feature of azure spring apps enterpri
    ```
     
       ![](Images/mjv2-5.png)
-    
+   
+  > **Note:** Please be aware that the above commands can run for up to two minutes. 
+   
  ### Task 5: Bind to Service Registry 
  
  Applications need to communicate with each other. ASA-E internally uses Tanzu Service Registry for dynamic service discovery.
@@ -181,9 +185,13 @@ The Application configuration service is a feature of azure spring apps enterpri
 
      ![](Images/mjv2-6.png)
 
+   > **Note:** Please be aware that the above commands can run for up to two minutes. 
+
 ### Task 6: Configure Spring Cloud Gateway 
 
 In this task, you will create a spring cloud gateway instance for acme-fitness and connect all the backend services to this gateway instance. This way the gateway instance acts as the proxy for any requests that are targeted towards the acme-fitness application.
+
+> **Note:** Please be aware that the below commands can run for up to two minutes. Hold off until the commands has completed.. 
 
 1. To assign a public endpoint and update the Spring Cloud Gateway configuration with API information, run the following command:
 
@@ -200,7 +208,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
       --no-wait
     ```
 
-    ![](Images/mjv2-7.png)
+    ![](Images/mjv2-7-new.png)
 
 1. Run the following command to create routing rules for the applications:
 
@@ -261,7 +269,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
 
     > **Note:** Deploying all applications will take approximately 10-15 minutes.
 
-    ![](Images/mjv2-9.png)
+    ![](Images/mjv2-9-new.png)
 
 ### Task 8: Access the Application through Spring Cloud Gateway 
 
@@ -291,7 +299,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
    echo "https://${PORTAL_URL}"
    ```
    
-   ![](Images/mjv2-12.png)
+   ![](Images/mjv2-12-new.png)
    
 1. Copy the URL and paste it in a new browser and then you should see the API portal of the ACME Fitness Store Application.
 
