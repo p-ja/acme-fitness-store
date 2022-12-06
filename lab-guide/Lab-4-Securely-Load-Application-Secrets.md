@@ -1,5 +1,7 @@
 ## Lab 4: Securely Load Application Secrets
 
+Duration: 15 minutes
+
 In this lab, you will use Azure Key Vault to securely store and load secrets to connect to Azure services.
 
 ### Task 1: Store secrets
@@ -7,7 +9,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 1. Choose a unique name for your Key Vault and set an environment variable with the value **keyvault<inject key="DeploymentID" enableCopy="false" />**
     
      ```shell
-     export KEY_VAULT=change-me      # customize this
+     export KEY_VAULT="change-me"      # customize this
      ```
 1. Create an Azure Key Vault and store connection secrets.
 
@@ -37,7 +39,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
          --name "POSTGRES-LOGIN-PASSWORD" --value ${POSTGRES_SERVER_PASSWORD}
       ```
       
-      ![](Images/mjv2-22.png)
+      ![](Images/mjv2-22-new.png)
 
 1.  Retrieve and store redis connection secrets in Key Vault.
 
@@ -63,7 +65,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
       > Note: Creating the SSO-PROVIDER-JWK-URI Secret can be skipped if not configuring Single Sign On
 
-      ![](Images/mjv2-24.png)
+      ![](Images/mjv2-24-new.png)
 
 1.  Enable System Assigned Identities for applications and export identities to the environment.
 
@@ -81,7 +83,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
       export IDENTITY_SERVICE_APP_IDENTITY=$(az spring app show --name ${IDENTITY_SERVICE_APP} | jq -r '.identity.principalId')
       ```
 
-      ![](Images/mjv2-25.png)
+      ![](Images/mjv2-25-new.png)
 
 1.  Add an access policy to Azure Key Vault to allow Managed Identities to read secrets.
 
@@ -101,7 +103,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
       > Note: Identity Service will not exist if you haven't completed Unit 2. Skip configuring an identity or policy for this service if not configuring Single Sign-On at this point.  
 
-      ![](Images/mjv2-26.png) 
+      ![](Images/mjv2-26-new.png) 
 
 ### Task 2: Activate applications to load secrets from Azure Key Vault
 
@@ -148,6 +150,9 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
          --env "CART_PORT=8080" "KEYVAULT_URI=${KEYVAULT_URI}" "AUTH_URL=https://${GATEWAY_URL}"
       ```
 
-      ![](Images/mjv2-27.png)
+      ![](Images/mjv2-27-new.png)
+    
+    
+    > **Note:** The above commands to delete service connectors and activate applications will take upto 5 minutes. Wait until the command run is successful.
       
   Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
