@@ -1,5 +1,5 @@
 export AZURE_CACHE_NAME=azure-cache-SUFFIX                   # Update the SUFFIX in the value
-export POSTGRES_SERVER=acmefitnessdb-SUFFIX                  # Update the SUFFIX in the value
+export POSTGRES_SERVER=acmefitnessdbSUFFIX                  # Update the SUFFIX in the value
 export POSTGRES_SERVER_USER=dbadmin             
 export POSTGRES_SERVER_PASSWORD=Password.1!!        
 
