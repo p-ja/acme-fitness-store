@@ -33,6 +33,8 @@ In this unit, you will explore live application metrics and query logs to know t
       --properties sampling-rate=100 connection_string=${INSTRUMENTATION_KEY}
    ```
 
+> **Note:** The above command could take upto 10 minutes to complete. Please wait until it runs successfully. 
+
 ### Task 3: Reload Applications
 
 1. Run the following command to restart applications to reload the configuration. For the Java applications, this will allow the new sampling rate to take effect. For the non-java applications, this will allow them to access the Instrumentation Key from Key Vault.
@@ -46,6 +48,9 @@ In this unit, you will explore live application metrics and query logs to know t
    ```
 
    ![](Images/mjv2-28-new.png)
+   
+   
+   > **Note:** The above spring apps can take upto 7 minutes to finish the restarting.
 
 ### Task 4: Get the log stream for an Application
 
