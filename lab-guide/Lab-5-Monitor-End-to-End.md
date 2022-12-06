@@ -1,5 +1,7 @@
 ## Lab 5:  Monitor End-to-End
 
+Duration: 40 minutes
+
 In this unit, you will explore live application metrics and query logs to know the health of your applications.
 
 ### Task 1: Add Instrumentation Key to Key Vault
@@ -9,7 +11,7 @@ In this unit, you will explore live application metrics and query logs to know t
    > Note: In future iterations, the buildpacks for non-java applications will support
    > Application Insights binding and this step will be unnecessary.
 
-1. To retrieve the Instrumentation Key for Application Insights and add it to Key Vault, run the following command in the bash shell pane. (Replace Spring-App with your **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />**.)
+1. To retrieve the Instrumentation Key for Application Insights and add it to Key Vault, run the following command in the shell pane. (Replace Spring-App with your **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />**)
 
    ```shell
       export INSTRUMENTATION_KEY=$(az monitor app-insights component show --app Spring-App | jq -r '.connectionString')
@@ -43,7 +45,7 @@ In this unit, you will explore live application metrics and query logs to know t
    az spring app restart -n ${PAYMENT_SERVICE_APP}
    ```
 
-   ![](Images/mjv2-28.png)
+   ![](Images/mjv2-28-new.png)
 
 ### Task 4: Get the log stream for an Application
 
@@ -81,7 +83,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
    cd -
    ```
 
-   ![](Images/mjv2-29.png)
+   ![](Images/mjv2-29-new.png)
 
 > **Note:** Continue to the next tasks while the traffic generator runs. 
 
