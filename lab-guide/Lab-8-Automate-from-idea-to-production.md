@@ -1,5 +1,7 @@
 ## Lab 8: Automate from idea to production
 
+Duration: 15 minutes
+
 ### Task 1: Setup Github Account and Settings
 
 1. From the new browser tab, go to [Github](https://github.com/) and log in to your account.
