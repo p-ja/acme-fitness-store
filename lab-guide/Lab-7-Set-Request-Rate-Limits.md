@@ -41,7 +41,7 @@ When the limit is exceeded, the response will fail with `429 Too Many Requests` 
       --routes-file azure/routes/catalog-service_rate-limit.json
    ```
 
-   ![](Images/mjv2-30.png)
+   ![](Images/mjv2-30-new.png)
 
 ### Task 3: Verify Request Rate Limits
 
