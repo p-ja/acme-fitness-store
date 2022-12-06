@@ -1,5 +1,7 @@
 ## Lab 6: Change the application code and update the app
 
+Duration: 10 minutes
+
   In this exercise, you will be updating the source code of the application and will update the spring application.
   
 1. Navigate back to cmd and run the below command to open the index file where you will be making the code changes. 
