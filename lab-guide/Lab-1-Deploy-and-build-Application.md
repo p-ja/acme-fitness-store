@@ -57,7 +57,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    
    > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape "ESC" key to exit insert mode and then type ":wq" to save and close the file.
   
-   ![](Images/mjv2-1.png)
+   ![](Images/mjv2-1-new.png)
 
 1. Run the following command to move back to the acme-fitness-store directory and then set up the environment:
   
