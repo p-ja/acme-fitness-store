@@ -1,4 +1,4 @@
-## Lab 7: Automate from idea to production
+## Lab 8: Automate from idea to production
 
 ### Task 1: Setup Github Account and Settings
 
