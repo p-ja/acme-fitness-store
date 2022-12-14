@@ -55,7 +55,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    ```
    >**Note:** You can copy the above values from the environment details page.
    
-   > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape "ESC" key to exit insert mode and then type ":wq" to save and close the file.
+   > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape `CRTL + [```   key to exit insert mode and then type ":wq" to save and close the file.
   
    ![](Images/mjv2-1-new.png)
 
