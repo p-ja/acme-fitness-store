@@ -120,6 +120,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    mvn clean package -DskipTests
    az spring app deploy -n hello-world --artifact-path target/spring-boot-complete-0.0.1-SNAPSHOT.jar
    cd ..
+   cd ..
    ```
 
 1. Now navigate back to the Azure portal in the browser and Look for your Azure Spring Apps instance in your resource group.
