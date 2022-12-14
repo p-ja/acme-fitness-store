@@ -28,7 +28,8 @@ In this lab, you will create persistent stores outside the applications and conn
    
    ![](Images/mjv2-18-new.png)
    
-   > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape "ESC" key to exit insert mode and then type ":wq" to save and close the file.
+   
+   > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape `CRTL + [   key to exit insert mode and then type ":wq" to save and close the file.
 
 1. Run the following command to move back to the acme-fitness-store directory and then set up the environment:
   
