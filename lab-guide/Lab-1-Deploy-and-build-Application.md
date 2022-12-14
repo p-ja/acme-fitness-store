@@ -71,14 +71,6 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
     ```shell
    az login
    ```   
-
-1. After running the above command you will be prompted with the code to authenticate like the code which is shown in the image below.
-
-   ![](Images/mjv2-2.png)
-
-1. Now open a browser and paste the link which you got after running the command "az login" and give the code to authenticate.
-
-   ![](Images/mjv2-3.png)
    
 1. Enter the azure credentials to sign in from the environment details page if necessary and click on **Continue**.
 
