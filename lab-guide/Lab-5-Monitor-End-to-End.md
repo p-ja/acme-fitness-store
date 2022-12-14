@@ -50,7 +50,7 @@ In this unit, you will explore live application metrics and query logs to know t
    ![](Images/mjv2-28-new.png)
    
    
-   > **Note:** The above spring apps can take upto 7 minutes to finish the restarting.
+   > **Note:** The above spring apps can take upto 7 minutes to finish the restarting.Also, if any app failed to restart please run the above command again for the app only.
 
 ### Task 4: Get the log stream for an Application
 
