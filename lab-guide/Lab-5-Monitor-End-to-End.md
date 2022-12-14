@@ -76,23 +76,7 @@ In this unit, you will explore live application metrics and query logs to know t
 
 You can use `az spring app logs -h` to explore more parameters and log stream functionalities.
 
-### Task 5: Generate Traffic
-
-In this task, you will use the ACME Fitness Shop Application to generate some traffic. Move throughout the application, view the catalog, or place an order.
-
-1. To continuously generate traffic, use the traffic generator by running the following command:
-
-   ```shell
-   cd traffic-generator
-   GATEWAY_URL=https://${GATEWAY_URL} ./gradlew gatlingRun-com.vmware.acme.simulation.GuestSimulation
-   cd -
-   ```
-
-   ![](Images/mjv2-29-new.png)
-
-> **Note:** Continue to the next tasks while the traffic generator runs. 
-
-### Task 6: Start monitoring apps and dependencies - in Application Insights
+### Task 5: Start monitoring apps and dependencies - in Application Insights
 
 1. Move back to the azure portal and in the **search resources, services and docs bar**, type **Application insight** and select it from suggestions, as shown below: 
 
@@ -144,7 +128,7 @@ In this task, you will use the ACME Fitness Shop Application to generate some tr
 
    ![](Images/mjv2-60.png)
 
-### Task 7: Start monitoring ACME Fitness Store's logs and metrics in Azure Log Analytics
+### Task 6: Start monitoring ACME Fitness Store's logs and metrics in Azure Log Analytics
 
 1. In the **search resources, services and docs bar**, type **Log analytics workspace** and select it from suggestions, as shown below: 
 
