@@ -33,7 +33,7 @@ In this unit, you will explore live application metrics and query logs to know t
       --properties sampling-rate=100 connection_string=${INSTRUMENTATION_KEY}
    ```
 
-> **Note:** The above command could take upto 10 minutes to complete. Please wait until it runs successfully. 
+> **Note:** The above command could take upto 10-15 minutes to complete. Please wait until it runs successfully. 
 
 ### Task 3: Reload Applications
 
