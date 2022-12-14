@@ -161,7 +161,7 @@ In this task, you update the affected applications to use the databases and redi
 
 1.  Browse the URL `https://${GATEWAY_URL}/order/${USER_ID}` in your browser and you will be able to see the following output.
 
-   ![](Images/browser.png)
+     ![](Images/browser.png)
 
 1. Run the following command to restart the order service application:
 
