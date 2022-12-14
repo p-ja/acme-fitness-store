@@ -14,7 +14,7 @@ In this unit, you will explore live application metrics and query logs to know t
 1. To retrieve the Instrumentation Key for Application Insights and add it to Key Vault, run the following command in the shell pane. (Replace Spring-App with your **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />**)
 
    ```shell
-      export INSTRUMENTATION_KEY=$(az monitor app-insights component show --app azure-Spring-App-SUFFIX | jq -r '.connectionString')
+      export INSTRUMENTATION_KEY=$(az monitor app-insights component show --app azure-Spring-Apps-SUFFIX | jq -r '.connectionString')
 
       az keyvault secret set --vault-name ${KEY_VAULT} \
        --name "ApplicationInsights--ConnectionString" --value ${INSTRUMENTATION_KEY}
