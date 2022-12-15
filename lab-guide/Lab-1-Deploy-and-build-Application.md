@@ -100,7 +100,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
 In this task, you will try to deploy a very simple hello-world spring boot app to get a high level understanding of how to deploy an asa-e app and access it.
 
-1. To deploy the hellpw world app and creating the Spring Boot application, run the following command and change the directory to hello world :
+1. To deploy the hello world app and creating the Spring Boot application, run the following command and change the directory to hello world :
 
    ```shell
    cd hello-world/complete
@@ -111,6 +111,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    ```shell
    az spring app create -n hello-world --assign-endpoint true
    mvn clean package -DskipTests
+   az spring app deploy -n hello-world --artifact-path target/spring-boot-complete-0.0.1-SNAPSHOT.jar
    cd ..
    cd ..
    ```
