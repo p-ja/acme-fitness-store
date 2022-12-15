@@ -43,7 +43,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    code setup-env-variables.sh
    ```
 
-1. Update the following variables in the setup-env-variables.sh file by replacing the following values :
+1. Update the following variables in the setup-env-variables.sh file by replacing the following values and **Save** the file :
 
    ```shell
     export SUBSCRIPTION=subscription-id                 # replace it with your subscription-id
