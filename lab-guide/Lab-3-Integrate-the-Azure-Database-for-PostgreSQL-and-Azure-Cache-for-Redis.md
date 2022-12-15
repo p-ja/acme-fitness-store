@@ -16,21 +16,19 @@ In this lab, you will create persistent stores outside the applications and conn
 
    ```shell
    cd azure
-   vim setup-db-env-variables.sh
+   code setup-db-env-variables.sh
    ```
 
-1. Update the following variables in the setup-db-env-variables.sh file by replacing the SUFFIX value with **<inject key="DeploymentID" enableCopy="false" />** :
+1. Update the following variables in the setup-db-env-variables.sh file by replacing the SUFFIX value with **<inject key="DeploymentID" enableCopy="false" /> </inject>** and **Save** and **Close** the file:
 
    ```shell
    export AZURE_CACHE_NAME=azure-cache-SUFFIX                   # Update the SUFFIX in the value
    export POSTGRES_SERVER=acmefitnessdbSUFFIX                  # Update the SUFFIX in the value
    ```
    
-   ![](Images/mjv2-18-new.png)
+   ![](Images/Ex3-T1-S3.png)
    
    
-   > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape `CRTL + [   key to exit insert mode and then type ":wq" to save and close the file.
-
 1. Run the following command to move back to the acme-fitness-store directory and then set up the environment:
   
    ```shell
