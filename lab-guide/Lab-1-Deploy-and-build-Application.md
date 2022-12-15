@@ -40,7 +40,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
    ```shell
    cd azure
-   vim setup-env-variables.sh
+   code setup-env-variables.sh
    ```
 
 1. Update the following variables in the setup-env-variables.sh file by replacing the following values :
@@ -54,9 +54,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    ```
    >**Note:** You can copy the above values from the environment details page.
    
-   > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape `CRTL + [```   key to exit insert mode and then type ":wq" to save and close the file.
-  
-   ![](Images/mjv2-1-new.png)
+   ![](Images/Ex1-T1-S8.1.png)
 
 1. Run the following command to move back to the acme-fitness-store directory and then set up the environment:
   
@@ -113,7 +111,6 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    ```shell
    az spring app create -n hello-world --assign-endpoint true
    mvn clean package -DskipTests
-   az spring app deploy -n hello-world --artifact-path target/spring-boot-complete-0.0.1-SNAPSHOT.jar
    cd ..
    cd ..
    ```
@@ -129,7 +126,8 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
     ![acme-fitness](Images/testend.png)
     
 1. A new browser tab will open, and you should be able to see your **hello world** app successfully deployed. 
-
+   
+    ![acme-fitness](Images/Ex1-T2-S6.png)
 
 ### Task 3: Introduction to the Acme Fitness app 
 
