@@ -30,8 +30,8 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
     >**Note:** You can copy the CLIENT_ID(Application id), CLIENT_SECRET(Secret key) and TENANT_ID from the environment details page.
 
-    >**Note:** Copy the output values and save them in the notepad as these will be used later in the lab. (The ISSUER_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/v2.0 The JWK_SET_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/discovery/v2.0/keys)
-
+    >**Note:** Copy the output values and save them in the notepad as these will be used later in the lab.
+   
    ![](Images/Ex2-T1-S3.png)
 
 1. Run the following command to set the environment and then verify the environment variables are set:
