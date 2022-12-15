@@ -156,5 +156,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
     
     
     > **Note:** The above commands to delete service connectors and activate applications will take upto 5 minutes. Wait until the command run is successful.
-      
+    
+    > **Note:** After finishing the exercise, be sure not to close the Git Bash window. If you open a new Git Bash window, run `cd source-code/acme-fitness-store` command and ensure your Azure CLI is logged into your Azure subscription by running `az login` command.
+    
   Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
