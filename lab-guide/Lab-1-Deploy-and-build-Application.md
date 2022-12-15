@@ -27,8 +27,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 1. To change the directory to the sample app repository to your shell, run the following command in the bash shell pane: 
 
     ```shell
-  
-    cd source-code/acme-fitness-store
+      cd source-code/acme-fitness-store
     ```
     
 1. Create a bash script with environment variables by making a copy of the supplied template:
@@ -72,7 +71,11 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    az login
    ```   
    
-   > **Note:** Once you run the command, you will be redirected to the default browser, and then enter the **AD username:** <inject key="AzureAdUserEmail"></inject> and **Password:** <inject key="AzureAdUserPassword"></inject>, close the tab when you see the successful login message and proceed with the next command.
+   > **Note:** Once you run the command, you will be redirected to the default browser, and then enter the following:
+   > - **Azure username:** <inject key="AzureAdUserEmail"></inject>  
+   > - **Password:** <inject key="AzureAdUserPassword"></inject> 
+   > 
+   > Close the tab when you see the successful login message and proceed with the next command.
 
 
 1. Run the following commands to get the list of subscriptions and also to set your subscription:
@@ -81,6 +84,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    az account list -o table
    az account set --subscription ${SUBSCRIPTION}
    ```     
+      
    > **Note:** Replace ${SUBSCRIPTION} with the subscription Id which you can find on the Environment details page. 
 
    ![](Images/mjv2-4.png)
