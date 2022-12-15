@@ -76,6 +76,8 @@ In this unit, you will explore live application metrics and query logs to know t
 
 You can use `az spring app logs -h` to explore more parameters and log stream functionalities.
 
+> **Note:** After finishing the task, be sure not to close the Git Bash window. 
+
 ### Task 5: Start monitoring apps and dependencies - in Application Insights
 
 1. Move back to the azure portal and in the **search resources, services and docs bar**, type **Application insight** and select it from suggestions, as shown below: 
