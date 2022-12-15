@@ -72,9 +72,8 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    az login
    ```   
    
-1. Enter the azure credentials to sign in from the environment details page if necessary and click on **Continue**.
+   > **Note:** Once you run the command, you will be redirected to the default browser, and then enter the **AD username:** <inject key="AzureAdUserEmail"></inject> and **Password:** <inject key="AzureAdUserPassword"></inject>, close the tab when you see the successful login message and proceed with the next command.
 
-   ![](Images/azure1.png)
 
 1. Run the following commands to get the list of subscriptions and also to set your subscription:
 
@@ -297,5 +296,9 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
 1. Copy the URL and paste it in a new browser and then you should see the API portal of the ACME Fitness Store Application.
 
     ![](Images/api1.png)
+    
+    
+ > **Note:** After finishing the exercise, be sure not to close the Git Bash window. If you open a new Git Bash window, ensure your Azure CLI is logged into your Azure subscription by running `az login` command.
+
 
 Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
