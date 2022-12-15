@@ -169,6 +169,6 @@ In this task, you update the affected applications to use the databases and redi
    
    > **Note:** After restarting, revisit the URL for your placed orders and notice that they persisted. 
 
-   > **Note:** After finishing the exercise, be sure not to close the Git Bash window. If you open a new Git Bash window, run `cd source-code/acme-fitness-store` command and ensure your Azure CLI is logged into your Azure subscription by running `az login` command.
+   > **Note:** After finishing the exercise, be sure not to close the Git Bash window.
 
 Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
