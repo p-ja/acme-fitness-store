@@ -16,26 +16,23 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 
    ```shell
    cd azure
-   vim setup-sso-variables.sh
+   code setup-sso-variables.sh
    ```
    
-1. Update the following variables in the setup-env-variables.sh file by replacing the following values:
+1. Update the following variables in the setup-env-variables.sh file by replacing the following values and **Save** and **Close** the file:
    
-   > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape ` CRTL + [   key to exit insert mode and then type ":wq" to save and close the file.
-   > 
-
    ```shell
-   export CLIENT_ID=change-me            # Your SSO provider Client ID
-   export CLIENT_SECRET=change-me        # Your SSO provider Client Secret
-   export ISSUER_URI=change-me           # Your SSO provider Issuer URI
-   export JWK_SET_URI=change-me          # Your SSO provider Json Web Token URI
+   export CLIENT_ID=ApplicationID       #  Update with you existing application id from environment details page
+   export CLIENT_SECRET=Applicationsecret    # Update with you existing application secret from environment details page
+   export ISSUER_URI=https://login.microsoftonline.com/TenantID/v2.0        # Make sure to replace TenantID with your tenant ID
+   export JWK_SET_URI=https://login.microsoftonline.com/TenantID/discovery/v2.0/keys # Make sure to replace TenantID with your tenant ID
    ```
    
     >**Note:** You can copy the CLIENT_ID(Application id), CLIENT_SECRET(Secret key) and TENANT_ID from the environment details page.
 
-    >**Note:** Copy the output values and save them in the notepad as these will be used later in the lab. (The ISSUER_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/v2.0 The JWK_SET_URI should take the form https://login.microsoftonline.com/${TENANT_ID}/discovery/v2.0/keys)
-
-   ![](Images/lab2-task1-01-new.png)
+    >**Note:** Copy the output values and save them in the notepad as these will be used later in the lab.
+   
+   ![](Images/Ex2-T1-S3.png)
 
 1. Run the following command to set the environment and then verify the environment variables are set:
 
@@ -216,7 +213,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
     ![](Images/mjv2-44.png)
     
 
-> **Note:** After finishing the exercise, be sure not to close the Git Bash window. If you open a new Git Bash window, run `cd source-code/acme-fitness-store` command and ensure your Azure CLI is logged into your Azure subscription by running `az login` command.
+> **Note:** After finishing the exercise, be sure not to close the Git Bash window.
 
   
   Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.

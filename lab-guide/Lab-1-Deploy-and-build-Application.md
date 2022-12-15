@@ -27,8 +27,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 1. To change the directory to the sample app repository to your shell, run the following command in the bash shell pane: 
 
     ```shell
-  
-    cd source-code/acme-fitness-store
+      cd source-code/acme-fitness-store
     ```
     
 1. Create a bash script with environment variables by making a copy of the supplied template:
@@ -41,10 +40,10 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
 
    ```shell
    cd azure
-   vim setup-env-variables.sh
+   code setup-env-variables.sh
    ```
 
-1. Update the following variables in the setup-env-variables.sh file by replacing the following values :
+1. Update the following variables in the setup-env-variables.sh file by replacing the following values and **Save** and **Close** the file :
 
    ```shell
     export SUBSCRIPTION=subscription-id                 # replace it with your subscription-id
@@ -55,9 +54,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    ```
    >**Note:** You can copy the above values from the environment details page.
    
-   > **Note:** You can use the arrow keys to move around in the file. Press the "i" key to enter insert mode to make the required changes. After making the changes press the escape `CRTL + [```   key to exit insert mode and then type ":wq" to save and close the file.
-  
-   ![](Images/mjv2-1-new.png)
+   ![](Images/Ex1-T1-S8.1.png)
 
 1. Run the following command to move back to the acme-fitness-store directory and then set up the environment:
   
@@ -72,7 +69,11 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    az login
    ```   
    
-   > **Note:** Once you run the command, you will be redirected to the default browser, and then enter the **AD username:** <inject key="AzureAdUserEmail"></inject> and **Password:** <inject key="AzureAdUserPassword"></inject>, close the tab when you see the successful login message and proceed with the next command.
+   > **Note:** Once you run the command, you will be redirected to the default browser, and then enter the following:
+   > - **Azure username:** <inject key="AzureAdUserEmail"></inject>  
+   > - **Password:** <inject key="AzureAdUserPassword"></inject> 
+   > 
+   > Close the tab when you see the successful login message and proceed with the next command.
 
 
 1. Run the following commands to get the list of subscriptions and also to set your subscription:
@@ -81,6 +82,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
    az account list -o table
    az account set --subscription ${SUBSCRIPTION}
    ```     
+      
    > **Note:** Replace ${SUBSCRIPTION} with the subscription Id which you can find on the Environment details page. 
 
    ![](Images/mjv2-4.png)
@@ -109,7 +111,6 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    ```shell
    az spring app create -n hello-world --assign-endpoint true
    mvn clean package -DskipTests
-   az spring app deploy -n hello-world --artifact-path target/spring-boot-complete-0.0.1-SNAPSHOT.jar
    cd ..
    cd ..
    ```
@@ -125,7 +126,8 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
     ![acme-fitness](Images/testend.png)
     
 1. A new browser tab will open, and you should be able to see your **hello world** app successfully deployed. 
-
+   
+    ![acme-fitness](Images/Ex1-T2-S6.png)
 
 ### Task 3: Introduction to the Acme Fitness app 
 
@@ -298,7 +300,7 @@ In this task, you will create a spring cloud gateway instance for acme-fitness a
     ![](Images/api1.png)
     
     
- > **Note:** After finishing the exercise, be sure not to close the Git Bash window. If you open a new Git Bash window, run `cd source-code/acme-fitness-store` command and ensure your Azure CLI is logged into your Azure subscription by running `az login` command.
+ > **Note:** After finishing the exercise, be sure not to close the Git Bash window.
 
 
 Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.

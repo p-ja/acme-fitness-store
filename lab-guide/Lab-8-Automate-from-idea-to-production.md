@@ -24,13 +24,29 @@ Duration: 15 minutes
      ```
 1. From your repo, click on **Settings**.
 
-1. Find **Secrets** (1) under _Security_ on the left side of menu, and click on **Actions** (2). After that Click on **New repository secret** (3).
-
+1. Find **Secrets** **(1)** under _Security_ on the left side of menu, and click on **Actions** **(2)**. After that Click on **New repository secret** **(3)**.
+  
    ![](Images/L8-t2-s3.png)
    
-1. Type `AZURE_CREDENTIALS` (1) for the name of the secret go to **Service Principal Details** and copy the secret key and **paste** (2) and then click on **Add Secret** (3).   
+1. Type `AZURE_CREDENTIALS` **(1)** for the name of the secret, enter the following code under secret and make sure replace the values of **ClientId (Application Id)**, **ClientSecret (Secret Key)**,**Subscription_ID** and **TenantId (Directory ID)** **(2)** and then click on **Add Secret** **(3)**.   
 
-   ![](Images/L8-t3-s4.png)
+     ```json
+    {
+        "clientId": "Application_ID",
+        "clientSecret": "Application_secret",
+        "subscriptionId": "Subscription_ID",
+        "tenantId": "TENANT_ID",
+        "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+        "resourceManagerEndpointUrl": "https://management.azure.com/",
+        "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+        "galleryEndpointUrl": "https://gallery.azure.com/",
+        "managementEndpointUrl": "https://management.core.windows.net/"
+    }
+    ```
+     
+     >**Note:** You can copy the **ClientId (Application Id)**, **ClientSecret (Secret Key)**, **Subscription_ID** and **TenantId (Directory ID)** from the environment details page.
+
+   ![](Images/Ex8-T2-S4.png)
 
 1. In a similar way, you will add the following secrets to GitHub Actions:
 

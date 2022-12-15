@@ -6,7 +6,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
 ### Task 1: Store secrets
 
-1. Choose a unique name for your Key Vault and set an environment variable with the value **keyvault<inject key="DeploymentID" enableCopy="false" />**
+1. Choose a unique name for your Key Vault and set an environment variable with the value **keyvault<inject key="DeploymentID" enableCopy="false" />**.
     
      ```shell
      export KEY_VAULT="change-me"      # customize this
@@ -14,7 +14,6 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 1. Create an Azure Key Vault and store connection secrets.
 
     ```shell
-    
     export KEYVAULT_URI=$(az keyvault show --name ${KEY_VAULT} | jq -r '.properties.vaultUri')
     ```
    
@@ -110,7 +109,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 ### Task 2: Activate applications to load secrets from Azure Key Vault
 
 
-1. To delete Service Connectors and activate applications to load secrets from Azure Key Vault, run the following command in the bash shell pane.
+1. To delete Service Connectors and activate applications to load secrets from Azure Key Vault, run the following command in the git bash.
 
       ```shell
       az spring connection delete \
@@ -157,6 +156,6 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
     
     > **Note:** The above commands to delete service connectors and activate applications will take upto 5 minutes. Wait until the command run is successful.
     
-    > **Note:** After finishing the exercise, be sure not to close the Git Bash window. If you open a new Git Bash window, run `cd source-code/acme-fitness-store` command and ensure your Azure CLI is logged into your Azure subscription by running `az login` command.
+    > **Note:** After finishing the exercise, be sure not to close the Git Bash window.
     
   Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.

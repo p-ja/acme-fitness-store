@@ -8,7 +8,7 @@ In this unit, you will explore live application metrics and query logs to know t
 
 1. The Application Insights Instrumentation Key must be provided for the non-java applications.
 
-   > Note: In future iterations, the buildpacks for non-java applications will support
+   > **Note:** In future iterations, the buildpacks for non-java applications will support
    > Application Insights binding and this step will be unnecessary.
 
 1. To retrieve the Instrumentation Key for Application Insights and add it to Key Vault, run the following command in the shell pane. (Replace Spring-App with your **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />**)
@@ -136,9 +136,9 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
 
    ![](Images/mjv2-58.png)
 
-1. Under the Log Analytics Workspaces page, select **log-analytics-<inject key="DeploymentID" enableCopy="false" />**.
+1. Under the Log Analytics Workspaces page, select **acme-log-analytic**.
    
-   ![](Images/mjv2-59.png)
+   ![](Images/Ex5-T6-S2.png)
 
 1. In the Log Analytics page, select `Logs` blade (1) under General and paste the below Kusto query (2) and click on **Run** (3) to see the application logs:
 
