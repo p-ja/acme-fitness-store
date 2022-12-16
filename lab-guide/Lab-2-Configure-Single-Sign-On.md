@@ -45,7 +45,8 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    echo ${ISSUER_URI}
    echo ${JWK_SET_URI}
    ```
-  
+   
+   > **Note**: Copy the above four values to the text editor, you will be using these values in Lab 8.
 
 1. To add the necessary web redirect URIs to the Azure AD Application Registration, run the following command:
 
