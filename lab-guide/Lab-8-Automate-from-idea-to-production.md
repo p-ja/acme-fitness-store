@@ -51,10 +51,10 @@ Duration: 15 minutes
 1. In a similar way, you will add the following secrets to GitHub Actions:
 
   
-   * `APP_SERVICE` - Use your Spring app name.
-   * `RESOURCE_GROUP` - with the value of your resource group that you are using for this lab.
-   * `KEYVAULT` - with the value for your keyvault deployed in your environment.
-   * `AZURE_LOCATION` - this is the Azure Region your resources will be created in.
+   * `APP_SERVICE` - Provide app service name as **<inject key="Spring App Name" />**
+   * `RESOURCE_GROUP` - Provide the RG name **<inject key="Resource Group Name" />**
+   * `KEYVAULT` - provide the Key vault name **<inject key="KeyVault Name" />**
+   * `AZURE_LOCATION` - Provide the region **<inject key="Region" />**
    * `OIDC_JWK_SET_URI` - use the `JWK_SET_URI` defined in [Lab 2]
    * `OIDC_CLIENT_ID` - use the `CLIENT_ID` defined in [Lab 2]
    * `OIDC_CLIENT_SECRET` - use the `CLIENT_SECRET` defined in [Lab 2]
