@@ -139,8 +139,12 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
 1. Under the Log Analytics Workspaces page, select **acme-log-analytic**.
    
    ![](Images/Ex5-T6-S2.png)
+   
+1. In the Log Analytics page, select `Logs` blade (1) under General and close the default query page by clicking on `X` **(2)** on the top right corner.
 
-1. In the Log Analytics page, select `Logs` blade (1) under General and paste the below Kusto query (2) and click on **Run** (3) to see the application logs:
+   ![](Images/log-welcome.png)
+
+1. In the **Logs** blade (1), paste the below Kusto query **(2)** and click on **Run (3)** to see the application logs:
 
    ```sql
       AppPlatformLogsforSpring 
@@ -152,7 +156,7 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
 
    ![](Images/mjv2-61.png)
 
-1. Now paste the below Kusto query (1) and click on **Run** (2) to see `catalog-service` application logs:
+1. Click on `+` **(1)** to create the new query. Now paste the below Kusto query **(2)** and click on **Run (3)** to see `catalog-service` application logs:
 
    ```sql
       AppPlatformLogsforSpring 
@@ -162,9 +166,9 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
       | project TimeGenerated, AppName, Log
    ```
    
-   ![](Images/mjv2-62.png)
+   ![](Images/mjv2-62-new.png)
 
-1. Now paste the below Kusto query (1) and click on **Run** (2) to see errors and exceptions thrown by each app:
+1. Click on `+` **(1)** to create the new query. Now paste the below Kusto query **(2)** and click on **Run (3)** to see errors and exceptions thrown by each app:
   
    ```sql
       AppPlatformLogsforSpring 
@@ -175,9 +179,9 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
       | render piechart
    ```
 
-   ![](Images/mjv2-63.png)
+   ![](Images/mjv2-63-new.png)
 
-1. Now paste the below Kusto query (1) and click on **Run** (2) to see all the inbound calls into Azure Spring Apps:
+1. Click on `+` **(1)** to create the new query. Now paste the below Kusto query **(2)** and click on **Run (3)** to see all the inbound calls into Azure Spring Apps:
 
    ```sql
       AppPlatformIngressLogs
@@ -185,9 +189,9 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
       | sort by TimeGenerated
    ```
    
-   ![](Images/mjv2-64.png)
+   ![](Images/mjv2-64-new.png)
 
-1. Now paste the below Kusto query (1) and click on **Run** (2) to see all the logs from Spring Cloud Gateway managed by Azure Spring Apps:
+1. Click on `+` **(1)** to create the new query. Now paste the below Kusto query **(2)** and click on **Run (3)** to see all the logs from Spring Cloud Gateway managed by Azure Spring Apps:
 
    ```sql
       AppPlatformSystemLogs
@@ -195,9 +199,9 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
       | project TimeGenerated,Log
    ```
 
-   ![](Images/mjv2-65.png)
+   ![](Images/mjv2-65-new.png)
 
-1. Now paste the below Kusto query (1) and click on **Run** (2) to see all the logs from Spring Cloud Service Registry managed by Azure Spring Apps:
+1. Click on `+` **(1)** to create the new query. Now paste the below Kusto query **(2)** and click on **Run (3)** to see all the logs from Spring Cloud Service Registry managed by Azure Spring Apps:
 
    ```sql
       AppPlatformSystemLogs
@@ -205,7 +209,7 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
       | project TimeGenerated, Log
    ```
 
-   ![](Images/mjv2-66.png)
+   ![](Images/mjv2-66-new.png)
    
 
 Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
