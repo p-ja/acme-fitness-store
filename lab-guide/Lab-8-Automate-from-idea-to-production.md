@@ -1,4 +1,4 @@
-## Lab 8: Automate from idea to production (optional)
+## Lab 8: Automate from idea to production (Optional)
 
 Duration: 15 minutes
 
