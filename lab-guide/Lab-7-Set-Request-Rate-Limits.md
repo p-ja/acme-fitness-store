@@ -1,4 +1,4 @@
-## Lab 7:  Set Request Rate Limits
+## Lab 7:  Set Request Rate Limits (Optional)
 Duration: 15 Minutes
 
 In this lab, you will use Spring Cloud Gateway filters to apply rate limiting to your API.
