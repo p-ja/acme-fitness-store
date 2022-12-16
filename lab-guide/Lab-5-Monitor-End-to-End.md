@@ -33,7 +33,7 @@ In this unit, you will explore live application metrics and query logs to know t
       --properties sampling-rate=100 connection_string=${INSTRUMENTATION_KEY}
    ```
 
-> **Note:** The above command could take upto 10-15 minutes to complete. Please wait until it runs successfully. 
+> **Note:** The above command could take upto 10-15 minutes to complete. Please wait until it runs successfully. In the mean time, you can learn about sampling in application insights from [here](https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling?tabs=net-core-new).
 
 ### Task 3: Reload Applications
 
