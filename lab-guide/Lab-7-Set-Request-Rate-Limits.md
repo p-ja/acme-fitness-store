@@ -45,7 +45,7 @@ When the limit is exceeded, the response will fail with `429 Too Many Requests` 
    ![](Images/mjv2-30-new.png)
    
    
-   > **Note:** If you are using a new Git Bash window, run `cd source-code/acme-fitness-store` command and ensure your Azure CLI is logged into your Azure subscription by running `az login` command.
+   > **Note:** Make sure you are using the same Git Bash window without closing it from previous exercise.
 
 ### Task 3: Verify Request Rate Limits
 
