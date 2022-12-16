@@ -2,7 +2,15 @@
 
 Duration: 15 minutes
 
-In this lab, you will use Azure Key Vault to securely store and load secrets to connect to Azure services.
+In this lab, you will use Azure Key Vault to securely store and load secrets to connect to Azure services. **Microsoft Azure Key Vault** service focuses on the security of the below subjects:
+
+ - **Secret Management**: The Azure Key Vault service can be used to securely store and control access of secrets, such as authentication keys, storage account keys, passwords, tokens, API keys, .pfx files, and other secrets.
+ 
+ - **Key Management**: The Azure Key Vault service can be used to manage the encryption keys for data encryption.
+
+ - **Certificate Management**: The Azure Key Vault service enables you to provision, manage, and deploy SSL/TLS certificates seamlessly for use with Azure integrated services.
+
+**Azure Key Vault** allow users to securely manage application key/secrets by enforcing role-based access policies. Applications have no direct access to keys, this ensures that secrets are not passed on to a person who has no permissions to the respective resources.
 
 ### Task 1: Store secrets
 
