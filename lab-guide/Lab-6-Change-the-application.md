@@ -25,7 +25,10 @@ Duration: 10 minutes
     ```bash
     az spring app deployment create --name green --app ${FRONTEND_APP} --source-path ./apps/acme-shopping 
     ```
-      
+  
+    > **Note:** Please be aware that the above command can run for up to 10 minutes. Wait until it runs successfully.
+
+  
 1.  Once the creation of the new deployment is completed, browse the newly created deployment from the below URL endpoint and observe the changes. Please make sure to update the **SUFFIX** with **<inject key="DeploymentID" enableCopy="false" />** in the URL.
 
     ```
