@@ -1,4 +1,4 @@
-## Lab 6: Change the application code and update the app
+## Lab 6: Change the application code and update the app (Optional)
 
 Duration: 10 minutes
 
