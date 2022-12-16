@@ -31,8 +31,8 @@ Throughout this hands-on lab, you will learn several things:
 
 | Lab No | Lab Name | Required/Optional | Duration |
 | ------ | -------- | ----------------- | -------- |
-| Lab 1 | [Deploy and Build Applications](https://github.com/CloudLabsAI-Azure/acme-fitness-store/blob/Azure/lab-guide/Lab-1-Deploy-and-build-Application.md) | Required | 40 Minutes |
-| Lab 2 | [Configure Single Sign-On](Lab-2-Configure-Single-Sign-On.md) | Required | 20 Minutes |
+| Lab 1 | [Deploy and Build Applications](#https://github.com/CloudLabsAI-Azure/acme-fitness-store/blob/Azure/lab-guide/Lab-1-Deploy-and-build-Application.md) | Required | 40 Minutes |
+| Lab 2 | [Configure Single Sign-On](#Lab-2-Configure-Single-Sign-On.md) | Required | 20 Minutes |
 | Lab 3 | [Integrate with Azure Database for PostgreSQL and Azure Cache for Redis](Lab-3-Integrate-the-Azure-Database-for-PostgreSQL-and-Azure-Cache-for-Redis.md)| Required | 20 Minutes |
 | Lab 4 | [Securely Load Application Secrets](Lab-4-Securely-Load-Application-Secrets.md) | Required | 15 Minutes |
 | Lab 5 | [Monitor End-to-End](Lab-5-Monitor-End-to-End.md) | Optional | 40 Minutes|
