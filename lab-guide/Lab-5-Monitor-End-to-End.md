@@ -1,4 +1,4 @@
-## Lab 5:  Monitor End-to-End
+## Lab 5:  Monitor End-to-End (Optional)
 
 Duration: 40 minutes
 
