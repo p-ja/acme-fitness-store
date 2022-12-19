@@ -131,9 +131,9 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
     
   
 
-### Task 2: Deploy Frontend apps
+### Task 2: Deploy Frontend app
 
- In this section we are going to deploy the frontend of acme-fitness (the demo application that you will be using in this lab), configure that with Spring Cloud Gateway and validate that we are able to access the frontend. You will create a spring cloud gateway instance for acme-fitness and connect all the frontend/backend services to this gateway instance. This way the gateway instance acts as the proxy for any requests that are targeted towards the acme-fitness application. Routing rules bind endpoints in the request to the backend applications. In the task below we will also create a rule in SCG to the frontend app.
+ In this section we are going to deploy the frontend of acme-fitness (the demo application that you will be using in this lab), configure that with Spring Cloud Gateway (SCG) and validate that we are able to access the frontend. You will create a spring cloud gateway instance for acme-fitness and connect all the frontend/backend services to this gateway instance. This way the gateway instance acts as the proxy for any requests that are targeted towards the acme-fitness application. Routing rules bind endpoints in the request to the backend applications. In the task below we will also create a rule in SCG to the frontend app.
 
 This diagram below shows the final result once this section is complete:
 
@@ -185,7 +185,7 @@ This diagram below shows the final result once this section is complete:
    ```
    ![](Images/mjv2-10.png)
   
-   > **Note:** If you see acme-fitness home page displayed as below, then congratulations. Your frontend app and its corresponding route in SCG are configured correctly and deployed successfully. Explore the application, but notice that not everything is functioning yet. Continue on to next section to configure the rest of the functionality.
+   > **Note:** If you see acme-fitness home page displayed as below, then it means that your frontend app and its corresponding route in SCG are configured correctly and deployed successfully. Explore the application, but notice that not everything is functioning yet. Continue on to next section to configure the rest of the functionality.
     
    ![](Images/acme-fitness-homepage.png)
    
