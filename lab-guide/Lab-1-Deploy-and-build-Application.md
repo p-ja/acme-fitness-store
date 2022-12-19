@@ -176,7 +176,7 @@ This diagram below shows the final result once this section is complete:
        --source-path ./apps/acme-shopping 
    ```
     
-   > **Note:** Deploying the application will take approximately 5-7 minutes.
+   > **Note:** Deploying the application will take approximately 2-3 minutes.
 
 1. Run the following command and then open the output from the following command in a browser:
 
