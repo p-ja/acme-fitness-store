@@ -115,6 +115,9 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    cd ..
    cd ..
    ```
+   
+   > Note: Creating and deployinf the hello-world app will around 2-3 minutes.
+
 
 1. Now navigate back to the Azure portal in the browser and Look for your Azure Spring Apps instance in your resource group.
 
