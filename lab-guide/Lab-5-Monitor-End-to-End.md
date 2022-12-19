@@ -8,7 +8,7 @@ In this unit, you will explore live application metrics and query logs to know t
 
 1. The Application Insights Instrumentation Key must be provided for the non-java applications.
 
-   > **Note:** In future iterations, the buildpacks for non-java applications will support
+   > **Note:** In future iterations, the buildpacks for non-java applications will support.
    > Application Insights binding and this step will be unnecessary.
 
 1. To retrieve the Instrumentation Key for Application Insights and add it to Key Vault, run the following command in the shell pane. Replace azure-Spring-Apps-SUFFIX with your **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />**
@@ -25,7 +25,7 @@ In this unit, you will explore live application metrics and query logs to know t
 
 ### Task 2: Update Sampling Rate
 
-1. To Increase the sampling rate for the Application Insights binding, run the following command in the bash shell pane.
+1. To Increase the sampling rate for the Application Insights binding, run the following command in the gitbash pane.
 
    ```shell
    az spring build-service builder buildpack-binding set \
@@ -35,7 +35,7 @@ In this unit, you will explore live application metrics and query logs to know t
       --properties sampling-rate=100 connection_string=${INSTRUMENTATION_KEY}
    ```
 
-> **Note:** The above command could take upto 15-20 minutes to complete. Please wait until it runs successfully. In the mean time, you can learn about sampling in application insights from [here](https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling?tabs=net-core-new).
+   > **Note:** The above command could take upto 15-20 minutes to complete. Please wait until it runs successfully. In the mean time, you can learn about sampling in application insights from [here](https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling?tabs=net-core-new).
 
 ### Task 3: Reload Applications
 
@@ -52,7 +52,7 @@ In this unit, you will explore live application metrics and query logs to know t
    ![](Images/mjv2-28-new.png)
    
    
-   > **Note:** The above spring apps can take upto 7 minutes to finish the restarting.Also, if any app failed to restart please run the above command again for the app only.
+   > **Note:** The above spring apps can take upto 7 minutes to finish the restarting. Also, if any app failed to restart please run the above command again for that app only.
 
 ### Task 4: Get the log stream for an Application
 
@@ -73,14 +73,17 @@ In this unit, you will explore live application metrics and query logs to know t
       -n ${CATALOG_SERVICE_APP} \
       -f
    ```
-
+   > Note: This command can take upto 10-15 minutes to run successfully. You don't need to wait for the commmand to get excecuted completely so in the meanwhile you can continue onto next task.
+   
    ![](Images/mjv2-47.png)
 
 You can use `az spring app logs -h` to explore more parameters and log stream functionalities.
 
-> **Note:** After finishing the task, be sure not to close the Git Bash window. 
+   > **Note:** After finishing the task, be sure not to close the Git Bash window. 
 
 ### Task 5: Start monitoring apps and dependencies - in Application Insights
+
+  > Note: At this point of the workshop, only a limited number of data visualisations may be populated. (So the result and the graphs in the screenshots below may vary)
 
 1. Move back to the azure portal and in the **search resources, services and docs bar**, type **Application insight** and select it from suggestions, as shown below: 
 
