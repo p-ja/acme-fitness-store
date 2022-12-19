@@ -2,7 +2,7 @@
 
 Duration: 40 minutes
 
-In this lab, you will learn how to build and deploy Spring applications to Azure Spring Apps.
+In this lab, you will learn how to build and deploy both frontend as well as backend Spring applications to Azure Spring Apps. In order to develop a high level grasp of how to deploy and operate the same, you will first attempt to setup a very basic hello-world spring boot app. After that, we will configure Spring Cloud Gateway, deploy the frontend and backend apps of acme-fitness (the demo application you will use in this lab), and verify that we can access the frontend. Additionally, we will change the Spring Cloud Gateway rules for these backend apps and set them up to communicate with the Application Configuration Service and the Service Registry.
 
 ### Exercise 1: Deploy a Hello World service to ASA-E 
 
