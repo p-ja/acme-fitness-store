@@ -4,7 +4,9 @@ Duration: 40 minutes
 
 In this lab, you will learn how to build and deploy Spring applications to Azure Spring Apps.
 
-### Task 1: Prepare your environment for deployments
+### Task 1: Deploy a Hello World service to ASA-E 
+
+In this task, you will try to deploy a very simple hello-world spring boot app to get a high level understanding of how to deploy an asa-e app and access it.
 
 1. If you are not logged in already, click on the Azure portal shortcut that is available on the desktop and log in with the below Azure credentials.
     
@@ -95,11 +97,7 @@ In this lab, you will learn how to build and deploy Spring applications to Azure
     location=${REGION} \
     spring=${SPRING_APPS_SERVICE}
     ```
-  
-### Task 2: Deploy a Hello World service to ASA-E 
-
-In this task, you will try to deploy a very simple hello-world spring boot app to get a high level understanding of how to deploy an asa-e app and access it.
-
+    
 1. To deploy the hello world app and creating the Spring Boot application, run the following command and change the directory to hello world :
 
    ```shell
@@ -128,7 +126,9 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
     
 1. A new browser tab will open, and you should be able to see your **hello world** app successfully deployed. 
    
-    ![acme-fitness](Images/Ex1-T2-S6.png)
+    ![acme-fitness](Images/Ex1-T2-S6.png)    
+    
+  
 
 ### Task 3: Introduction to the Acme Fitness app 
 
