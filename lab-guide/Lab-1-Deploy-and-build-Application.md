@@ -247,6 +247,8 @@ This diagram below shows the final result once this section is complete:
    > **Note:** Routing rules bind endpoints in the request to the backend applications. For example in the Cart route below, the routing rule indicates any requests to /cart/** endpoint gets routed to backend Cart App.
 
    ![](Images/mjv2-8.png)
+   
+   > **Note:** Please be aware that the above commands can run up to two minutes. 
 
 1. Run the following command to deploy and build each backend application with its required parameters:
 
