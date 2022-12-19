@@ -44,7 +44,7 @@ Duration: 15 minutes
     }
     ```
      
-     >**Note:** You can copy the **ClientId (Application Id)**, **ClientSecret (Secret Key)**, **Subscription_ID** and **TenantId (Directory ID)** from the environment details page.
+     >**Note:** You can copy the **ClientId (Application Id)**, **ClientSecret (Secret Key)**, **Subscription_ID** and **TenantId (Directory ID)** from the Environment details page > Service principal details.
 
    ![](Images/Ex8-T2-S4.png)
 
