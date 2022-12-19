@@ -168,6 +168,7 @@ This diagram below shows the final result once this section is complete:
       --app-name ${FRONTEND_APP} \
       --routes-file ./routes/frontend.json
    ```
+   ![](Images/frontend-route.png)
 
 1. Run the following command to deploy and build each application with its required parameters:
    
@@ -175,7 +176,8 @@ This diagram below shows the final result once this section is complete:
        az spring app deploy --name ${FRONTEND_APP} \
        --source-path ./apps/acme-shopping 
    ```
-    
+   ![](Images/frontend-deploy.png)
+   
    > **Note:** Deploying the application will take approximately 2-3 minutes.
 
 1. Run the following command and then open the output from the following command in a browser:
@@ -246,7 +248,7 @@ This diagram below shows the final result once this section is complete:
    
    > **Note:** Routing rules bind endpoints in the request to the backend applications. For example in the Cart route below, the routing rule indicates any requests to /cart/** endpoint gets routed to backend Cart App.
 
-   ![](Images/mjv2-8.png)
+   ![](Images/upd-mjv2-8.png)
    
    > **Note:** Please be aware that the above commands can run up to two minutes. 
 
