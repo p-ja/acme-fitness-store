@@ -162,7 +162,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
       ![](Images/mjv2-27-new.png)
     
     
-    > **Note:** The above commands to delete service connectors and activate applications will take upto 5 minutes. Wait until the command run is successful.
+    > **Note:** The above commands to delete service connectors and activate applications will take upto 8 minutes. Wait until the command run is successful.
     
     > **Note:** After finishing the exercise, be sure not to close the Git Bash window.
     
