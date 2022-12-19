@@ -132,28 +132,13 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
 
 ### Task 2: Deploy Frontend apps
 
-In this task, you will try to deploy frontend apps for your acme fitness store application (the demo application that you will be using in this lab).
+ In this section we are going to deploy the frontend of acme-fitness (the demo application that you will be using in this lab), configure that with Spring Cloud Gateway and validate that we are able to access the frontend. You will create a spring cloud gateway instance for acme-fitness and connect all the frontend/backend services to this gateway instance. This way the gateway instance acts as the proxy for any requests that are targeted towards the acme-fitness application. Routing rules bind endpoints in the request to the backend applications. In the task below we will also create a rule in SCG to the frontend app.
 
-This section below discusses the demo application that you will be using in this lab to demonstrate the different features of ASA-E.
-The below image shows the services involved in the ACME Fitness Store. It depicts the applications and their dependencies on different ASA-E services. We will be implementing this architecture by the end of this workshop.
-    ![acme-fitness](Images/architecture.png)
+This diagram below shows the final result once this section is complete:
 
-This application is composed of several services:
-
-* 3 Java Spring Boot applications:
-  * A catalog service for fetching available products
-  * A payment service for processing and approving payments for users' orders
-  * An identity service for referencing the authenticated user
-
-* 1 Python application:
-  * A cart service for managing a users' items that have been selected for purchase
-
-* 1 ASP.NET Core applications:
-  * An order service for placing orders to buy products that are in the users' carts
-
-* 1 NodeJS and static HTML Application
-  * A frontend shopping application
-
+   ![](Images/frontend.png)
+    
+> **Please note that we have already deployed the Azure Spring app and created the required frontend app to save the time during the lab.**
  
 1. To assign a public endpoint and update the Spring Cloud Gateway configuration with API information, run the following command:
 
@@ -183,7 +168,7 @@ This application is composed of several services:
       --routes-file ./routes/frontend.json
    ```
 
- 1. Run the following command to deploy and build each application with its required parameters:
+1. Run the following command to deploy and build each application with its required parameters:
    
    ```shell
        az spring app deploy --name ${FRONTEND_APP} \
@@ -197,9 +182,11 @@ This application is composed of several services:
    ```shell
     echo "https://${GATEWAY_URL}"
    ```
-   
+   ![](Images/mjv2-10.png)
+  
    > **Note:** If you see acme-fitness home page displayed as below, then congratulations. Your frontend app and its corresponding route in SCG are configured correctly and deployed successfully. Explore the application, but notice that not everything is functioning yet. Continue on to next section to configure the rest of the functionality.
-    ![](Images/mjv2-10.png)
+    
+   ![](Images/acme-fitness-homepage.png)
    
    
 
@@ -207,8 +194,37 @@ This application is composed of several services:
 
 ### Task 3: Deploy Backend applications
 
+In this section we are going to deploy the backend apps for acme-fitness application. We will also updates the rules for these backend apps in Spring Cloud Gateway and configure these apps to talk to Application Configuration Service and Service Registry. The Application configuration service is a feature of azure spring apps enterprise that makes Spring Apps config server capabilities available in a polyglot way. ASA-E internally uses Tanzu Service Registry for dynamic service discovery.
 
-1. Run the following command to create routing rules for the applications:
+This diagram below shows the final result once this section is complete:
+
+   ![](Images/scg-frontend-backend.png)
+
+> **Please note that we have already deployed the Azure Spring app and created the required backend apps to save the time during the lab.**
+
+1. Run the following command to bind the spring applications to the Application Configuration Service:
+
+   ```shell
+    az spring application-configuration-service bind --app ${PAYMENT_SERVICE_APP}
+    az spring application-configuration-service bind --app ${CATALOG_SERVICE_APP}
+   ```
+    
+   ![](Images/mjv2-5.png)
+   
+   > **Note:** Please be aware that the above commands can run up to two minutes. 
+
+1. Run the following command to bind the spring applications to the Service Registry:
+
+   ```shell
+     az spring service-registry bind --app ${PAYMENT_SERVICE_APP}
+     az spring service-registry bind --app ${CATALOG_SERVICE_APP}
+   ```
+
+   ![](Images/mjv2-6.png)
+
+   > **Note:** Please be aware that the above commands can take up to two minutes to complete the running.
+
+1. Run the following command to create routing rules for all backend applications:
 
     ```shell
     az spring gateway route-config create \
@@ -225,20 +241,13 @@ This application is composed of several services:
       --name ${CATALOG_SERVICE_APP} \
       --app-name ${CATALOG_SERVICE_APP} \
       --routes-file ./routes/catalog-service.json
-
-   az spring gateway route-config create \
-      --name ${FRONTEND_APP} \
-      --app-name ${FRONTEND_APP} \
-      --routes-file ./routes/frontend.json
    ```
-> **Note:** Deploying all applications will take approximately 10-15 minutes.
+   
+   > **Note:** Routing rules bind endpoints in the request to the backend applications. For example in the Cart route below, the routing rule indicates any requests to /cart/** endpoint gets routed to backend Cart App.
+
    ![](Images/mjv2-8.png)
 
-### Task 7: Build and Deploy Polyglot Applications 
-
- In this task, you will deploy the more sophisticated acme-fitness application to the same asa-e instance.
- 
- 1. Run the following command to deploy and build each application with its required parameters:
+1. Run the following command to deploy and build each backend application with its required parameters:
 
     ```shell
     # Deploy Payment Service
@@ -259,17 +268,11 @@ This application is composed of several services:
     az spring app deploy --name ${CART_SERVICE_APP} \
        --env "CART_PORT=8080" \
        --source-path ./apps/acme-cart 
-
-    # Deploy Frontend App
-    az spring app deploy --name ${FRONTEND_APP} \
-       --source-path ./apps/acme-shopping 
     ```
 
-    > **Note:** Deploying all applications will take approximately 10-15 minutes.
+   > **Note:** Deploying all applications will take approximately 10-15 minutes.
 
-    ![](Images/mjv2-9-new.png)
-
-### Task 8: Access the Application through Spring Cloud Gateway 
+   ![](Images/mjv2-9-new.png)
 
 1. Run the following command and then open the output from the following command in a browser:
 
@@ -278,13 +281,11 @@ This application is composed of several services:
    ```
    ![](Images/mjv2-10.png)
 
-1. Copy the gateway URL and paste it into a new browser and then you should see the ACME Fitness Store Application. Explore the application but notice that not      everything is functioning yet. Continue to Lab 2 to configure Single Sign On to enable the rest of the functionality (features like logging in, adding items to the cart, or completing an order).
+1. Copy the gateway URL and paste it into a new browser and then you should see the ACME Fitness Store Application. Now that all the required apps are deployed, you should be able to open the home page and access through the app Explore the application but notice that not everything is functioning yet. Continue to Lab 2 to configure Single Sign On to enable the rest of the functionality (features like logging in, adding items to the cart, or completing an order).
 
    ![](Images/mjv2-11.png)
 
-### Task 9: Explore the API using API Portal 
-
-1. To assign an endpoint to API Portal, run the following command:
+1. To assign an endpoint to API Portal, move back to git bash and run the following command:
 
    ```shell 
    az spring api-portal update --assign-endpoint true
