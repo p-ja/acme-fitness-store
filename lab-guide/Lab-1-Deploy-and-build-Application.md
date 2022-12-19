@@ -4,7 +4,7 @@ Duration: 40 minutes
 
 In this lab, you will learn how to build and deploy Spring applications to Azure Spring Apps.
 
-### Task 1: Deploy a Hello World service to ASA-E 
+### Exercise 1: Deploy a Hello World service to ASA-E 
 
 In this task, you will try to deploy a very simple hello-world spring boot app to get a high level understanding of how to deploy an asa-e app and access it.
 
@@ -131,7 +131,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
     
   
 
-### Task 2: Deploy Frontend app
+### Exercise 2: Deploy Frontend app
 
  In this section we are going to deploy the frontend of acme-fitness (the demo application that you will be using in this lab), configure that with Spring Cloud Gateway (SCG) and validate that we are able to access the frontend. You will create a spring cloud gateway instance for acme-fitness and connect all the frontend/backend services to this gateway instance. This way the gateway instance acts as the proxy for any requests that are targeted towards the acme-fitness application. Routing rules bind endpoints in the request to the backend applications. In the task below we will also create a rule in SCG to the frontend app.
 
@@ -193,7 +193,7 @@ This diagram below shows the final result once this section is complete:
 
 
 
-### Task 3: Deploy Backend applications
+### Exercise 3: Deploy Backend applications
 
 In this section we are going to deploy the backend apps for acme-fitness application. We will also updates the rules for these backend apps in Spring Cloud Gateway and configure these apps to talk to Application Configuration Service and Service Registry. The Application configuration service is a feature of azure spring apps enterprise that makes Spring Apps config server capabilities available in a polyglot way. ASA-E internally uses Tanzu Service Registry for dynamic service discovery.
 
