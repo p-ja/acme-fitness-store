@@ -14,7 +14,7 @@ Spring Cloud Gateway includes route filters from the Open Source version as well
    * (Optional) User partition key: it's also possible to apply rate limiting per user, that is, different users can have their throughput allowed based on an identifier found in the request. Set whether the key is in a JWT claim or HTTP header with '' or '' syntax.
    * (Optional) It is possible to rate limit by IP addresses. Note, this cannot be combined with the rate-limiting per user.
 
-   > **Note:** The following example would limit all users to two requests every 5 seconds to the `/products` route, run the following command in the bash shell pane.
+   > **Note:** The following example would limit all users to two requests every 5 seconds to the `/products` route.
 
    ```json
    {
