@@ -14,18 +14,18 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
 ### Task 1: Store secrets
 
-1. Choose a unique name for your Key Vault and set an environment variable with the value **keyvault<inject key="DeploymentID" enableCopy="false" />**.
+1. Choose a unique name for your Key Vault and set an environment variable with the value **keyvault<inject key="DeploymentID" enableCopy="false" />** (Replace "change-me" with the mentioned key vault name.)
     
      ```shell
      export KEY_VAULT="change-me"      # customize this
      ```
-1. Create an Azure Key Vault and store connection secrets.
+1. Run the following command to store connection secrets.
 
     ```shell
     export KEYVAULT_URI=$(az keyvault show --name ${KEY_VAULT} | jq -r '.properties.vaultUri')
     ```
    
-1.  Store database connection secrets in Key Vault.
+1.  To Store database connection secrets in Key Vault, run the following command:
 
       ```shell
       export POSTGRES_SERVER_FULL_NAME="${POSTGRES_SERVER}.postgres.database.azure.com"
@@ -48,7 +48,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
       
       ![](Images/mjv2-22-new.png)
 
-1.  Retrieve and store redis connection secrets in Key Vault.
+1. Run the following command to retrieve and store redis connection secrets in Key Vault.
 
       ```shell
       az redis show -n ${AZURE_CACHE_NAME} > redis.json
@@ -63,7 +63,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
       ![](Images/mjv2-23.png)
 
-1.  Store SSO Secrets in Key Vault.
+1. Run the following command to store SSO Secrets in Key Vault.
 
       ```shell
       az keyvault secret set --vault-name ${KEY_VAULT} \
@@ -74,7 +74,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
       ![](Images/mjv2-24-new.png)
 
-1.  Enable System Assigned Identities for applications and export identities to the environment.
+1. Run the following command to enable System Assigned Identities for applications and export identities to the environment.
 
       ```shell
       az spring app identity assign --name ${CART_SERVICE_APP}
@@ -94,7 +94,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
       ![](Images/mjv2-25-new.png)
 
-1.  Add an access policy to Azure Key Vault to allow Managed Identities to read secrets.
+1.  Run the following command to add an access policy to Azure Key Vault to allow Managed Identities to read secrets.
 
       ```shell
       az keyvault set-policy --name ${KEY_VAULT} \
@@ -162,7 +162,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
       ![](Images/mjv2-27-new.png)
     
     
-    > **Note:** The above commands to delete service connectors and activate applications will take upto 5 minutes. Wait until the command run is successful.
+    > **Note:** The above commands to delete service connectors and activate applications will take upto 8 minutes. Wait until the command run is successful.
     
     > **Note:** After finishing the exercise, be sure not to close the Git Bash window.
     

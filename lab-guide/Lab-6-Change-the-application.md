@@ -4,7 +4,7 @@ Duration: 10 minutes
 
   In this exercise, you will be updating the source code of the application and will update the spring application.
   
-1. Navigate back to cmd and run the below command to open the index file where you will be making the code changes. 
+1. Navigate back to gitbash pane and run the below command to open the index file where you will be making the code changes. 
 
    ```bash
    
@@ -20,7 +20,7 @@ Duration: 10 minutes
 
 1. Once the changes are done, now you will be publishing a new stagging deployment to the frontend application.
 
-1. Run the below command in the cmd to create a new deployment name as stagging-update for the frontend application.
+1. Run the below command in the gitbash to create a new deployment name as stagging-update for the frontend application.
 
     ```bash
     az spring app deployment create --name green --app ${FRONTEND_APP} --source-path ./apps/acme-shopping 
@@ -54,4 +54,4 @@ Duration: 10 minutes
     ```
      ![](Images/movetoprod.png)
     
-Now, click on Next in the lab guide section in the bottom right corner to jump to the next exercise instructions.
+Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
