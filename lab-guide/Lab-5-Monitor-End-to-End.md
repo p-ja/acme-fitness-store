@@ -83,7 +83,7 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
 
 ### Task 5: Start monitoring apps and dependencies - in Application Insights
 
-  > Note: At this point of the workshop, only a limited number of data visualisations may be populated. (So the result and the graphs in the screenshots below may vary)
+  > Note: At this point of the workshop, only a limited number of data visualizations may be populated. (So the result and the graphs in the screenshots below may vary)
 
 1. Move back to the azure portal and in the **search resources, services and docs bar**, type **Application insight** and select it from suggestions, as shown below: 
 
