@@ -8,8 +8,7 @@ In this unit, you will explore live application metrics and query logs to know t
 
 1. The Application Insights Instrumentation Key must be provided for the non-java applications.
 
-   > **Note:** In future iterations, the buildpacks for non-java applications will support.
-   > Application Insights binding and this step will be unnecessary.
+   > **Note:** In future iterations, the buildpacks for non-java applications will be support Application Insights binding and this step will be unnecessary.
 
 1. To retrieve the Instrumentation Key for Application Insights and add it to Key Vault, run the following command in the shell pane. Replace azure-Spring-Apps-SUFFIX with your **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />**
 
@@ -52,7 +51,7 @@ In this unit, you will explore live application metrics and query logs to know t
    ![](Images/mjv2-28-new.png)
    
    
-   > **Note:** The above spring apps can take upto 7 minutes to finish the restarting. Also, if any app failed to restart please run the above command again for that app only.
+   > **Note:** The above spring apps can take upto 7 minutes to finish the restarting. Also, if any app has failed to restart please run the above command again for that app only.
 
 ### Task 4: Get the log stream for an Application
 
@@ -73,7 +72,7 @@ In this unit, you will explore live application metrics and query logs to know t
       -n ${CATALOG_SERVICE_APP} \
       -f
    ```
-   > Note: This command can take upto 10-15 minutes to run successfully. You don't need to wait for the commmand to get excecuted completely so in the meanwhile you can continue onto next task.
+   > Note: This command can take upto 10-15 minutes to run successfully. You don't need to wait for the commmand to get excecuted completely so in the meanwhile you can continue with next task.
    
    ![](Images/mjv2-47.png)
 
