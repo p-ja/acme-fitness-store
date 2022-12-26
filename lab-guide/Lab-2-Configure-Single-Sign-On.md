@@ -32,7 +32,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
    ![](Images/Ex2-T1-S3.png)
 
-1. Run the following command to set the environment and then verify the environment variables are set:
+1. Run the following command to set the environment and then verify that the environment variables are set:
 
    ```shell
    cd ..
@@ -136,7 +136,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   
     - **Country:** USA
   
-    - Leave the other values as blank  
+    - Leave the other values blank  
   
    
      ![](Images/mjv2-39.png)
