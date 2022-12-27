@@ -2,7 +2,7 @@
 
 Duration: 10 minutes
 
-  In this exercise, you will be updating the source code of the application and will update the spring application.
+  In this exercise, you will be updating the source code of the application and the spring application.
   
 1. Navigate back to gitbash pane and run the below command to open the index file where you will be making the code changes. 
 
@@ -18,7 +18,7 @@ Duration: 10 minutes
 
      ![dfgj](Images/keyupdates2.png)
 
-1. Once the changes are done, now you will be publishing a new stagging deployment to the frontend application.
+1. Once the changes are done, you will be publishing a new stagging deployment to the frontend application.
 
 1. Run the below command in the gitbash to create a new deployment name as stagging-update for the frontend application.
 
@@ -26,10 +26,10 @@ Duration: 10 minutes
     az spring app deployment create --name green --app ${FRONTEND_APP} --source-path ./apps/acme-shopping 
     ```
   
-    > **Note:** Please be aware that the above command can run for up to 10 minutes. Wait until it runs successfully.
+    > **Note:** Please note that the above command can run for up to 10 minutes. Wait until it runs successfully.
 
   
-1.  Once the creation of the new deployment is completed, browse the newly created deployment from the below URL endpoint and observe the changes. Please make sure to update the **SUFFIX** with **<inject key="DeploymentID" enableCopy="false" />** in the URL.
+1.  Once the creation of the new deployment is completed, browse the newly created deployment from the below URL endpoint and observe the changes. Please update the **SUFFIX** with **<inject key="DeploymentID" enableCopy="false" />** in the URL.
 
     ```
     https://azure-spring-apps-SUFFIX.test.azuremicroservices.io/frontend/green/
@@ -37,7 +37,7 @@ Duration: 10 minutes
     
     ![](Images/green.png)
     
-1. Now, we will be moving the **green** deployment to the production so that we can see the changes from the production URL.
+1. Now, we will be moving the **green** deployment to the production to see the changes from the production URL.
 
 1. To set up the deployment to production, run the below command:
 
