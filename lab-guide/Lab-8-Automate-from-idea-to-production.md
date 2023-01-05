@@ -86,7 +86,7 @@ Duration: 15 minutes
 
    ![Output from the Deploy Catalog workflow](Images/final-result.png)
 
-1. Once the GitHub workflow is completed, navigate back to your web app and you should be able to see the new **Catalog** option added on the website.
+1. Once the GitHub workflow is completed, navigate back to your web app to see the new **Catalog** option added on the website.
 
 
 ## Lab Ends
