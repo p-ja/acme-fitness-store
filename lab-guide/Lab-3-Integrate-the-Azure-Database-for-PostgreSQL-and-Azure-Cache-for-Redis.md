@@ -38,7 +38,7 @@ In this lab, you will create persistent stores outside the applications and conn
    
 ### Task 2: Create Service Connectors
    
- 1. The Order Service and Catalog Service use Azure Database for Postgres, therefore run the following command to create Service Connectors for those applications:
+ 1. The Order Service and Catalog Service use Azure Database for Postgres, therefore, run the following command to create Service Connectors for those applications:
 
       ```shell
       # Bind order service to Postgres
@@ -91,7 +91,7 @@ In this lab, you will create persistent stores outside the applications and conn
 
 ### Task 3: Update Applications
 
-In this task, you update the affected applications to use the databases and redis cache.
+In this task, you will update the affected applications to use the databases and redis cache.
 
 > **Note:** The commands listed in this task can run for up to two minutes. Hold off until the command has completed.
 
@@ -139,7 +139,7 @@ In this task, you update the affected applications to use the databases and redi
   
 ### Task 4: View the persisted data 
 
-1. Now verify cart data is now persisted in Redis by adding a few items to your cart. Then, restart the cart service by running the following command:
+1. Verify cart data is now persisted in Redis by adding a few items to your cart. Then, restart the cart service by running the following command:
 
    ```shell
    az spring app restart --name ${CART_SERVICE_APP}
@@ -149,7 +149,7 @@ In this task, you update the affected applications to use the databases and redi
 
    > **Note:** Notice that after restarting the cart service, the items in your cart will now persist.
 
-1. Now verify order data is now persisted in a PostgreSQL Database by placing an order. To view your placed orders with the following URL in a browser:
+1. Verify order data is now persisted in a PostgreSQL Database by placing an order. To view your placed orders with the following URL in a browser:
 
    ```shell
    curl https://${GATEWAY_URL}/order/${USER_ID}
