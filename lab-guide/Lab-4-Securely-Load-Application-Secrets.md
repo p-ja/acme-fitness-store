@@ -25,7 +25,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
     export KEYVAULT_URI=$(az keyvault show --name ${KEY_VAULT} | jq -r '.properties.vaultUri')
     ```
    
-1.  To Store database connection secrets in Key Vault, run the following command:
+1.  To store database connection secrets in Key Vault, run the following command:
 
       ```shell
       export POSTGRES_SERVER_FULL_NAME="${POSTGRES_SERVER}.postgres.database.azure.com"
@@ -90,7 +90,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
       export IDENTITY_SERVICE_APP_IDENTITY=$(az spring app show --name ${IDENTITY_SERVICE_APP} | jq -r '.identity.principalId')
       ```
 
-     > **Note:** Please be aware that the above commands can run for up to 5 minutes. 
+     > **Note:** Please note that the above commands can run for up to 5 minutes. 
 
       ![](Images/mjv2-25-new.png)
 
