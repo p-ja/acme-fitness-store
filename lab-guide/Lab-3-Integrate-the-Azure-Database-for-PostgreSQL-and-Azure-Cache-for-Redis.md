@@ -72,7 +72,8 @@ In this lab, you will create persistent stores outside the applications and conn
       ![](Images/upd-mjv2-19-new.png)
  
  1. Run the following command to create a service connector for Cart Service to connect it to Azure Cache for Redis:
-    >Note: You can ignore any warning related to auth. 
+    
+     >**Note:** You can ignore any warning related to auth. 
 
       ```shell
       az spring connection create redis \
@@ -149,7 +150,7 @@ In this task, you will update the affected applications to use the databases and
 
    > **Note:** Notice that after restarting the cart service, the items in your cart will now persist.
 
-1. Verify order data is now persisted in a PostgreSQL Database by placing an order. To view your placed orders with the following URL in a browser:
+2. Verify order data is now persisted in a PostgreSQL Database by placing an order. To view your placed orders with the following URL in a browser:
 
    ```shell
    curl https://${GATEWAY_URL}/order/${USER_ID}
@@ -159,11 +160,11 @@ In this task, you will update the affected applications to use the databases and
    > **Note :** Replace ${USER_ID} with ODL_User<inject key="DeploymentID" enableCopy="false" /> respectively in the above command.
 
 
-1.  Browse the URL `https://${GATEWAY_URL}/order/${USER_ID}` in your browser and you will be able to see the following output.
+3.  Browse the URL `https://${GATEWAY_URL}/order/${USER_ID}` in your browser and you will be able to see the following output.
 
      ![](Images/browser.png)
 
-1. Run the following command to restart the order service application:
+4. Run the following command to restart the order service application:
 
    ```shell
    az spring app restart --name ${ORDER_SERVICE_APP}
