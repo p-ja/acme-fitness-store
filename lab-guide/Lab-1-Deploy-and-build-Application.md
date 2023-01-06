@@ -10,8 +10,8 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
 
 1. If you are not logged in already, click on the Azure portal shortcut that is available on the desktop and log in with the below Azure credentials.
     
-    * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
-    * Azure Password: <inject key="AzureAdUserPassword"></inject>
+    * **Azure Username/Email**: <inject key="AzureAdUserEmail"></inject> 
+    * **Azure Password**: <inject key="AzureAdUserPassword"></inject>
     
 1. Now open gitbash from the start menu, click on the windows button and open **Git Bash**   
 
@@ -85,7 +85,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    az account set --subscription ${SUBSCRIPTION}
    ```     
       
-   > **Note:** Replace ${SUBSCRIPTION} with the subscription Id which you can find on the Environment details page. 
+   > **Note:** Replace ${SUBSCRIPTION} with the subscription Id which you can find on the Environment details > Service Principal details page. 
 
     ![](Images/mjv2-4.png)
    
@@ -116,9 +116,19 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    > **Note:** Creating and deploying the hello-world app will take around 2-3 minutes.
 
 
-1. Now navigate back to the Azure portal in the browser and look for your Azure Spring Apps instance in your resource group.
+1. Now navigate back to the Azure portal in the browser and select **Resource groups** under Azure services.
 
-1. Click on **Apps** in the **Settings** section of the navigation pane and select **hello-world**.
+    ![acme-fitness](Images/L1-e1-s15.png)
+    
+1. Under Resource groups page, select **Modernize-java-apps-<inject key="DeploymentID" enableCopy="false" />**.
+
+    ![acme-fitness](Images/L1-e1-s16.png) 
+    
+1. Under your resource group page, select **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />** instance from the right-hand side under resources section.   
+
+    ![acme-fitness](Images/L1-e1-s17.png) 
+
+1. Click on **Apps** under the **Settings** section of the navigation pane and select **hello-world**.
 
     ![acme-fitness](Images/hrlloword.png)
 
@@ -161,7 +171,7 @@ The diagram below shows the final result once this section is complete:
     
    > **Note:** Please be aware that the below commands can run for up to two minutes. Hold off until the commands has completed.
 
-1. Run the following command to create routing rules for the frontend application:
+1. Run the following command to create routing rule for the frontend application:
    
    ```shell
       az spring gateway route-config create \
@@ -171,7 +181,7 @@ The diagram below shows the final result once this section is complete:
    ```
    ![](Images/frontend-route.png)
 
-1. Run the following command to deploy and build each application with its required parameters:
+1. Run the following command to deploy and build the frontend application with its required parameters:
    
    ```shell
        az spring app deploy --name ${FRONTEND_APP} \
