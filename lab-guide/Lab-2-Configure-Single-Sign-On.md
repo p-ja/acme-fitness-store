@@ -43,6 +43,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    echo ${ISSUER_URI}
    echo ${JWK_SET_URI}
    ```
+   ![](Images/L2-t1-s4.png)
    
    > **Note**: Copy and save the above four output values to the notepad/text editor, you will be using these values in Lab 8.
 
@@ -192,6 +193,8 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    ```
 
     ![](Images/mjv2-17-new.png)
+    
+    >**Note:** Please be aware that the above command can run for up to two minutes. Hold off until the command has completed.
 
 ### Task 6: Explore the API using API Portal 
 
