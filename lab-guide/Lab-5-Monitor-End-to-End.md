@@ -82,7 +82,7 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
 
 ### Task 5: Start monitoring apps and dependencies - in Application Insights
 
-  > Note: At this point of the workshop, only a limited number of data visualizations may be populated. (So the result and the graphs in the screenshots below may vary)
+  >**Note:** At this point of the workshop, only a limited number of data visualizations may be populated. (So the result and the graphs in the screenshots below may vary)
 
 1. Move back to the azure portal and in the **search resources, services and docs bar**, type **Application insight** and select it from suggestions, as shown below: 
 
@@ -157,7 +157,8 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
       | sort by TimeGenerated
       | project TimeGenerated, AppName, Log
    ```
-
+   >**Note:** If you see the message "The query was stopped", then please wait for few minutes and try again as there is a chance that services are still being deployed.
+   
    ![](Images/mjv2-61.png)
 
 1. Click on `+` **(1)** to create the new query. Now paste the below Kusto query **(2)** and click on **Run (3)** to see `catalog-service` application logs:
