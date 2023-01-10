@@ -169,7 +169,7 @@ The diagram below shows the final result once this section is complete:
 
     ![](Images/mjv2-7-new.png)
     
-   > **Note:** Please be aware that the below commands can run for up to two minutes. Hold off until the commands has completed.
+   > **Note:** Please be aware that the below commands can run for up to two minutes. Hold off until the commands have completed.
 
 1. Run the following command to create routing rule for the frontend application:
    
@@ -257,7 +257,7 @@ The diagram below shows the final result once this section is complete:
       --routes-file ./routes/catalog-service.json
    ```
    
-   > **Note:** Routing rules bind endpoints in the request to the backend applications. For example in the Cart route below, the routing rule indicates any requests to /cart/** endpoint gets routed to backend Cart App.
+   > **Note:** Routing rules bind endpoints in the request to the backend applications. For example, in the Cart route below, the routing rule indicates any requests to /cart/** endpoint gets routed to backend Cart App.
 
    ![](Images/upd-mjv2-8.png)
    
