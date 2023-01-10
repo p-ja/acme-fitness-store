@@ -149,7 +149,7 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
 
 The diagram below shows the final result once this section is complete:
 
-   ![](Images/frontend.png)
+   ![](Images/upd-frontend.png)
     
 > **Please note that we have already deployed the Azure Spring app and created the required frontend app to save time during the lab.**
  
@@ -211,7 +211,7 @@ In this section, you are going to deploy the backend apps for ACME-FITNESS appli
 
 The diagram below shows the final result once this section is complete:
 
-   ![](Images/scg-frontend-backend.png)
+   ![](Images/upd-scg-frontend-backend.png)
 
 > **Please note that we have already deployed the Azure Spring app and created the required backend apps to save time during the lab.**
 
