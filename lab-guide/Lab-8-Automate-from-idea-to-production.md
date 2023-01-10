@@ -1,4 +1,4 @@
-## Lab 8: Automate from idea to production (Optional)
+## Lab 8: Automate from Idea to Production (Optional)
 
 Duration: 15 minutes
 
@@ -16,19 +16,14 @@ Duration: 15 minutes
 ### Task 2: Add Secrets to GitHub Actions
 
 1. Now you're going to add the secrets to your repo.
-     
-   - The URL of your repo will look like this
 
-     ```text
-     https://github.com/{YOURACCOUNT}}/acme-fitness-store
-     ```
 1. From your repo, click on **Settings**.
 
 1. Find **Secrets** **(1)** under _Security_ on the left side of menu, and click on **Actions** **(2)**. After that Click on **New repository secret** **(3)**.
   
    ![](Images/L8-t2-s3.png)
    
-1. Type `AZURE_CREDENTIALS` **(1)** for the name of the secret, enter the following code under secret and make sure replace the values of **ClientId (Application Id)**, **ClientSecret (Secret Key)**,**Subscription_ID** and **TenantId (Directory ID)** **(2)** and then click on **Add Secret** **(3)**.   
+1. Type `AZURE_CREDENTIALS` **(1)** for the Name of the secret, enter the following code under Secret and make sure replace the values of **ClientId (Application Id)**, **ClientSecret (Secret Key)**, **Subscription_ID** and **TenantId (Directory ID)** **(2)** and then click on **Add Secret** **(3)**.   
 
      ```json
     {
@@ -50,22 +45,23 @@ Duration: 15 minutes
 
 1. In a similar way, you will add the following secrets to GitHub Actions:
 
-  
-   * `APP_SERVICE` - Provide app service name as **<inject key="Spring App Name" />**
-   * `RESOURCE_GROUP` - Provide the RG name **<inject key="Resource Group Name" />**
-   * `KEYVAULT` - provide the Key vault name **<inject key="KeyVault Name" />**
-   * `AZURE_LOCATION` - Provide the region **<inject key="Region" />**
-   * `OIDC_JWK_SET_URI` - use the `JWK_SET_URI` defined in [Lab 2]
-   * `OIDC_CLIENT_ID` - use the `CLIENT_ID` defined in [Lab 2]
-   * `OIDC_CLIENT_SECRET` - use the `CLIENT_SECRET` defined in [Lab 2]
-   * `OIDC_ISSUER_URI` - use the `ISSUER_URI` defined in [Lab 2]
+   | Secret Name | Secret value|
+   |:----------|:--------|
+   |`APP_SERVICE`| Provide app service name as **<inject key="Spring App Name" />**|
+   | `RESOURCE_GROUP`| Provide the RG name **<inject key="Resource Group Name" />**|
+   | `KEYVAULT`| Provide the Key vault name **<inject key="KeyVault Name" />**|
+   | `AZURE_LOCATION` | Provide the region **<inject key="Region" />**|
+   | `OIDC_JWK_SET_URI` | use the `JWK_SET_URI` |
+   | `OIDC_CLIENT_ID` | use the `CLIENT_ID` |
+   | `OIDC_CLIENT_SECRET` | use the `CLIENT_SECRET`|
+   | `OIDC_ISSUER_URI` | use the `ISSUER_URI`|
 
     ![](Images/secrets-count.png)
  
     > **Note**: For the values of `OIDC_JWK_SET_URI`, `OIDC_CLIENT_ID`, `OIDC_CLIENT_SECRET`, `OIDC_ISSUER_URI`, enter the values you have copied in your text editor in Lab 2.
 
 
-1. Add the secret `TF_BACKEND_CONFIG` to GitHub Actions with the value (replacing `${STORAGE_ACCOUNT_NAME}` and `${STORAGE_RESOURCE_GROUP}`):
+1. Add the secret `TF_BACKEND_CONFIG` to GitHub Actions with the value (replacing `${STORAGE_ACCOUNT_NAME}` and `${STORAGE_RESOURCE_GROUP}` with **<inject key="Resource Group Name" />**):
 
    ```text
    resource_group_name  = "${STORAGE_RESOURCE_GROUP}"
@@ -82,7 +78,7 @@ Duration: 15 minutes
 
    ![](Images/L8-t3-s2.png)
 
-1. Each application has a `Deploy` workflow that will redeploy the application when changes are made to that application. An example output from the catalog service is seen below:
+1. Each application has a `Deploy` workflow that will redeploy the application when changes are made to that application. An example output from the catalog service is shown below:
 
    ![Output from the Deploy Catalog workflow](Images/final-result.png)
 
