@@ -2,18 +2,18 @@
 
 Duration: 40 minutes
 
-In this lab, you will learn how to build and deploy both frontend as well as backend Spring applications to Azure Spring Apps. In order to develop a high-level grasp of how to deploy and operate the same, you will first attempt to setup a very basic hello-world spring boot app. After that, you will configure Spring Cloud Gateway, deploy the frontend and backend apps of acme-fitness (the demo application you will use in this lab), and verify that you can access the frontend as well as backend. Additionally, you will change the Spring Cloud Gateway rules for these backend apps and set them up to communicate with the Application Configuration Service and the Service Registry.
+In this lab, you will learn how to build and deploy both frontend and backend Spring applications to Azure Spring Apps. In order to develop a high-level grasp of how to deploy and operate the same, you will first attempt to setup a very basic hello-world Spring Boot app. After that, you will configure Spring Cloud Gateway, deploy the frontend and backend apps of acme-fitness (the demo application you will use in this lab), and verify that you can access the frontend as well as the backend. Additionally, you will change the Spring Cloud Gateway rules for these backend apps and set them up to communicate with the Application Configuration Service and the Service Registry.
 
-### Exercise 1: Deploy a Hello World service to f-E 
+### Exercise 1: Deploy a Hello World service to ASA-E 
 
-In this task, you will try to deploy a very simple hello-world spring boot app to get a high-level understanding of how to deploy an ASA-E app and access it.
+In this task, you will try to deploy a very simple hello-world Spring Boot app to get a high-level understanding of how to deploy an ASA-E app and access it.
 
 1. If you are not logged in already, click on the Azure portal shortcut that is available on the desktop and log in with the below Azure credentials.
     
     * **Azure Username/Email**: <inject key="AzureAdUserEmail"></inject> 
     * **Azure Password**: <inject key="AzureAdUserPassword"></inject>
     
-1. Now open Git Bash from the start menu, click on the windows button and open **Git Bash**.  
+1. Now open Git Bash from the start menu, click on the windows button, and open **Git Bash**.  
 
      ![](Images/gitbash.png)                          
 
@@ -26,7 +26,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
     az extension add --name spring
     ```
     
-1. To change the directory to the sample app repository to your shell, run the following command in the bash shell pane: 
+1. To change the directory to the sample app repository in your shell, run the following command in the Bash shell pane: 
 
     ```shell
       cd source-code/acme-fitness-store
@@ -45,7 +45,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    code setup-env-variables.sh
    ```
 
-1. Update the following variables in the setup-env-variables.sh file by replacing the following values and **Save** and **Close** the file:
+1. Update the following variables in the setup-env-variables.sh file by replacing the following values and **Save** it using **Ctrl+S** key and **Close** the file:
 
    ```shell
     export SUBSCRIPTION=subscription-id                 # replace it with your subscription-id
@@ -71,21 +71,21 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    az login
    ```   
    
-   > **Note:** Once you run the command, you will be redirected to the default browser, and then enter the following:
+   > **Note:** Once you run the command, you will be redirected to the default browser. Enter the following:
    > - **Azure username:** <inject key="AzureAdUserEmail"></inject>  
    > - **Password:** <inject key="AzureAdUserPassword"></inject> 
    > 
    > Close the tab when you see the successful login message and proceed with the next command.
 
 
-1. Run the following commands to get the list of subscriptions and also to set your subscription:
+1. Run the following commands to get the list of subscriptions and to set your subscription:
 
    ```shell
    az account list -o table
    az account set --subscription ${SUBSCRIPTION}
    ```     
       
-   > **Note:** Replace ${SUBSCRIPTION} with the subscription Id which you can find on the Environment details > Service Principal details page. 
+   > **Note:** Replace ${SUBSCRIPTION} with the subscription ID which you can find on the Environment details > Service Principal details page. 
 
     ![](Images/mjv2-4.png)
    
@@ -104,7 +104,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
     cd hello-world/complete
    ```
 
-1. Run the following command to create the 'hello-world' app instance and deploy it to Azure Spring Apps Enterprise:
+1. Run the following command to create the **hello-world** app instance and deploy it to Azure Spring Apps Enterprise:
 
    ```shell
    az spring app create -n hello-world --assign-endpoint true
@@ -113,18 +113,18 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
    cd ..
    cd ..
    ```
-   > **Note:** Creating and deploying the hello-world app will take around 2-3 minutes.
+   > **Note:** Creating and deploying the hello-world app will take around **2-3** minutes.
 
 
-1. Now navigate back to the Azure portal in the browser and select **Resource groups** under Azure services.
+1. Return to the Azure portal in the browser and select **Resource groups** from the Azure services menu.
 
     ![acme-fitness](Images/L1-e1-s15.png)
     
-1. Under Resource groups page, select **Modernize-java-apps-<inject key="DeploymentID" enableCopy="false" />**.
+1. Under the Resource groups page, select **Modernize-java-apps-<inject key="DeploymentID" enableCopy="false" />**.
 
     ![acme-fitness](Images/L1-e1-s16.png) 
     
-1. Under your resource group page, select **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />** instance from the right-hand side under resources section.   
+1. Under your resource group page, select **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />** instance from the right-hand side under the resources section.   
 
     ![acme-fitness](Images/L1-e1-s17.png) 
 
@@ -132,7 +132,7 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
 
     ![acme-fitness](Images/hrlloword.png)
 
-1. On the overview page, find the **Test endpoint** in the **Essentials** section, click on the **link** to browse the application.
+1. On the overview page, find the **Test endpoint** in the **Essentials** section, and click on the **link** to browse the application.
 
     ![acme-fitness](Images/testend.png)
     
@@ -142,9 +142,9 @@ In this task, you will try to deploy a very simple hello-world spring boot app t
     
   
 
-### Exercise 2: Deploy Frontend application
+### Exercise 2: Deploy a Frontend Application
 
- In this section you are going to deploy the frontend of acme-fitness (the demo application that you will be using in this lab), configure that with Spring Cloud Gateway (SCG) and validate that you are able to access the frontend. You will create a spring cloud gateway instance for acme-fitness and connect all the frontend/backend services to this gateway instance. This way the gateway instance acts as the proxy for any requests that are targeted towards the acme-fitness application. Routing rules bind endpoints in the request to the backend applications. In the task below, you will also create a rule in SCG to the frontend app.
+ In this section, you are going to deploy the frontend of acme-fitness (the demo application that you will be using in this lab), configure it with Spring Cloud Gateway (SCG), and validate that you are able to access the frontend. You will create a Spring Cloud Gateway instance for acme-fitness and connect all the frontend and backend services to this gateway instance. This way, the gateway instance acts as the proxy for any requests that are targeted towards the Acme-Fitness application. Routing rules bind endpoints in the request to the backend applications. In the task below, you will also create a rule in SCG for the frontend app.
 
 The diagram below shows the final result once this section is complete:
 
@@ -169,9 +169,9 @@ The diagram below shows the final result once this section is complete:
 
     ![](Images/mjv2-7-new.png)
     
-   > **Note:** Please be aware that the below commands can run for up to two minutes. Hold off until the commands have completed.
+   > **Note:** Please be aware that the below commands can run for up to two minutes. Hold off until the commands have been completed.
 
-1. Run the following command to create routing rule for the frontend application:
+1. Run the following command to create a routing rule for the frontend application:
    
    ```shell
       az spring gateway route-config create \
@@ -189,7 +189,7 @@ The diagram below shows the final result once this section is complete:
    ```
    ![](Images/frontend-deploy.png)
    
-   > **Note:** Deploying the application will take approximately 2-3 minutes.
+   > **Note:** Deploying the application will take approximately **2-3** minutes.
 
 1. Run the following command and then open the output from the following command in a browser:
 
@@ -198,7 +198,7 @@ The diagram below shows the final result once this section is complete:
    ```
    ![](Images/mjv2-10.png)
   
-   > **Note:** If you see acme-fitness home page displayed as below, then it means that your frontend app and its corresponding route in SCG is configured correctly and deployed successfully. Explore the application, but notice that not everything is functioning yet. Continue on to next exercise to configure the rest of the functionality.
+   > **Note:** If you see the acme-fitness home page displayed as below, then it means that your frontend app and its corresponding route in SCG is configured correctly and deployed successfully. Explore the application, but notice that not everything is functioning yet. Continue on to the next exercise to configure the rest of the functionality.
     
    ![](Images/acme-fitness-homepage.png)
    
@@ -206,15 +206,15 @@ The diagram below shows the final result once this section is complete:
 
 
 
-### Exercise 3: Deploy Backend applications
+### Exercise 3: Deploy Backend Applications
 
-In this section you are going to deploy the backend apps for acme-fitness application. You will also update the rules for these backend apps in Spring Cloud Gateway and configure these apps to talk to Application Configuration Service and Service Registry. The Application configuration service is a feature of azure spring apps enterprise that makes Spring Apps config server capabilities available in a polyglot way. ASA-E internally uses Tanzu Service Registry for dynamic service discovery.
+In this section, you are going to deploy the backend apps for Acme-Fitness application. You will also update the rules for these backend apps in Spring Cloud Gateway and configure these apps to talk to the Application Configuration Service and Service Registry. The Application Configuration Service is a feature of Azure Spring Apps Enterprise that makes Spring Apps configuration server capabilities available in a polyglot way. ASA-E internally uses the Tanzu Service Registry for dynamic service discovery.
 
 The diagram below shows the final result once this section is complete:
 
    ![](Images/scg-frontend-backend.png)
 
-> **Please note that we have already deployed the Azure Spring app and created the required backend apps to save the time during the lab.**
+> **Please note that we have already deployed the Azure Spring app and created the required backend apps to save time during the lab.**
 
 1. Run the following command to bind the spring applications to the Application Configuration Service:
 
@@ -225,7 +225,7 @@ The diagram below shows the final result once this section is complete:
     
    ![](Images/mjv2-5.png)
    
-   > **Note:** Please note that the above commands can run up to two minutes. 
+   > **Note:** Please note that the above commands can run for up to two minutes. 
 
 1. Run the following command to bind the spring applications to the Service Registry:
 
@@ -236,7 +236,7 @@ The diagram below shows the final result once this section is complete:
 
    ![](Images/mjv2-6.png)
 
-   > **Note:** Please note that the above commands can take up to two minutes to complete the running.
+   > **Note:** Please note that the above commands can take up to two minutes to complete.
 
 1. Run the following command to create routing rules for all backend applications:
 
@@ -257,11 +257,11 @@ The diagram below shows the final result once this section is complete:
       --routes-file ./routes/catalog-service.json
    ```
    
-   > **Note:** Routing rules bind endpoints in the request to the backend applications. For example, in the Cart route below, the routing rule indicates any requests to /cart/** endpoint gets routed to backend Cart App.
+   > **Note:** Routing rules bind endpoints in the request to the backend applications. For example, in the Cart route below, the routing rule indicates any requests to /cart/** endpoint gets routed to the backend Cart App.
 
    ![](Images/upd-mjv2-8.png)
    
-   > **Note:** Please note that the above commands can run up to two minutes. 
+   > **Note:** Please note that the above commands can run for up to two minutes. 
 
 1. Run the following command to deploy and build each backend application with its required parameters:
 
@@ -286,7 +286,7 @@ The diagram below shows the final result once this section is complete:
        --source-path ./apps/acme-cart 
     ```
 
-   > **Note:** Deploying all applications will take approximately 10-15 minutes.
+   > **Note:** Deploying all applications will take approximately **10-15** minutes.
 
    ![](Images/mjv2-9-new.png)
 
@@ -297,11 +297,11 @@ The diagram below shows the final result once this section is complete:
    ```
    ![](Images/mjv2-10.png)
 
-1. Copy the gateway URL and paste it into a new browser and then you should see the ACME Fitness Store Application. Now that all the required apps are deployed, you should be able to open the home page and access it through the entire app. Explore the application but notice that not everything is functioning yet. Continue to Lab 2 to configure Single Sign On to enable the rest of the functionality (features like logging in, adding items to the cart, or placing an order).
+1. Copy the gateway URL and paste it into a new browser, and then you should see the ACME Fitness Store application. Now that all the required apps are deployed, you should be able to open the home page and access it through the entire app. Explore the application, but notice that not everything is functioning yet. Continue to Lab 2 to configure Single Sign-On to enable the rest of the functionality (features like logging in, adding items to the cart, or placing an order).
 
    ![](Images/mjv2-11.png)
 
-1. To assign an endpoint to API Portal, move back to git bash and run the following command:
+1. To assign an endpoint to API Portal, move back to Git Bash and run the following command:
 
    ```shell 
    az spring api-portal update --assign-endpoint true
@@ -316,7 +316,7 @@ The diagram below shows the final result once this section is complete:
    
    ![](Images/mjv2-12-new.png)
    
-1. Copy the URL and paste it in a new browser and then you should see the API portal of the ACME Fitness Store Application.
+1. Copy the URL and paste it in a new browser, and then you should see the API portal for the ACME Fitness Store application.
 
     ![](Images/api1.png)
     
