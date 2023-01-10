@@ -54,7 +54,7 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
     export LOG_ANALYTICS_WORKSPACE=acme-log-analytic  
     export REGION=eastus                           # choose a region with Enterprise tier support
    ```
-   >**Note:** You can copy the above values from the Environment details page.
+   >**Note:** You can copy the above values from the Environment details page and for REGION, leave the default value i.e. eastus.
    
     ![](Images/Ex1-T1-S8.1.png)
 
