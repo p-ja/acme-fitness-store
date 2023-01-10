@@ -10,10 +10,10 @@ In this unit, you will explore live application metrics and query logs to know t
 
    > **Note:** In future iterations, the buildpacks for non-java applications will support Application Insights binding, and this step will be unnecessary.
 
-1. To retrieve the Instrumentation Key for Application Insights and add it to the Key Vault, run the following command in the shell pane. Replace azure-spring-apps-SUFFIX with your **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />**
+1. To retrieve the Instrumentation Key for Application Insights and add it to the Key Vault, run the following command in the Git Bash window. Replace azure-spring-apps-SUFFIX with your **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />**
 
    ```shell
-      export INSTRUMENTATION_KEY=$(az monitor app-insights component show --app azure-Spring-Apps-SUFFIX | jq -r '.connectionString')
+      export INSTRUMENTATION_KEY=$(az monitor app-insights component show --app azure-spring-apps-SUFFIX | jq -r '.connectionString')
 
       az keyvault secret set --vault-name ${KEY_VAULT} \
        --name "ApplicationInsights--ConnectionString" --value ${INSTRUMENTATION_KEY}
@@ -34,7 +34,7 @@ In this unit, you will explore live application metrics and query logs to know t
       --properties sampling-rate=100 connection_string=${INSTRUMENTATION_KEY}
    ```
 
-   > **Note:** The above command could take up to **15-20** minutes to complete. Please wait until it runs successfully.Meanwhile, you can learn more about sampling in application insights by clicking [here](https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling?tabs=net-core-new).
+   > **Note:** The above command could take up to **15-20** minutes to complete. Please wait until it runs successfully. Meanwhile, you can learn more about sampling in application insights by clicking [here](https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling?tabs=net-core-new).
 
 ### Task 3: Reload Applications
 
@@ -157,7 +157,7 @@ You can use `az spring app logs -h` to explore more parameters and log stream fu
       | sort by TimeGenerated
       | project TimeGenerated, AppName, Log
    ```
-   >**Note:** If you see the message "The query was stopped", then please wait for few minutes and try again as there is a chance that services are still being deployed.
+   >**Note:** If you see the message "The query was stopped", then please wait for few minutes and try again as there might be a chance that services are still being deployed.
    
    ![](Images/mjv2-61.png)
 
