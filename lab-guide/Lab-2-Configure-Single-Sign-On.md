@@ -95,7 +95,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    ```
    ![](Images/mjv2-10.png)
  
-2. You should see the ACME Fitness Store application, and then click on the **Login** button.
+2. You should see the ACME FITNESS Store application, and then click on the **LOG IN** button.
    
    ![](Images/gateway-login.png)
    
@@ -103,7 +103,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 
    ![](Images/mjv2-15.png)
    
-4. Once logged in, the remaining functionality of the application will be available. Click on **Catalog** to see the list of products.
+4. Once logged in, the remaining functionality of the application will be available. Click on **CATALOG** to see the list of products.
 
    ![](Images/mjv2-34.png)
    
@@ -111,19 +111,19 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
    ![](Images/mjv2-35.png)
 
-6. Under Yoga Mat, click on **Add to cart**.
+6. Under Yoga Mat, click on **ADD TO CART**.
    
    ![](Images/mjv2-36.png) 
 
-7. Now click on **1 item in cart** to proceed further to place an order.   
+7. Now click on **1 ITEMS IN CART** to proceed further to place an order.   
    
    ![](Images/mjv2-37.png)
    
-8. To place an order, click on **Proceed to checkout**.
+8. To place an order, click on **PROCEED TO CHECKOUT**.
    
    ![](Images/mjv2-38.png)
    
-9. On the Address pane of the checkout page, fill in the following details and then click on **Continue to Delivery Method**:
+9. On the Address pane of the checkout page, fill in the following details and then click on **CONTINUE TO DELIVERY METHOD**:
 
     - **Firstname:** odl
 
@@ -143,11 +143,11 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
      ![](Images/mjv2-39.png)
    
  
-10. On the Delivery Method pane, click on **Continue to Payment Method**.   
+10. On the Delivery Method pane, click on **CONTINUE TO PAYMENT METHOD**.   
    
      ![](Images/mjv2-40.png)
    
-11. On the Payment Method pane, fill in the following details and then click on **Continue to Order Review**.
+11. On the Payment Method pane, fill in the following details and then click on **CONTINUE TO ORDER REVIEW**.
 
     - **Card Type:** American Express
   
@@ -165,12 +165,12 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
      ![](Images/mjv2-41.png)
     
    
-12. On the Order Review pane, click on **Place an Order**.   
+12. On the Order Review pane, click on **PLACE AN ORDER**.   
    
      ![](Images/mjv2-42.png)
    
-13. After that, you will receive a pop-up page for "Successfully placing an Order".
-  
+13. After that, you will receive a pop-up page for "Your transaction was successfully processed" as shown below.
+
       <br>
       <br>
       <br>
