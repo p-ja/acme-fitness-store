@@ -1,5 +1,5 @@
 ## Lab 7:  Set Request Rate Limits (Optional)
-Duration: 15 Minutes
+Duration: 15 minutes
 
 In this lab, you will use Spring Cloud Gateway filters to apply rate limiting to your API.
 
@@ -7,7 +7,7 @@ In this lab, you will use Spring Cloud Gateway filters to apply rate limiting to
 
 Spring Cloud Gateway includes route filters from the Open Source version as well as several additional route filters. One of these additional filters is the [RateLimit: Limiting user requests filter](https://docs.vmware.com/en/VMware-Spring-Cloud-Gateway-for-Kubernetes/1.1/scg-k8s/GUID-route-filters.html#ratelimit-limiting-user-requests-filter). The RateLimit filter limits the number of requests allowed per route during a time window.
 
-   When defining a Route, you can add the RateLimit filter by including it in the list of filters for the route. The filter accepts 4 options:
+   When defining a route, you can add the RateLimit filter by including it in the list of filters for the route. The filter accepts four options:
 
    * Number of requests accepted during the window.
    * Duration of the window: by default milliseconds, but you can use the s, m, or h suffix to specify it in seconds, minutes, or hours.
@@ -33,7 +33,7 @@ When the limit is exceeded, the response will fail with `429 Too Many Requests` 
 
 ### Task 2: Update Spring Cloud Gateway Routes
 
-1. To apply the `RateLimit` filter to the `/products` route run the following command:
+1. To apply the `RateLimit` filter to the `/products` route, run the following command:
 
    ```bash
    az spring gateway route-config update \
@@ -49,14 +49,16 @@ When the limit is exceeded, the response will fail with `429 Too Many Requests` 
 
 ### Task 3: Verify Request Rate Limits
 
-1. To retrieve the URL for the `/products` route in Spring Cloud Gateway using the following command:
+1. To retrieve the URL for the `/products` route in Spring Cloud Gateway, use the following command:
 
    ```bash
    GATEWAY_URL=$(az spring gateway show | jq -r '.properties.url')
    echo "https://${GATEWAY_URL}/products"
    ```
 
-   Make several requests to the URL for `/products` within a five-second period to see requests fail with the status `429 Too Many Requests`.
+     > **Note:** Copy the output URL and paste it in a new browser. Make several requests to the URL for `/products` within a five-second period to see requests fail with the status `429 Too Many Requests`.
+   
+   ![](Images/L7-t3-s1.png) 
 
 
 Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.

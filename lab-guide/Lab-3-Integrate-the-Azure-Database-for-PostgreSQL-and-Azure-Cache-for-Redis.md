@@ -2,7 +2,7 @@
 
 Duration: 20 minutes
 
-In this lab, you will create persistent stores outside the applications and connect applications to those stores.
+In this lab, you will create persistent stores outside the applications and connect those applications to those stores.
 
 ### Task 1: Prepare your environment 
 
@@ -12,14 +12,14 @@ In this lab, you will create persistent stores outside the applications and conn
     cp ./azure/setup-db-env-variables-template.sh ./azure/setup-db-env-variables.sh
    ```
    
-1. To open `setup-db-env-variables.sh` file, run the following command :
+1. To open the `setup-db-env-variables.sh` file, run the following command:
 
    ```shell
    cd azure
    code setup-db-env-variables.sh
    ```
 
-1. Update the following variables in the setup-db-env-variables.sh file by replacing the SUFFIX value with **<inject key="DeploymentID" enableCopy="false" /> </inject>** and **Save** and **Close** the file:
+1. Update the following variables in the setup-db-env-variables.sh file by replacing the SUFFIX value with **<inject key="DeploymentID" enableCopy="false" /> </inject>** and **Save** it using **Ctrl+S** key and then **Close** the file:
 
    ```shell
    export AZURE_CACHE_NAME=azure-cache-SUFFIX                   # Update the SUFFIX in the value
@@ -38,7 +38,7 @@ In this lab, you will create persistent stores outside the applications and conn
    
 ### Task 2: Create Service Connectors
    
- 1. The Order Service and Catalog Service use Azure Database for Postgres, therefore, run the following command to create Service Connectors for those applications:
+ 1. The Order Service and Catalog Service use Azure Database for Postgres; therefore, run the following command to create Service Connectors for those applications:
 
       ```shell
       # Bind order service to Postgres
@@ -71,8 +71,9 @@ In this lab, you will create persistent stores outside the applications and conn
  
       ![](Images/upd-mjv2-19-new.png)
  
- 1. Run the following command to create a service connector for Cart Service to connect it to Azure Cache for Redis:
-    >Note: You can ignore any warning related to auth. 
+ 1. To connect Cart Service to Azure Cache for Redis, use the following command to create a service connector:
+    
+     >**Note:** You can ignore any warning related to auth. 
 
       ```shell
       az spring connection create redis \
@@ -93,9 +94,9 @@ In this lab, you will create persistent stores outside the applications and conn
 
 In this task, you will update the affected applications to use the databases and redis cache.
 
-> **Note:** The commands listed in this task can run for up to two minutes. Hold off until the command has completed.
+> **Note:** The commands listed in this task can run for up to two minutes. Hold off until the commands have been completed.
 
-1. Run the following command to restart the Catalog Service for the Service Connector to take effect:
+1. Run the following command to restart the Catalog service for the Service Connector to take effect:
 
    ```shell
     az spring app restart --name ${CATALOG_SERVICE_APP}
@@ -103,7 +104,7 @@ In this task, you will update the affected applications to use the databases and
   
     ![](Images/restart-catalog-new.png)
     
-1. To retrieve the PostgreSQL connection string and update the Catalog Service, run the following command:
+1. To retrieve the PostgreSQL connection string and update the Catalog service, run the following command:
 
    ```shell
     POSTGRES_CONNECTION_STR=$(az spring connection show \
@@ -139,7 +140,7 @@ In this task, you will update the affected applications to use the databases and
   
 ### Task 4: View the persisted data 
 
-1. Verify cart data is now persisted in Redis by adding a few items to your cart. Then, restart the cart service by running the following command:
+1. By adding a few items to your cart, you can confirm that cart data is now persisted in Redis. Then, restart the cart service by running the following command:
 
    ```shell
    az spring app restart --name ${CART_SERVICE_APP}
@@ -147,23 +148,23 @@ In this task, you will update the affected applications to use the databases and
 
    ![](Images/mjv2-33-new.png)
 
-   > **Note:** Notice that after restarting the cart service, the items in your cart will now persist.
+   > **Note:** You'll notice that after restarting the cart service, the items in your cart will now persist.
 
-1. Verify order data is now persisted in a PostgreSQL Database by placing an order. To view your placed orders with the following URL in a browser:
+2. Verify order data is now persisted in a PostgreSQL Database by placing an order. In the Git Bash window, run the following command:
 
    ```shell
    curl https://${GATEWAY_URL}/order/${USER_ID}
    ```
-   > **Note :** Run `echo ${GATEWAY_URL}` to get the spring apps gateway URL and replace  the value with ${GATEWAY_URL} in the above command.
+   > **Note:** Run `echo ${GATEWAY_URL}` to get the spring apps gateway URL and replace the value with ${GATEWAY_URL} in the above command.
    
-   > **Note :** Replace ${USER_ID} with ODL_User<inject key="DeploymentID" enableCopy="false" /> respectively in the above command.
+   > **Note:** Replace ${USER_ID} with ODL_User<inject key="DeploymentID" enableCopy="false" /> respectively in the above command.
 
 
-1.  Browse the URL `https://${GATEWAY_URL}/order/${USER_ID}` in your browser and you will be able to see the following output.
+3.  Browse the URL `https://${GATEWAY_URL}/order/${USER_ID}` in your browser and you will be able to see the following output:
 
      ![](Images/browser.png)
 
-1. Run the following command to restart the order service application:
+4. Run the following command to restart the order service application:
 
    ```shell
    az spring app restart --name ${ORDER_SERVICE_APP}

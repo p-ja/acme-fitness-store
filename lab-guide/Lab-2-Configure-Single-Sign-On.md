@@ -6,20 +6,20 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 
 ### Task 1: Prepare your environment for SSO Deployments
 
-1. To use an existing SSO Identity Provider, copy the existing template:
+1. To use an existing SSO Identity Provider, copy the existing template by running the following command:
 
    ```shell
    cp ./azure/setup-sso-variables-template.sh ./azure/setup-sso-variables.sh
    ```
 
-1. To open the `./scripts/setup-sso-variables.sh` file, run the following command :
+1. To open the `./scripts/setup-sso-variables.sh` file, run the following command:
 
    ```shell
    cd azure
    code setup-sso-variables.sh
    ```
    
-1. Update the following variables in the setup-env-variables.sh file by replacing the following values and **Save** and **Close** the file:
+1. Update the following variables in the setup-env-variables.sh file by replacing the following values and **Save** it using **Ctrl+S** key and then **Close** the file:
    
    ```shell
    export CLIENT_ID=ApplicationID       #  Update with you existing application id from environment details page
@@ -28,11 +28,11 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    export JWK_SET_URI=https://login.microsoftonline.com/TenantID/discovery/v2.0/keys # Make sure to replace TenantID with your tenant ID
    ```
    
-    >**Note:** You can copy the CLIENT_ID(Application id), CLIENT_SECRET(Secret key) and TENANT_ID from the Environment details page > Service principal details .
+    >**Note:** You can copy the CLIENT_ID(Application id), CLIENT_SECRET(Secret key) and TenantID from the Environment details page > Service principal details.
    
    ![](Images/Ex2-T1-S3.png)
 
-1. Run the following command to set the environment and then verify that the environment variables are set:
+1. Run the following command to set the environment, and then verify that the environment variables are set:
 
    ```shell
    cd ..
@@ -43,8 +43,9 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    echo ${ISSUER_URI}
    echo ${JWK_SET_URI}
    ```
+   ![](Images/L2-t1-s4.png)
    
-   > **Note**: Copy and save the above four output values to the notepad/text editor, you will be using these values in Lab 8.
+   > **Note**: Copy and save the above four output values to the notepad or text editor. You will be using these values in Lab 8.
 
 1. To add the necessary web redirect URIs to the Azure AD Application Registration, run the following command:
 
@@ -85,44 +86,44 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    ![](Images/mjv2-14-new.png)
 
 
-### Task 4: Login to the Application through Spring Cloud Gateway 
+### Task 4: Login to the application through the Spring Cloud Gateway 
 
-1. Run the following command to retrieve the URL for Spring Cloud Gateway and then copy the output URL in a browser to access the application:
+1. Run the following command to retrieve the URL for Spring Cloud Gateway, and then copy the output URL into a browser to access the application:
 
    ```shell
    echo "https://${GATEWAY_URL}"
    ```
    ![](Images/mjv2-10.png)
  
-2. You should see the ACME Fitness Store Application, and then click on **Login** button.
+2. You should see the ACME FITNESS Store application, and then click on the **LOG IN** button.
    
    ![](Images/gateway-login.png)
    
-3. Click on **Accept** inorder to able to log in using your SSO Credentials. 
+3. Click on **Accept** in order to be able to log in using your SSO credentials. 
 
    ![](Images/mjv2-15.png)
    
-4. Once logged in, the remaining functionality of the application will be available. Click on **Catalog** to see the list of products.
+4. Once logged in, the remaining functionality of the application will be available. Click on **CATALOG** to see the list of products.
 
    ![](Images/mjv2-34.png)
    
-5. Click on **Yoga Mat** to add this item in your cart.  
+5. Click on **Yoga Mat** to add this item to your cart.  
    
    ![](Images/mjv2-35.png)
 
-6. Under Yoga Mat, click on **Add to cart**.
+6. Under Yoga Mat, click on **ADD TO CART**.
    
    ![](Images/mjv2-36.png) 
 
-7. Now click on **1 item in cart** to proceed further to place an order.   
+7. Now click on **1 ITEMS IN CART** to proceed further to place an order.   
    
    ![](Images/mjv2-37.png)
    
-8. To place an order, click on **Proceed to checkout**.
+8. To place an order, click on **PROCEED TO CHECKOUT**.
    
    ![](Images/mjv2-38.png)
    
-9. On the Address pane of the checkout page, fill the following details and then click on **Continue to Delivery Method**:
+9. On the Address pane of the checkout page, fill in the following details and then click on **CONTINUE TO DELIVERY METHOD**:
 
     - **Firstname:** odl
 
@@ -136,17 +137,17 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   
     - **Country:** USA
   
-    - Leave the other values blank  
+    - Leave the other values blank. 
   
    
      ![](Images/mjv2-39.png)
    
  
-10. On the Delivery Method pane, click on **Continue to Payment Method**.   
+10. On the Delivery Method pane, click on **CONTINUE TO PAYMENT METHOD**.   
    
      ![](Images/mjv2-40.png)
    
-11. On the Payment Method pane, fill the following details and then click on **Continue to Order Review**.
+11. On the Payment Method pane, fill in the following details and then click on **CONTINUE TO ORDER REVIEW**.
 
     - **Card Type:** American Express
   
@@ -164,12 +165,12 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
      ![](Images/mjv2-41.png)
     
    
-12. On the Order Review pane, click on **Place an Order**.   
+12. On the Order Review pane, click on **PLACE AN ORDER**.   
    
      ![](Images/mjv2-42.png)
    
-13. After that you will receive a pop-up page for Successfully placing an order.
-  
+13. After that, you will receive a pop-up page for "Your transaction was successfully processed" as shown below.
+
       <br>
       <br>
       <br>
@@ -177,9 +178,9 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
   
      ![](Images/mjv2-43.png)
 
-### Task 5: Configure SSO for API Portal 
+### Task 5: Configure SSO for the API Portal 
 
-1. To configure API Portal with SSO enabled, move back to gitbash and run the following command:
+1. To configure the API Portal with SSO enabled, move back to Git Bash and run the following command:
 
    ```shell
    export PORTAL_URL=$(az spring api-portal show | jq -r '.properties.url')
@@ -192,10 +193,12 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    ```
 
     ![](Images/mjv2-17-new.png)
+    
+    >**Note:** Please be aware that the above command can run for up to two minutes. Hold off until the command has completed.
 
-### Task 6: Explore the API using API Portal 
+### Task 6: Explore the API using the API Portal 
 
-1. Run the following command to retrieve the URL for API Portal and then copy the output URL in a browser to access the API portal: 
+1. Run the following command to retrieve the URL for the API Portal, and then copy the output URL into a browser to access the API Portal: 
 
    ```shell
    echo "https://${PORTAL_URL}"
@@ -207,7 +210,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 
     ![](Images/api-login.png)
    
-1. Once logged in via SSO credentials, you can now explore the API portal.
+1. Once logged in via SSO credentials, you can now explore the API Portal.
    
     ![](Images/mjv2-44.png)
     
