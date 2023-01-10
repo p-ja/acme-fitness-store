@@ -70,8 +70,6 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
          --name "SSO-PROVIDER-JWK-URI" --value ${JWK_SET_URI}
       ```
 
-      > Note: If you are not configuring single sign-on in Lab 2, you can skip creating the SSO-PROVIDER-JWK-URI Secret.
-
       ![](Images/mjv2-24-new.png)
 
 1. Run the following command to enable System-Assigned Identities for applications and export identities to the environment:
@@ -110,14 +108,12 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
          --object-id ${IDENTITY_SERVICE_APP_IDENTITY} --secret-permissions get list
       ```
 
-      > **Note:** The Identity Service will not exist if you haven't completed Unit 2. Skip configuring an identity or policy for this service if you are not configuring Single Sign-On at this point.  
-
       ![](Images/mjv2-26-new.png) 
 
 ### Task 2: Activate applications to load secrets from Azure Key Vault
 
 
-1. To delete Service Connectors and activate applications to load secrets from Azure Key Vault, run the following command in the git bash.
+1. To delete Service Connectors and activate applications to load secrets from Azure Key Vault, run the following command in the git bash:
 
       ```shell
       az spring connection delete \
