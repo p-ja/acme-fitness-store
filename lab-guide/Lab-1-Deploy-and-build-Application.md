@@ -78,7 +78,7 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
    > Close the tab when you see the successful login message and proceed with the next command.
 
 
-1. Run the following commands to get the list of subscriptions and to set your subscription:
+11. Run the following commands to get the list of subscriptions and to set your subscription:
 
    ```shell
    az account list -o table
@@ -89,7 +89,7 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
 
     ![](Images/mjv2-4.png)
    
-1. Now, run the following command to set your default resource group name and cluster name:
+12. Now, run the following command to set your default resource group name and cluster name:
 
    ```shell
     az configure --defaults \
@@ -98,13 +98,13 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
     spring=${SPRING_APPS_SERVICE}
    ```
     
-1. To deploy the hello world app and create the Spring Boot application, run the following command and change the directory to hello world :
+13. To deploy the hello world app and create the Spring Boot application, run the following command and change the directory to hello world :
 
    ```shell
     cd hello-world/complete
    ```
 
-1. Run the following command to create the **hello-world** app instance and deploy it to Azure Spring Apps Enterprise:
+14. Run the following command to create the **hello-world** app instance and deploy it to Azure Spring Apps Enterprise:
 
    ```shell
    az spring app create -n hello-world --assign-endpoint true
@@ -116,27 +116,27 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
    > **Note:** Creating and deploying the hello-world app will take around **2-3** minutes.
 
 
-1. Return to the Azure portal in the browser and select **Resource groups** from the Azure services menu.
+15. Return to the Azure portal in the browser and select **Resource groups** from the Azure services menu.
 
     ![acme-fitness](Images/L1-e1-s15.png)
     
-1. Under the Resource groups page, select **Modernize-java-apps-<inject key="DeploymentID" enableCopy="false" />**.
+16. Under the Resource groups page, select **Modernize-java-apps-<inject key="DeploymentID" enableCopy="false" />**.
 
     ![acme-fitness](Images/L1-e1-s16.png) 
     
-1. Under your resource group page, select **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />** instance from the right-hand side under the resources section.   
+17. Under your resource group page, select **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />** instance from the right-hand side under the resources section.   
 
     ![acme-fitness](Images/L1-e1-s17.png) 
 
-1. Click on **Apps** under the **Settings** section of the navigation pane and select **hello-world**.
+18. Click on **Apps** under the **Settings** section of the navigation pane and select **hello-world**.
 
     ![acme-fitness](Images/hrlloword.png)
 
-1. On the overview page, find the **Test endpoint** in the **Essentials** section, and click on the **link** to browse the application.
+19. On the overview page, find the **Test endpoint** in the **Essentials** section, and click on the **link** to browse the application.
 
     ![acme-fitness](Images/testend.png)
     
-1. A new browser tab will open, and you should be able to see your **hello world** app successfully deployed. 
+20. A new browser tab will open, and you should be able to see your **hello world** app successfully deployed. 
    
     ![acme-fitness](Images/Ex1-T2-S6.png)    
     
