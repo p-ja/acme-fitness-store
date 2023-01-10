@@ -140,7 +140,7 @@ In this task, you will update the affected applications to use the databases and
   
 ### Task 4: View the persisted data 
 
-1. By adding a few items to your cart, you can confirm that cart data is now persisted in Redis.. Then, restart the cart service by running the following command:
+1. By adding a few items to your cart, you can confirm that cart data is now persisted in Redis. Then, restart the cart service by running the following command:
 
    ```shell
    az spring app restart --name ${CART_SERVICE_APP}
@@ -150,7 +150,7 @@ In this task, you will update the affected applications to use the databases and
 
    > **Note:** You'll notice that after restarting the cart service, the items in your cart will now persist.
 
-2. Verify order data is now persisted in a PostgreSQL Database by placing an order. Enter the following URL into your browser to view your placed orders:
+2. Verify order data is now persisted in a PostgreSQL Database by placing an order. In the Git Bash window, run the following command:
 
    ```shell
    curl https://${GATEWAY_URL}/order/${USER_ID}
