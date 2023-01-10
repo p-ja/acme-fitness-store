@@ -39,7 +39,7 @@ Duration: 10 minutes
     
 1. Now, we will be moving the **green** deployment to the production to see the changes from the production URL.
 
-1. To set up the deployment to production, run the below command:
+1. To set up the deployment to production, move back to the Git Bash window and run the below command:
 
     ```bash
     az spring app set-deployment --deployment green --name ${FRONTEND_APP}
@@ -47,7 +47,7 @@ Duration: 10 minutes
     
     ![](Images/updatesstagging.png)
     
-1. Once the set deployment is completed, refresh the main application Gateway URL, and you should be able to see the changes in production. If you do not have the application open, run the below command to get the gateway endpoint.
+1. Once the set deployment is completed, refresh the main application Gateway URL, and you should be able to see the changes in production. If you do not have the application open, run the below command to get the Gateway endpoint. (Copy the URL and paste it in a new browser.)
 
     ```bash
     echo "https://${GATEWAY_URL}"
