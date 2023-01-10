@@ -56,7 +56,7 @@ When the limit is exceeded, the response will fail with `429 Too Many Requests` 
    echo "https://${GATEWAY_URL}/products"
    ```
 
-   Make several requests to the URL for `/products` within a five-second period to see requests fail with the status `429 Too Many Requests`.
+     > **Note:** Copy the output URL and paste it in a new browser. Make several requests to the URL for `/products` within a five-second period to see requests fail with the status `429 Too Many Requests`.
    
    ![](Images/L7-t3-s1.png) 
 
