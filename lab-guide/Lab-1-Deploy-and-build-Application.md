@@ -86,7 +86,6 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
    ```     
       
    > **Note:** Replace ${SUBSCRIPTION} with the subscription ID which you can find on the Environment details > Service Principal details page. 
-
     ![](Images/mjv2-4.png)
    
 12. Now, run the following command to set your default resource group name and cluster name:
