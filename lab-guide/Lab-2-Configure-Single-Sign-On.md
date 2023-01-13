@@ -28,7 +28,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    export JWK_SET_URI=https://login.microsoftonline.com/TenantID/discovery/v2.0/keys # Make sure to replace TenantID with your tenant ID
    ```
    
-    >**Note:** You can copy the CLIENT_ID(Application id), CLIENT_SECRET(Secret key) and TenantID from the Environment details page > Service principal details.
+    >**Note:** You can copy the CLIENT_ID(ApplicationID), CLIENT_SECRET(Secret key/Applicationsecret) and TenantID from the Environment details page > Service principal details.
    
    ![](Images/Ex2-T1-S3.png)
 
