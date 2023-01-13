@@ -19,6 +19,8 @@ Duration: 15 minutes
 
 1. From your repo, click on **Settings**.
 
+   ![](Images/lab8.png)
+
 1. Find **Secrets** **(1)** under _Security_ on the left side of menu, and click on **Actions** **(2)**. After that Click on **New repository secret** **(3)**.
   
    ![](Images/L8-t2-s3.png)
