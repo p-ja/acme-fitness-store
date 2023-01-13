@@ -14,7 +14,7 @@ Duration: 10 minutes
 
 1. The index.html file will open with VS Code Editor, now in line number **67**, update the value from **About ACME Fitness** to **ACME Fitness key Points** and save the file using **Ctrl+S** key.
 
-     ![gfd](Images/keyupdate.png)
+     ![gfd](Images/lab6.png)
 
      ![dfgj](Images/keyupdates2.png)
 
