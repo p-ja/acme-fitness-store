@@ -150,17 +150,9 @@ In this task, you will update the affected applications to use the databases and
 
    > **Note:** You'll notice that after restarting the cart service, the items in your cart will now persist.
 
-2. Verify order data is now persisted in a PostgreSQL Database by placing an order. In the Git Bash window, run the following command:
-
-   ```shell
-   curl https://${GATEWAY_URL}/order/${USER_ID}
-   ```
-   > **Note:** Run `echo ${GATEWAY_URL}` to get the spring apps gateway URL and replace the value with ${GATEWAY_URL} in the above command.
-   
-   > **Note:** Replace ${USER_ID} with ODL_User<inject key="DeploymentID" enableCopy="false" /> respectively in the above command.
-
-
 3.  Browse the URL `https://${GATEWAY_URL}/order/${USER_ID}` in your browser and you will be able to see the following output:
+      > **Note:** Replace ${USER_ID} with ODL_User <inject key="DeploymentID" enableCopy="false" /> respectively in the above command.
+
 
      ![](Images/browser.png)
 
