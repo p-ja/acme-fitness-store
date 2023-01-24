@@ -124,7 +124,7 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
 
     ![acme-fitness](Images/L1-e1-s15.png)
     
-16. Under the Resource groups page, select **Modernize-java-apps-<inject key="DeploymentID" enableCopy="false" />**.
+16. Under the Resource groups page, select **Modernize-java-apps**.
 
     ![acme-fitness](Images/L1-e1-s16.png) 
     
@@ -144,7 +144,6 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
    
     ![acme-fitness](Images/Ex1-T2-S6.png)    
     
-  
 
 ### Exercise 2: Deploy a Frontend Application
 
