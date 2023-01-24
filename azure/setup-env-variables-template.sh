@@ -1,8 +1,8 @@
-export SUBSCRIPTION=subscription-id                 # replace it with your subscription-id
-export RESOURCE_GROUP=Modernize-java-apps-SUFFIX           # Repleace suffix with deploymentID from environment details page
-export SPRING_APPS_SERVICE=azure-spring-apps-SUFFIX   # Repleace suffix with deploymentID from environment details page
+export SUBSCRIPTION=subscription-id                 # Replace it with your SubscriptionID
+export RESOURCE_GROUP=Modernize-java-apps 
+export SPRING_APPS_SERVICE=azure-spring-apps-SUFFIX   # Replace suffix with deploymentID
 export LOG_ANALYTICS_WORKSPACE=acme-log-analytic  
-export REGION=eastus                           # choose a region with Enterprise tier support
+export REGION=eastus                           
 
 export CART_SERVICE_APP="cart-service"
 export IDENTITY_SERVICE_APP="identity-service"
