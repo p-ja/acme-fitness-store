@@ -47,14 +47,17 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
 
 1. Update the following variables in the setup-env-variables.sh file by replacing the following values and **Save** it using **Ctrl+S** key and **Close** the file:
 
+   * SubscriptionID: **<inject key="Subscription Id" enableCopy="True"/>**
+   * Spring App Name: **<inject key="Spring App Name" enableCopy="True"/>**
+
    ```shell
-    export SUBSCRIPTION=subscription-id                 # replace it with your subscription-id
-    export RESOURCE_GROUP=Modernize-java-apps-SUFFIX           # Replace suffix with deploymentID from environment details page
-    export SPRING_APPS_SERVICE=azure-spring-apps-SUFFIX   # Replace suffix with deploymentID from environment details page
+    export SUBSCRIPTION=subscription-id                 # Replace it with your subscription-id 
+    export RESOURCE_GROUP=Modernize-java-apps        
+    export SPRING_APPS_SERVICE=azure-spring-apps-SUFFIX   # Replace suffix with the provided DeploymentID
     export LOG_ANALYTICS_WORKSPACE=acme-log-analytic  
-    export REGION=eastus                           # choose a region with Enterprise tier support
+    export REGION=eastus                          
    ```
-   >**Note:** You can copy the above values from the Environment details page and for REGION, leave the default value i.e. eastus.
+   >**Note:** Leave default values for RESOURCE_GROUP, LOG_ANALYTICS_WORKSPACE and REGION.
    
     ![](Images/Ex1-T1-S8.1.png)
 
