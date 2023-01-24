@@ -83,12 +83,12 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
 
 11. Run the following commands to get the list of subscriptions and to set your subscription:
 
+    * Replace ${SUBSCRIPTION} with the SubscriptionID: **<inject key="Subscription Id" enableCopy="True"/>**
+
      ```shell
      az account list -o table
      az account set --subscription ${SUBSCRIPTION}
      ```     
-      
-     > **Note:** Replace ${SUBSCRIPTION} with the subscription ID which you can find on the Environment details > Service Principal details page. 
     
     ![](Images/mjv2-4.png)
    
