@@ -40,8 +40,8 @@
 
    ![](Images/select-rg.png "Resource groups")
    
-1. Confirm you have all resource groups present as shown below.
+1. Confirm you have all resource groups present as shown below. Open **Modernize-java-apps** resource group and verify the recources present in it.
 
-   ![](Images/upimage10.png "Resource groups")
+   ![](Images/mja-verify-rg.png "Resource groups")
    
 1. Now, click on the **Next** from the lower right corner to move to next page.
