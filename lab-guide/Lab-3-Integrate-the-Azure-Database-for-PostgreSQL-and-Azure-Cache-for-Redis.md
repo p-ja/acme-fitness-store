@@ -150,11 +150,11 @@ In this task, you will update the affected applications to use the databases and
 
    > **Note:** You'll notice that after restarting the cart service, the items in your cart will now persist.
 
-3.  Browse the URL `https://${GATEWAY_URL}/order/${USER_ID}` in your browser and you will be able to see the following output:
-      > **Note:** Replace ${USER_ID} with ODL_User <inject key="DeploymentID" enableCopy="false" /> respectively in the above command.
+3. Browse the URL `https://${GATEWAY_URL}/order/${USER_ID}` in your browser and you will be able to see the following output:
+      
+   > **Note:** Replace ${USER_ID} with ODL_User <inject key="DeploymentID" enableCopy="false" /> respectively in the above command.
 
-
-     ![](Images/browser.png)
+   ![](Images/browser.png)
 
 4. Run the following command to restart the order service application:
 
