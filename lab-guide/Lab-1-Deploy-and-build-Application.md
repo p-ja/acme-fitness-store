@@ -59,7 +59,7 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
    ```
    >**Note:** Leave default values for RESOURCE_GROUP, LOG_ANALYTICS_WORKSPACE and REGION.
    
-    ![](Images/Ex1-T1-S8.1.png)
+    ![](Images/mja-setup-env-variables.png)
 
 1. Run the following command to move back to the acme-fitness-store directory and then set up the environment:
   
@@ -104,7 +104,7 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
 13. To deploy the hello world app and create the Spring Boot application, run the following command and change the directory to hello world:
 
      ```shell
-      cd hello-world/complete
+     cd hello-world/complete
      ```
 
 14. Run the following command to create the **hello-world** app instance and deploy it to Azure Spring Apps Enterprise:
@@ -119,18 +119,17 @@ In this task, you will try to deploy a very simple hello-world Spring Boot app t
  
       > **Note:** Creating and deploying the hello-world app will take around **2-3** minutes.
 
-
 15. Return to the Azure portal in the browser and select **Resource groups** from the Azure services menu.
 
     ![acme-fitness](Images/L1-e1-s15.png)
     
 16. Under the Resource groups page, select **Modernize-java-apps**.
 
-    ![acme-fitness](Images/L1-e1-s16.png) 
+    ![acme-fitness](Images/mja-verify-rg.png) 
     
 17. Under your resource group page, select **azure-spring-apps-<inject key="DeploymentID" enableCopy="false" />** instance from the right-hand side under the Resources section.   
 
-    ![acme-fitness](Images/L1-e1-s17.png) 
+    ![acme-fitness](Images/mja-lab1-ex1-step17.png) 
 
 18. Click on **Apps** under the **Settings** section of the navigation pane and select **hello-world**.
 
@@ -158,16 +157,16 @@ The diagram below shows the final result once this section is complete:
 1. To assign a public endpoint and update the Spring Cloud Gateway configuration with API information, run the following command:
 
    ```shell
-     az spring gateway update --assign-endpoint true
-     export GATEWAY_URL=$(az spring gateway show | jq -r '.properties.url')
+   az spring gateway update --assign-endpoint true
+   export GATEWAY_URL=$(az spring gateway show | jq -r '.properties.url')
     
-     az spring gateway update \
-      --api-description "Acme Fitness Store API" \
-      --api-title "Acme Fitness Store" \
-      --api-version "v1.0" \
-      --server-url "https://${GATEWAY_URL}" \
-      --allowed-origins "*" \
-      --no-wait
+   az spring gateway update \
+    --api-description "Acme Fitness Store API" \
+    --api-title "Acme Fitness Store" \
+    --api-version "v1.0" \
+    --server-url "https://${GATEWAY_URL}" \
+    --allowed-origins "*" \
+    --no-wait
    ```
 
     ![](Images/mjv2-7-new.png)
@@ -177,18 +176,18 @@ The diagram below shows the final result once this section is complete:
 1. Run the following command to create a routing rule for the frontend application:
    
    ```shell
-      az spring gateway route-config create \
-      --name ${FRONTEND_APP} \
-      --app-name ${FRONTEND_APP} \
-      --routes-file ./routes/frontend.json
+   az spring gateway route-config create \
+    --name ${FRONTEND_APP} \
+    --app-name ${FRONTEND_APP} \
+    --routes-file ./routes/frontend.json
    ```
    ![](Images/frontend-route.png)
 
 1. Run the following command to deploy and build the frontend application with its required parameters:
    
    ```shell
-       az spring app deploy --name ${FRONTEND_APP} \
-       --source-path ./apps/acme-shopping 
+   az spring app deploy --name ${FRONTEND_APP} \
+    --source-path ./apps/acme-shopping 
    ```
    ![](Images/frontend-deploy.png)
    
@@ -197,15 +196,14 @@ The diagram below shows the final result once this section is complete:
 1. Run the following command. Copy the output URL and paste it in a browser.
 
    ```shell
-    echo "https://${GATEWAY_URL}"
+   echo "https://${GATEWAY_URL}"
    ```
    ![](Images/mjv2-10.png)
   
    > **Note:** If you see the ACME-FITNESS home page displayed as below, then it means that your frontend app and its corresponding route in SCG is configured correctly and deployed successfully. Explore the application, but notice that not everything is functioning yet. Continue on to the next exercise to configure the rest of the functionality.
     
    ![](Images/acme-fitness-homepage.png)
-   
-   
+      
 
 ### Exercise 3: Deploy Backend Applications
 
@@ -220,8 +218,8 @@ The diagram below shows the final result once this section is complete:
 1. Run the following command to bind the spring applications to the Application Configuration Service:
 
    ```shell
-    az spring application-configuration-service bind --app ${PAYMENT_SERVICE_APP}
-    az spring application-configuration-service bind --app ${CATALOG_SERVICE_APP}
+   az spring application-configuration-service bind --app ${PAYMENT_SERVICE_APP}
+   az spring application-configuration-service bind --app ${CATALOG_SERVICE_APP}
    ```
     
    ![](Images/mjv2-5.png)
@@ -231,8 +229,8 @@ The diagram below shows the final result once this section is complete:
 1. Run the following command to bind the spring applications to the Service Registry:
 
    ```shell
-     az spring service-registry bind --app ${PAYMENT_SERVICE_APP}
-     az spring service-registry bind --app ${CATALOG_SERVICE_APP}
+   az spring service-registry bind --app ${PAYMENT_SERVICE_APP}
+   az spring service-registry bind --app ${CATALOG_SERVICE_APP}
    ```
 
    ![](Images/mjv2-6.png)
@@ -321,10 +319,8 @@ The diagram below shows the final result once this section is complete:
    
 1. Copy the URL and paste it in a new browser, and then you should see the API portal for the ACME Fitness Store application.
 
-    ![](Images/api1.png)
-    
+    ![](Images/api1.png)   
     
  > **Note:** After finishing the exercise, be sure not to close the Git Bash window.
-
 
 Now, click on **Next** in the lab guide section in the bottom right corner to jump to the next exercise instructions.
