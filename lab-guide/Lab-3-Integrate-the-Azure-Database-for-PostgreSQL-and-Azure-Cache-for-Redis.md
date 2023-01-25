@@ -19,7 +19,7 @@ In this lab, you will create persistent stores outside the applications and conn
    code setup-db-env-variables.sh
    ```
 
-1. Update the following variables in the setup-db-env-variables.sh file by replacing the SUFFIX value with **<inject key="DeploymentID" enableCopy="true" /> </inject>** and **Save** it using **Ctrl+S** key and then **Close** the file:
+1. Update the following variables in the setup-db-env-variables.sh file by replacing the SUFFIX value with **<inject key="DeploymentID" enableCopy="true" /> and **Save** it using **Ctrl+S** key and then **Close** the file:
 
    ```shell
    export AZURE_CACHE_NAME=azure-cache-SUFFIX                   # Update the SUFFIX in the value
