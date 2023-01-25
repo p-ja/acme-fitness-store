@@ -20,6 +20,10 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    ```
    
 1. Update the following variables in the setup-sso-variables.sh file by replacing the following values and **Save** it using **Ctrl+S** key and then **Close** the file:
+
+   * CLIENT_ID(ApplicationID):
+   * CLIENT_SECRET(Secret key/Applicationsecret): 
+   * TenantID: 
    
    ```shell
    export CLIENT_ID=ApplicationID       #  Update with you existing application id from environment details page
