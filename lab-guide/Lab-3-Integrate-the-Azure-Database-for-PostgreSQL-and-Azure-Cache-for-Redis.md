@@ -99,7 +99,7 @@ In this task, you will update the affected applications to use the databases and
 1. Run the following command to restart the Catalog service for the Service Connector to take effect:
 
    ```shell
-    az spring app restart --name ${CATALOG_SERVICE_APP}
+   az spring app restart --name ${CATALOG_SERVICE_APP}
    ```
   
     ![](Images/restart-catalog-new.png)
@@ -107,12 +107,12 @@ In this task, you will update the affected applications to use the databases and
 1. To retrieve the PostgreSQL connection string and update the Catalog service, run the following command:
 
    ```shell
-    POSTGRES_CONNECTION_STR=$(az spring connection show \
-      --resource-group ${RESOURCE_GROUP} \
-      --service ${SPRING_APPS_SERVICE} \
-      --deployment default \
-      --connection ${ORDER_SERVICE_DB_CONNECTION} \
-      --app ${ORDER_SERVICE_APP} | jq '.configurations[0].value' -r)
+   POSTGRES_CONNECTION_STR=$(az spring connection show \
+     --resource-group ${RESOURCE_GROUP} \
+     --service ${SPRING_APPS_SERVICE} \
+     --deployment default \
+     --connection ${ORDER_SERVICE_DB_CONNECTION} \
+     --app ${ORDER_SERVICE_APP} | jq '.configurations[0].value' -r)
 
    az spring app update \
       --name order-service \
@@ -124,16 +124,16 @@ In this task, you will update the affected applications to use the databases and
 1. To retrieve the Redis connection string and update the Cart Service, run the following command:   
 
    ```shell
-      REDIS_CONN_STR=$(az spring connection show \
-       --resource-group ${RESOURCE_GROUP} \
-       --service ${SPRING_APPS_SERVICE} \
-       --deployment default \
-       --app ${CART_SERVICE_APP} \
-       --connection ${CART_SERVICE_CACHE_CONNECTION} | jq -r '.configurations[0].value')
+   REDIS_CONN_STR=$(az spring connection show \
+     --resource-group ${RESOURCE_GROUP} \
+     --service ${SPRING_APPS_SERVICE} \
+     --deployment default \
+     --app ${CART_SERVICE_APP} \
+     --connection ${CART_SERVICE_CACHE_CONNECTION} | jq -r '.configurations[0].value')
 
    az spring app update \
-      --name cart-service \
-      --env "CART_PORT=8080" "REDIS_CONNECTIONSTRING=${REDIS_CONN_STR}" "AUTH_URL=https://${GATEWAY_URL}"
+     --name cart-service \
+     --env "CART_PORT=8080" "REDIS_CONNECTIONSTRING=${REDIS_CONN_STR}" "AUTH_URL=https://${GATEWAY_URL}"
    ```
   
     ![](Images/mjv2-32-new.png)
