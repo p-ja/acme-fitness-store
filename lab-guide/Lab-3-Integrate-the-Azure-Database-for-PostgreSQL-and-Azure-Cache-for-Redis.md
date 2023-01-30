@@ -19,7 +19,7 @@ In this lab, you will create persistent stores outside the applications and conn
    code setup-db-env-variables.sh
    ```
 
-1. Update the following variables in the setup-db-env-variables.sh file by replacing the SUFFIX value with **<inject key="DeploymentID" enableCopy="false" /> </inject>** and **Save** it using **Ctrl+S** key and then **Close** the file:
+1. Update the following variables in the setup-db-env-variables.sh file by replacing the SUFFIX value with **<inject key="DeploymentID" enableCopy="true" />** and **Save** it using **Ctrl+S** key and then **Close** the file:
 
    ```shell
    export AZURE_CACHE_NAME=azure-cache-SUFFIX                   # Update the SUFFIX in the value
@@ -99,7 +99,7 @@ In this task, you will update the affected applications to use the databases and
 1. Run the following command to restart the Catalog service for the Service Connector to take effect:
 
    ```shell
-    az spring app restart --name ${CATALOG_SERVICE_APP}
+   az spring app restart --name ${CATALOG_SERVICE_APP}
    ```
   
     ![](Images/restart-catalog-new.png)
@@ -107,12 +107,12 @@ In this task, you will update the affected applications to use the databases and
 1. To retrieve the PostgreSQL connection string and update the Catalog service, run the following command:
 
    ```shell
-    POSTGRES_CONNECTION_STR=$(az spring connection show \
-      --resource-group ${RESOURCE_GROUP} \
-      --service ${SPRING_APPS_SERVICE} \
-      --deployment default \
-      --connection ${ORDER_SERVICE_DB_CONNECTION} \
-      --app ${ORDER_SERVICE_APP} | jq '.configurations[0].value' -r)
+   POSTGRES_CONNECTION_STR=$(az spring connection show \
+     --resource-group ${RESOURCE_GROUP} \
+     --service ${SPRING_APPS_SERVICE} \
+     --deployment default \
+     --connection ${ORDER_SERVICE_DB_CONNECTION} \
+     --app ${ORDER_SERVICE_APP} | jq '.configurations[0].value' -r)
 
    az spring app update \
       --name order-service \
@@ -124,16 +124,16 @@ In this task, you will update the affected applications to use the databases and
 1. To retrieve the Redis connection string and update the Cart Service, run the following command:   
 
    ```shell
-      REDIS_CONN_STR=$(az spring connection show \
-       --resource-group ${RESOURCE_GROUP} \
-       --service ${SPRING_APPS_SERVICE} \
-       --deployment default \
-       --app ${CART_SERVICE_APP} \
-       --connection ${CART_SERVICE_CACHE_CONNECTION} | jq -r '.configurations[0].value')
+   REDIS_CONN_STR=$(az spring connection show \
+     --resource-group ${RESOURCE_GROUP} \
+     --service ${SPRING_APPS_SERVICE} \
+     --deployment default \
+     --app ${CART_SERVICE_APP} \
+     --connection ${CART_SERVICE_CACHE_CONNECTION} | jq -r '.configurations[0].value')
 
    az spring app update \
-      --name cart-service \
-      --env "CART_PORT=8080" "REDIS_CONNECTIONSTRING=${REDIS_CONN_STR}" "AUTH_URL=https://${GATEWAY_URL}"
+     --name cart-service \
+     --env "CART_PORT=8080" "REDIS_CONNECTIONSTRING=${REDIS_CONN_STR}" "AUTH_URL=https://${GATEWAY_URL}"
    ```
   
     ![](Images/mjv2-32-new.png)
@@ -150,11 +150,11 @@ In this task, you will update the affected applications to use the databases and
 
    > **Note:** You'll notice that after restarting the cart service, the items in your cart will now persist.
 
-3.  Browse the URL `https://${GATEWAY_URL}/order/${USER_ID}` in your browser and you will be able to see the following output:
-      > **Note:** Replace ${USER_ID} with ODL_User <inject key="DeploymentID" enableCopy="false" /> respectively in the above command.
+3. Browse the URL `https://${GATEWAY_URL}/order/${USER_ID}` in your browser and you will be able to see the following output:
+      
+   > **Note:** Replace ${USER_ID} with ODL_User <inject key="DeploymentID" enableCopy="false" /> respectively in the above command.
 
-
-     ![](Images/browser.png)
+   ![](Images/browser.png)
 
 4. Run the following command to restart the order service application:
 

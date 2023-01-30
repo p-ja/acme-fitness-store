@@ -20,6 +20,10 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    ```
    
 1. Update the following variables in the setup-sso-variables.sh file by replacing the following values and **Save** it using **Ctrl+S** key and then **Close** the file:
+
+   * CLIENT_ID(ApplicationID): **<inject key="Application Id" enableCopy="true" />**
+   * CLIENT_SECRET(Secret key/Applicationsecret): **<inject key="Secret Key" enableCopy="true" />**
+   * TenantID: **<inject key="Tenant Id (Directory Id)" enableCopy="true" />**
    
    ```shell
    export CLIENT_ID=ApplicationID       #  Update with you existing application id from environment details page
@@ -28,7 +32,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    export JWK_SET_URI=https://login.microsoftonline.com/TenantID/discovery/v2.0/keys # Make sure to replace TenantID with your tenant ID
    ```
    
-    >**Note:** You can copy the CLIENT_ID(ApplicationID), CLIENT_SECRET(Secret key/Applicationsecret) and TenantID from the Environment details page > Service principal details.
+    >**Note:** You can also find the CLIENT_ID(ApplicationID), CLIENT_SECRET(Secret key/Applicationsecret) and TenantID from the Environment details page > Service principal details.
    
    ![](Images/Ex2-T1-S3.png)
 
@@ -101,7 +105,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
    
 3. Click on **Accept** in order to be able to log in using your SSO credentials. 
 
-   ![](Images/mjv2-15.png)
+   ![](Images/mja-lab2-t4-step3.png)
    
 4. Once logged in, the remaining functionality of the application will be available. Click on **CATALOG** to see the list of products.
 
