@@ -14,7 +14,7 @@ In this lab, you will use Azure Key Vault to securely store and load secrets to 
 
 ### Task 1: Store secrets
 
-1. Choose a unique name for your Key Vault and set an environment variable with the value **keyvault<inject key="DeploymentID" enableCopy="true" />** (Replace "change-me" with the mentioned key vault name.)
+1. Choose a unique name for your Key Vault and set an environment variable with the value **<inject key="keyvault + DeploymentID" enableCopy="true" />** (Replace "change-me" with the mentioned key vault name.)
     
      ```shell
      export KEY_VAULT="change-me"      # customize this
