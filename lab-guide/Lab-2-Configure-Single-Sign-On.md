@@ -23,7 +23,7 @@ In this lab, you will configure Single Sign-On for Spring Cloud Gateway using Az
 
    * CLIENT_ID(ApplicationID): **<inject key="Application Id" enableCopy="true" />**
    * CLIENT_SECRET(Secret key/Applicationsecret): **<inject key="Secret Key" enableCopy="true" />**
-   * TenantID: **<inject key="Tenant Id (Directory Id)" enableCopy="true" />**
+   * TenantID: **<inject key="tenantid" enableCopy="true" />**
    
    ```shell
    export CLIENT_ID=ApplicationID       #  Update with you existing application id from environment details page
