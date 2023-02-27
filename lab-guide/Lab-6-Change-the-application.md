@@ -18,9 +18,9 @@ Duration: 10 minutes
 
      ![dfgj](Images/keyupdates2.png)
 
-1. Once the changes are done, you will be publishing a new stagging deployment to the frontend application.
+1. Once the changes are done, you will be publishing a new staging deployment to the frontend application.
 
-1. Run the below command in the Git Bash to create a new deployment named as **stagging-update** for the frontend application.
+1. Run the below command in the Git Bash to create a new deployment named as **staging-update** for the frontend application.
 
     ```bash
     az spring app deployment create --name green --app ${FRONTEND_APP} --source-path ./apps/acme-shopping 
@@ -29,11 +29,13 @@ Duration: 10 minutes
     > **Note:** Please note that the above command can run for up to 10 minutes. Wait until it runs successfully.
 
   
-1.  Once the creation of the new deployment is completed, browse the newly created deployment from the below URL endpoint and observe the changes. Please update the **SUFFIX** with **<inject key="DeploymentID" enableCopy="false" />** in the URL.
+1. Once the creation of the new deployment is completed, navigate back to Azure Spring Apps named **<inject key="Spring App Name" enableCopy="true" />** **(1)** in Azure Portal. Then click on **Apps** **(2)** from the left menu under Settings and select **frontend** **(3)** app from the list.
 
-    ```
-    https://azure-spring-apps-SUFFIX.test.azuremicroservices.io/frontend/green/
-    ```
+    ![](Images/lab6-frontend-app.png)
+    
+1. In **frontend** App pane, click on **Deployments** **(1)** from the left menu under Settings and click on the **Staging** **(2)** hyperlink next to **green** deployment to verify the new staging deployment to the frontend application
+    
+    ![](Images/lab6-green-app.png)
     
     ![](Images/green.png)
     
